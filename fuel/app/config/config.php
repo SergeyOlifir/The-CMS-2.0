@@ -34,7 +34,7 @@ return array(
 	 *
 	 * Set this to an empty string if no suffix is used
 	 */
-	// 'url_suffix'  => '',
+	 'url_suffix'  => '.html',
 
 	/**
 	 * index_file - The name of the main bootstrap file.
@@ -48,13 +48,13 @@ return array(
 	/**
 	 * Default location for the file cache
 	 */
-	// 'cache_dir'       => APPPATH.'cache/',
+	 'cache_dir'       => APPPATH.'cache/',
 
 	/**
 	 * Settings for the file finder cache (the Cache class has it's own config!)
 	 */
-	// 'caching'         => false,
-	// 'cache_lifetime'  => 3600, // In Seconds
+	 'caching'         => false,
+	 'cache_lifetime'  => 3600, // In Seconds
 
 	/**
 	 * Callback to use with ob_start(), set this to 'ob_gzhandler' for gzip encoding of output
@@ -256,7 +256,7 @@ return array(
 	/**************************************************************************/
 	/* Always Load                                                            */
 	/**************************************************************************/
-	// 'always_load'  => array(
+	 'always_load'  => array(
 
 		/**
 		 * These packages are loaded on Fuel's startup.
@@ -269,9 +269,9 @@ return array(
 		 *     array('auth'	=> PKGPATH.'auth/')
 		 * );
 		 */
-		// 'packages'  => array(
-		// 	//'orm',
-		// ),
+		 'packages'  => array(
+                    'orm',
+		 ),
 
 		/**
 		 * These modules are always loaded on Fuel's startup. You can specify them
@@ -296,7 +296,9 @@ return array(
 		 * add it like 'session' => 'auth'.
 		 * If you don't want the config in a group use null as groupname.
 		 */
-		// 'config'  => array(),
+		 'config'  => array(
+                     'application'
+                 ),
 
 		/**
 		 * Language files to autoload
@@ -307,6 +309,6 @@ return array(
 		 * If you don't want the lang in a group use null as groupname.
 		 */
 		// 'language'  => array(),
-	// ),
+	 ),
 
 );
