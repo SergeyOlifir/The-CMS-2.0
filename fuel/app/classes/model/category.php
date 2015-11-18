@@ -64,5 +64,9 @@ class Model_Category extends Model_Base {
         
         return self::$validator;
     }
+    
+    public static function to_array_for_dropdown ($key, $value) {
+        return Arr::assoc_to_keyval(\Fuel\Core\DB::select($key, $value)->from(self::table())->execute()->as_array(), $key, $value);
+    }
 }
 
