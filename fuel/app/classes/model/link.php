@@ -30,6 +30,13 @@ class Model_Link extends Model_Base {
             'key_to' => 'id',
             'cascade_save' => true,
             'cascade_delete' => false,
+        ),
+        'logo' => array(
+            'key_from' => 'image',
+            'model_to' => 'Model_Image',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
         )
     );
     

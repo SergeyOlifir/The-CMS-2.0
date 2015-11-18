@@ -2,7 +2,7 @@
     <div class="col-md-4">
         <div class="box box-primary">
             <div class="box-body box-profile">
-                <?= \Fuel\Core\Html::img('assets/img/default.png', array('class' => 'profile-user-img img-responsive img-circle')); ?>
+                <?= \Fuel\Core\Html::img((!is_null($model->logo)) ? "files/{$model->logo->small}" : 'assets/img/default.png', array('class' => 'profile-user-img img-responsive img-circle')); ?>
               <h3 class="profile-username text-center"><?= $model->title;?></h3>
 
               <p class="text-muted text-center"><?= $model->description;?></p>
@@ -34,7 +34,7 @@
             </div>
                 <? $kmodel = $model->category; ?>
                 <div class="box-body box-profile">
-                    <?= \Fuel\Core\Html::img('assets/img/default.png', array('class' => 'profile-user-img img-responsive img-circle')); ?>
+                    <?= \Fuel\Core\Html::img((!is_null($kmodel->logo)) ? "files/{$kmodel->logo->small}" : 'assets/img/default.png', array('class' => 'profile-user-img img-responsive img-circle')); ?>
                     <h3 class="profile-username text-center"><?= $kmodel->title;?></h3>
 
                     <p class="text-muted text-center"><?= $kmodel->page_title;?></p>

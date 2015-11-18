@@ -28,7 +28,7 @@ class Controller_Admin_Category extends Controller_Admin {
                         try {
                             $logo->save();
                         } catch (Exception $ex) {
-                            $this->template->set_global('model', Model_Category::forge(Fuel\Core\Input::post()));
+                            $this->template->set_global('model', Model_Category::forge($fields));
                             $this->template->set_global('errors', e(array('image' => $ex)));
                             \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
                             return;
@@ -36,9 +36,12 @@ class Controller_Admin_Category extends Controller_Admin {
                         
                         $fields['image'] = $logo->id;
 			
+                    } else {
+                        $this->template->set_global('model', Model_Category::forge($fields));
+                        $this->template->set_global('errors', e(array('image' => $ex)));
+                        \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                        return;
                     }
-                } else {
-                    var_dump(Fuel\Core\Input::post()); die();
                 }
                 $model = Model_Category::forge($fields);
                 try {
@@ -77,7 +80,7 @@ class Controller_Admin_Category extends Controller_Admin {
                             try {
                                 $logo->save();
                             } catch (Exception $ex) {
-                                $this->template->set_global('model', Model_Category::forge(Fuel\Core\Input::post()));
+                                $this->template->set_global('model', $model->from_array($fields));
                                 $this->template->set_global('errors', e(array('image' => $ex)));
                                 \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
                                 return;
@@ -85,9 +88,12 @@ class Controller_Admin_Category extends Controller_Admin {
 
                             $fields['image'] = $logo->id;
 
+                        } else {
+                            $this->template->set_global('model', $model->from_array($fields));
+                            $this->template->set_global('errors', e(array('image' => 'error')));
+                            \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                            return;
                         }
-                    } else {
-                        var_dump(Fuel\Core\Input::post()); die();
                     }
                     $model->from_array($fields);
                     try {
