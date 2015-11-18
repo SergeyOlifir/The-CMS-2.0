@@ -48,6 +48,16 @@ class Model_Category extends Model_Base {
         )
     );
     
+    protected static $_belongs_to = array(
+        'logo' => array(
+            'key_from' => 'image',
+            'model_to' => 'Model_Image',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        )
+    );
+    
     private static $validator;
     
     public static function get_validator () {

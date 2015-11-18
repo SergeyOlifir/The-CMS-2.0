@@ -11,9 +11,36 @@ class Controller_Admin_Category extends Controller_Admin {
     }
     
     public function action_create () {
+        
+        $this->template->header = 'Категории';
+        $this->template->description = 'Добавьте новую';
+        $this->template->content = \Fuel\Core\View::forge('admin/category/create');
+        
         if(Fuel\Core\Input::post()) {
             if(Model_Category::get_validator()->run()) {
-                $model = Model_Category::forge(Model_Category::get_validator()->validated());
+                $fields = Model_Category::get_validator()->validated();
+                if(Fuel\Core\Input::all('image')) {
+                    $config = \Config::get('application.galery.upload');
+                    Upload::process($config);
+		    if (Upload::is_valid()) {
+                        Upload::save();
+			$logo = Model_Image::forge();
+                        try {
+                            $logo->save();
+                        } catch (Exception $ex) {
+                            $this->template->set_global('model', Model_Category::forge(Fuel\Core\Input::post()));
+                            $this->template->set_global('errors', e(array('image' => $ex)));
+                            \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                            return;
+                        }
+                        
+                        $fields['image'] = $logo->id;
+			
+                    }
+                } else {
+                    var_dump(Fuel\Core\Input::post()); die();
+                }
+                $model = Model_Category::forge($fields);
                 try {
                     $model->save();
                 } catch (Exception $ex) {
@@ -21,7 +48,7 @@ class Controller_Admin_Category extends Controller_Admin {
                 }
                 
                 \Fuel\Core\Session::set_flash('success', 'Категория успешно создана');
-                Fuel\Core\Response::redirect('/admin/category/index');
+                Fuel\Core\Response::redirect('/admin/category/view/' . $model->id);
                 
             } else {
                 $this->template->set_global('model', Model_Category::forge(Fuel\Core\Input::post()));
@@ -30,17 +57,39 @@ class Controller_Admin_Category extends Controller_Admin {
             }
         }
         
-        $this->template->header = 'Категории';
-        $this->template->description = 'Добавьте новую';
-        $this->template->content = \Fuel\Core\View::forge('admin/category/create');
+        
     }
     
     public function action_edit ($id = null) {
         if($id and $model = Model_Category::find($id)) {
-            
+            $this->template->header = 'Категории';
+            $this->template->description = 'Редактирование';
+            $this->template->content = \Fuel\Core\View::forge('admin/category/edit');
             if(Fuel\Core\Input::post()) {
                 if(Model_Category::get_validator()->run()) {
-                    $model->from_array(Model_Category::get_validator()->validated());
+                    $fields = Model_Category::get_validator()->validated();
+                    if(Fuel\Core\Input::all('image')) {
+                        $config = \Config::get('application.galery.upload');
+                        Upload::process($config);
+                        if (Upload::is_valid()) {
+                            Upload::save();
+                            $logo = Model_Image::forge();
+                            try {
+                                $logo->save();
+                            } catch (Exception $ex) {
+                                $this->template->set_global('model', Model_Category::forge(Fuel\Core\Input::post()));
+                                $this->template->set_global('errors', e(array('image' => $ex)));
+                                \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                                return;
+                            }
+
+                            $fields['image'] = $logo->id;
+
+                        }
+                    } else {
+                        var_dump(Fuel\Core\Input::post()); die();
+                    }
+                    $model->from_array($fields);
                     try {
                         $model->save();
                     } catch (Exception $ex) {
@@ -48,7 +97,7 @@ class Controller_Admin_Category extends Controller_Admin {
                     }
                     
                     \Fuel\Core\Session::set_flash('success', 'Категория успешно обновлена!');
-                    Fuel\Core\Response::redirect('/admin/category/index');
+                    Fuel\Core\Response::redirect('/admin/category/view/' . $model->id);
                     
                 } else {
                     $model->from_array(Fuel\Core\Input::post());
@@ -58,9 +107,7 @@ class Controller_Admin_Category extends Controller_Admin {
             }
             
             $this->template->set_global('model', $model);
-            $this->template->header = 'Категории';
-            $this->template->description = 'Редактирование';
-            $this->template->content = \Fuel\Core\View::forge('admin/category/edit');
+            
             
         } else {
             Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
@@ -125,6 +172,33 @@ class Controller_Admin_Category extends Controller_Admin {
                 } catch (Exception $ex) {
                     \Fuel\Core\Session::set_flash('error', 'Чтото не так');
                 }
+                \Fuel\Core\Session::set_flash('success', 'Категории успешно привязаны');
+                Fuel\Core\Response::redirect_back();
+                
+            } else {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                Fuel\Core\Response::redirect_back();
+            }
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+    }
+    
+    public function action_setto ($id = null) {
+        if(isset($id) and $model = Model_Category::find($id)) {
+            if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
+                foreach (\Fuel\Core\Input::post('relations') as $related_id) {
+                    if($related_model = Model_Category::find((int)$related_id)) {
+                        $related_model->related_category[] = $model;
+                        try {
+                            $related_model->save();	
+                        } catch (Exception $ex) {
+                            \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                            return Fuel\Core\Response::redirect_back();
+                        }
+                    }
+                }
+                
                 \Fuel\Core\Session::set_flash('success', 'Категории успешно привязаны');
                 Fuel\Core\Response::redirect_back();
                 

@@ -1,5 +1,13 @@
 
     <div class="box-body">
+        <div class="form-group <?= ((isset($errors) and isset($errors['image'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['image'])) ? 'has-success' : '') ?>">
+            <div class="clearfix">
+                <?= \Fuel\Core\Html::img((isset($model) && !is_null($model->logo)) ? "files/{$model->logo->small}" : 'assets/img/default.png', array('class' => 'img-responsive img-bordered-sm img-circle img-lg')); ?>
+            </div>
+            <?= Fuel\Core\Form::label('Логотип', 'image'); ?>
+            <?= Fuel\Core\Form::file( 'image'); ?>
+            <p class="help-block">Логотип категории</p>
+        </div>
         <div class="form-group <?= ((isset($errors) and isset($errors['alias'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['alias'])) ? 'has-success' : '') ?>">
             <?= Fuel\Core\Form::label('Alias', 'alias'); ?>
             <?= Fuel\Core\Form::input('alias', (isset($model) ? $model->alias : ''), array('class' => 'form-control', 'placeholder' => 'Alias')); ?>
@@ -21,7 +29,7 @@
         <div class="form-group <?= ((isset($errors) and isset($errors['title'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['title'])) ? 'has-success' : '') ?>">
             <?= Fuel\Core\Form::label('Заголовок', 'title'); ?>
             <?= Fuel\Core\Form::input('title', (isset($model) ? $model->title : ''), array('class' => 'form-control', 'placeholder' => 'Заголовок')); ?>
-            <p class="help-block">Заголовок категории</p>
+            <p class="help-block ">Заголовок категории</p>
         </div>
 
         <div class="form-group <?= ((isset($errors) and isset($errors['description'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['description'])) ? 'has-success' : '') ?>">

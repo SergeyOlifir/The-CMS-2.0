@@ -1,5 +1,5 @@
-<?= Fuel\Core\Form::open("admin/category/set/{$model->id}"); ?>
-    <div class="modal fade" id="reladet_categiry_form">
+<?= Fuel\Core\Form::open($action); ?>
+    <div class="modal fade" id="<?= $popup_id; ?>">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -20,7 +20,7 @@
                         </thead>
                         <tbody>
                             <? foreach($models as $rmodel): ?>
-                                <? if(!in_array($rmodel, $model->related_category) && $rmodel->id !== $model->id) : ?>
+                                <? if(!in_array($rmodel, $relations) && $rmodel->id !== $model->id) : ?>
                                     <tr>
                                         <td><?= $rmodel->id; ?></td>
                                         <td><?= $rmodel->alias; ?></td>
