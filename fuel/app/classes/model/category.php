@@ -58,6 +58,16 @@ class Model_Category extends Model_Base {
         )
     );
     
+    protected static $_has_many = array(
+        'links' => array(
+            'key_from' => 'id',
+            'model_to' => 'Model_Link',
+            'key_to' => 'category_id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        )
+    );
+    
     private static $validator;
     
     public static function get_validator () {

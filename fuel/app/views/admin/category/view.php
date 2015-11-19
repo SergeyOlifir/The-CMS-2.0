@@ -1,41 +1,28 @@
 <div class="row">
     <div class="col-md-4">
         <div class="box box-primary">
-            <div class="box-body box-profile">
-                <?= \Fuel\Core\Html::img((!is_null($model->logo)) ? "files/{$model->logo->small}" : 'assets/img/default.png', array('class' => 'profile-user-img img-responsive img-circle')); ?>
-              <h3 class="profile-username text-center"><?= $model->title;?></h3>
-
-              <p class="text-muted text-center"><?= $model->page_title;?></p>
-
-              <ul class="list-group list-group-unbordered">
-                <li class="list-group-item clearfix">
-                    <b class="col-xs-6">Alias</b> <a class="col-xs-6 text-right"><?= $model->alias;?></a>
-                </li>
-                <li class="list-group-item clearfix">
-                  <b class="col-xs-6">Заголовок для всего контента</b> <a class="col-xs-6 text-right"><?= $model->all_caption;?></a>
-                </li>
-                <li class="list-group-item clearfix">
-                  <b class="col-xs-6">Обновлена</b> <a class="col-xs-6 text-right"><?= Date::forge($model->created_at)->format("%d/%m/%Y %H:%M");?></a>
-                </li>
-                <li class="list-group-item clearfix">
-                  <b class="col-xs-6">Создана</b> <a class="col-xs-6 text-right"><?= Date::forge($model->updated_at)->format("%d/%m/%Y %H:%M");?></a>
-                </li>
-                <li class="list-group-item clearfix">
-                  <b class="col-xs-6">Связанных категорий</b> <a class="col-xs-6 text-right"><?= count($model->related_category); ?></a>
-                </li>
-                <li class="list-group-item clearfix">
-                  <b class="col-xs-6">Пренадлежит категориям</b> <a class="col-xs-6 text-right"><?= count($model->master_category); ?></a>
-                </li>
-                <li class="list-group-item clearfix">
-                  <b class="col-xs-6">Всего контента</b> <a class="col-xs-6 text-right">13,287</a>
-                </li>
-              </ul>
-
-              <a href="/admin/category/edit/<?= $model->id;?>" class="btn btn-primary btn-block btn-flat"><b>Редатировать</b></a>
-              <a href="/admin/category/edit/<?= $model->id;?>" class="btn btn-primary btn-block btn-flat"><b>Привязать контент</b></a>
+            <?= render('admin/category/profile_card', array('cmodel' => $model)); ?>
+            <div class="box-footer">
+                <a href="/admin/category/edit/<?= $model->id;?>" class="btn btn-primary btn-block btn-flat"><b>Редатировать</b></a>
+                <a href="/admin/category/edit/<?= $model->id;?>" class="btn btn-primary btn-block btn-flat"><b>Привязать контент</b></a>
             </div>
-            <!-- /.box-body -->
-          </div>
+        </div>
+        <? if(count($model->links) > 0): ?>
+            <? foreach($model->links as $lmodel): ?>
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Ссылка</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        </div>
+                    </div>
+                    <?= render('admin/link/profile_card', array('lmodel' => $lmodel)); ?>
+                    <div class="box-footer">
+                        <a href="/admin/link/view/<?= $lmodel->id;?>" class="btn btn-primary btn-block btn-flat"><b>Просмотр</b></a>
+                    </div>
+                </div>
+            <? endforeach;?>
+        <? endif; ?>
     </div>
     <div class="col-md-8">
         <div class="box box-primary">

@@ -48,7 +48,7 @@ class Controller_Admin_Link extends Controller_Admin {
                 }
                 
                 \Fuel\Core\Session::set_flash('success', 'Ссылка успешно создана');
-                Fuel\Core\Response::redirect('/admin/link/index');
+                Fuel\Core\Response::redirect('/admin/link/view/' . $model->id);
             } else {
                 $this->template->set_global('model', Model_Link::forge(Fuel\Core\Input::post()));
                 $this->template->set_global('errors', e(Model_Link::get_validator()->error()));
@@ -100,7 +100,7 @@ class Controller_Admin_Link extends Controller_Admin {
                     }
                     
                     \Fuel\Core\Session::set_flash('success', 'Ссылка успешно обновлена!');
-                    Fuel\Core\Response::redirect('/admin/link/index');
+                    Fuel\Core\Response::redirect('/admin/link/view/' . $model->id);
                     
                 } else {
                     $model->from_array(Fuel\Core\Input::post());
