@@ -28,7 +28,7 @@
         <?= \Fuel\Core\Asset::js('admin/app.min.js'); ?>
         <?= \Fuel\Core\Asset::js('admin/admin.js'); ?>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-blue fixed sidebar-mini">
         <?= render('_messages'); ?>
     <div class="wrapper">
 

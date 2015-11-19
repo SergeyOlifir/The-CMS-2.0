@@ -1,47 +1,66 @@
-
+    
     <div class="box-body">
-        <div class="form-group <?= ((isset($errors) and isset($errors['image'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['image'])) ? 'has-success' : '') ?>">
-            <div class="clearfix">
-                <?= \Fuel\Core\Html::img((isset($model) && !is_null($model->logo)) ? "files/{$model->logo->small}" : 'assets/img/default.png', array('class' => 'img-responsive img-bordered-sm img-circle img-lg')); ?>
-            </div>
-            <?= Fuel\Core\Form::label('Логотип', 'image'); ?>
-            <?= Fuel\Core\Form::file( 'image'); ?>
-            <p class="help-block">Логотип категории</p>
-        </div>
-        <div class="form-group <?= ((isset($errors) and isset($errors['alias'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['alias'])) ? 'has-success' : '') ?>">
-            <?= Fuel\Core\Form::label('Alias', 'alias'); ?>
-            <?= Fuel\Core\Form::input('alias', (isset($model) ? $model->alias : ''), array('class' => 'form-control', 'placeholder' => 'Alias')); ?>
-            <p class="help-block">Алиас категории. Обязательный и уникальный</p>
-        </div>
-
-        <div class="form-group <?= ((isset($errors) and isset($errors['all_caption'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['all_caption'])) ? 'has-success' : '') ?>">
-            <?= Fuel\Core\Form::label('Заголовок для всего контента', 'all_caption'); ?>
-            <?= Fuel\Core\Form::input('all_caption', (isset($model) ? $model->alias : ''), array('class' => 'form-control', 'placeholder' => 'Menu text')); ?>
-            <p class="help-block">Текст на кнопке для показа всего контента</p>
-        </div>
-
-        <div class="form-group <?= ((isset($errors) and isset($errors['page_title'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['page_title'])) ? 'has-success' : '') ?>">
-            <?= Fuel\Core\Form::label('Заголовок Страницы', 'page_title'); ?>
-            <?= Fuel\Core\Form::input('page_title', (isset($model) ? $model->page_title : ''), array('class' => 'form-control', 'placeholder' => 'Заголовок Страницы')); ?>
-            <p class="help-block">Заголовок, который будет показан на табе.</p>
-        </div>
-
-        <div class="form-group <?= ((isset($errors) and isset($errors['title'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['title'])) ? 'has-success' : '') ?>">
-            <?= Fuel\Core\Form::label('Заголовок', 'title'); ?>
-            <?= Fuel\Core\Form::input('title', (isset($model) ? $model->title : ''), array('class' => 'form-control', 'placeholder' => 'Заголовок')); ?>
-            <p class="help-block ">Заголовок категории</p>
-        </div>
-
-        <div class="form-group <?= ((isset($errors) and isset($errors['description'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['description'])) ? 'has-success' : '') ?>">
-            <?= Fuel\Core\Form::label('Описание', 'description'); ?>
-            <?= Fuel\Core\Form::textarea('description', (isset($model) ? $model->description : ''), array('class' => 'form-control', 'placeholder' => 'Описание', 'rows' => 6)); ?>
-            <p class="help-block">Встречающий текст категории</p>
-        </div>
-
-        <div class="form-group <?= ((isset($errors) and isset($errors['meta'])) ? 'has-error' : '') ?> <?= ((isset($errors) and !isset($errors['meta'])) ? 'has-success' : '') ?>">
-            <?= Fuel\Core\Form::label('Meta', 'meta'); ?>
-            <?= Fuel\Core\Form::textarea('meta', (isset($model) ? $model->meta : ''), array('class' => 'form-control', 'placeholder' => 'Meta', 'rows' => 6)); ?>
-            <p class="help-block">Ключевые поисковые слова и словосочетания…</p>
-        </div>
+        <?= TCForm::File(array(
+            'errors' => isset($errors) ? $errors : null,
+            'model' => isset($model) ? $model : null,
+            'field' => 'image',
+            'image_field' => 'logo',
+            'label' => 'Логотип',
+            'description' => 'Логотип категории'
+        )); ?>
+        
+        <?= TCForm::Input(array(
+            'errors' => isset($errors) ? $errors : null,
+            'model' => isset($model) ? $model : null,
+            'field' => 'alias',
+            'label' => 'Алиас',
+            'placeholder' => 'Алиас',
+            'description' => 'Алиас категории. Обязательный и уникальный'
+        )); ?>
+        
+        <?= TCForm::Input(array(
+            'errors' => isset($errors) ? $errors : null,
+            'model' => isset($model) ? $model : null,
+            'field' => 'all_caption',
+            'label' => 'Заголовок для всего контента',
+            'placeholder' => 'Menu text',
+            'description' => 'Текст на кнопке для показа всего контента'
+        )); ?>
+        
+        <?= TCForm::Input(array(
+            'errors' => isset($errors) ? $errors : null,
+            'model' => isset($model) ? $model : null,
+            'field' => 'page_title',
+            'label' => 'Заголовок Страницы',
+            'placeholder' => 'Заголовок Страницы',
+            'description' => 'Заголовок, который будет показан на табе.'
+        )); ?>
+        
+        <?= TCForm::Input(array(
+            'errors' => isset($errors) ? $errors : null,
+            'model' => isset($model) ? $model : null,
+            'field' => 'title',
+            'label' => 'Заголовок',
+            'placeholder' => 'Заголовок',
+            'description' => 'Заголовок категории.'
+        )); ?>
+        
+        <?= TCForm::Textarea(array(
+            'errors' => isset($errors) ? $errors : null,
+            'model' => isset($model) ? $model : null,
+            'field' => 'description',
+            'label' => 'Описание',
+            'placeholder' => 'Описание',
+            'description' => 'Встречающий текст категории.'
+        )); ?>
+        
+        <?= TCForm::Textarea(array(
+            'errors' => isset($errors) ? $errors : null,
+            'model' => isset($model) ? $model : null,
+            'field' => 'meta',
+            'label' => 'Meta',
+            'placeholder' => 'Meta',
+            'description' => 'Ключевые поисковые слова и словосочетания…'
+        )); ?>
     </div>
     
