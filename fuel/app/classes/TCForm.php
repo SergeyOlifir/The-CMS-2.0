@@ -10,7 +10,7 @@ class TCForm {
     }
     
     public static function Select (array $config) {
-        
+        return \Fuel\Core\View::forge(self::$tempalte_path . 'select', $config, true);
     }
     
     public static function Textarea (array $config) {
