@@ -150,7 +150,7 @@ class Controller_Admin_Category extends Controller_Admin {
     public function action_unset($id = null, $related_id = null) {
         if(isset($id) and isset($related_id) and $model = Model_Category::find($id) and $rmodel = Model_Category::find($related_id)) {
             try {
-                unset($model->related_category[$related_id]);
+                unset($model->subsidiary_category[$related_id]);
                 $model->save();
             } catch (Exception $ex) {
                 \Fuel\Core\Session::set_flash('error', 'Чтото не так');
@@ -170,7 +170,7 @@ class Controller_Admin_Category extends Controller_Admin {
             if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
                 foreach (\Fuel\Core\Input::post('relations') as $related_id) {
                     if($related_model = Model_Category::find((int)$related_id)) {
-                        $model->related_category[] = $related_model;
+                        $model->subsidiary_category[] = $related_model;
                     }
                 }
                 try {
@@ -196,14 +196,17 @@ class Controller_Admin_Category extends Controller_Admin {
             if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
                 foreach (\Fuel\Core\Input::post('relations') as $related_id) {
                     if($related_model = Model_Category::find((int)$related_id)) {
-                        $related_model->related_category[] = $model;
-                        try {
-                            $related_model->save();	
-                        } catch (Exception $ex) {
-                            \Fuel\Core\Session::set_flash('error', 'Чтото не так');
-                            return Fuel\Core\Response::redirect_back();
-                        }
+                        //$related_model->related_category[] = $model;
+                        $model->master_category[] = $related_model;
+                        
                     }
+                }
+                
+                try {
+                    $model->save();	
+                } catch (Exception $ex) {
+                    \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                    return Fuel\Core\Response::redirect_back();
                 }
                 
                 \Fuel\Core\Session::set_flash('success', 'Категории успешно привязаны');
@@ -216,6 +219,80 @@ class Controller_Admin_Category extends Controller_Admin {
         } else {
             Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
         }
+    }
+    
+    public function  action_setrelation ($id = null) {
+        if(isset($id) and $model = Model_Category::find($id)) {
+            if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
+                foreach (\Fuel\Core\Input::post('relations') as $related_id) {
+                    if($related_model = Model_Category::find((int)$related_id)) {
+                        $model->related_category[] = $related_model;
+                    }
+                }
+                try {
+                    $model->save();	
+                    
+                } catch (Exception $ex) {
+                    \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                }
+                \Fuel\Core\Session::set_flash('success', 'Категории успешно привязаны');
+                Fuel\Core\Response::redirect_back();
+                
+            } else {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                Fuel\Core\Response::redirect_back();
+            }
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+    }
+    
+    public function action_setrelationto ($id = null) {
+        if(isset($id) and $model = Model_Category::find($id)) {
+            if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
+                foreach (\Fuel\Core\Input::post('relations') as $related_id) {
+                    if($related_model = Model_Category::find((int)$related_id)) {
+                        //$related_model->related_category[] = $model;
+                        $model->related_to_category[] = $related_model;
+                        
+                    }
+                }
+                
+                try {
+                    $model->save();	
+                } catch (Exception $ex) {
+                    \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                    return Fuel\Core\Response::redirect_back();
+                }
+                
+                \Fuel\Core\Session::set_flash('success', 'Категории успешно привязаны');
+                Fuel\Core\Response::redirect_back();
+                
+            } else {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                Fuel\Core\Response::redirect_back();
+            }
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+    }
+    
+    public function action_unsetrelation($id = null, $related_id = null) {
+        if(isset($id) and isset($related_id) and $model = Model_Category::find($id) and $rmodel = Model_Category::find($related_id)) {
+            try {
+                unset($model->related_category[$related_id]);
+                $model->save();
+            } catch (Exception $ex) {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+            }
+            
+            \Fuel\Core\Session::set_flash('success', 'Категория успешно отвязана');
+            Fuel\Core\Response::redirect_back();
+            
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+            
     }
 }
 

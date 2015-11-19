@@ -26,7 +26,7 @@ class Model_Category extends Model_Base {
     );
     
     protected static $_many_many = array(
-        'related_category' => array(
+        'subsidiary_category' => array(
             'key_from' => 'id',
             'key_through_from' => 'category_id',
             'table_through' => 'category_in_category',
@@ -45,7 +45,28 @@ class Model_Category extends Model_Base {
             'key_to' => 'id',
             'cascade_save' => true,
             'cascade_delete' => false,
-        )
+        ),
+        'related_category' => array(
+            'key_from' => 'id',
+            'key_through_from' => 'category_id',
+            'table_through' => 'categories_in_related_categories',
+            'key_through_to' => 'related_category_id',
+            'model_to' => 'Model_Category',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
+        'related_to_category' => array(
+            'key_from' => 'id',
+            'key_through_from' => 'related_category_id',
+            'table_through' => 'categories_in_related_categories',
+            'key_through_to' => 'category_id',
+            'model_to' => 'Model_Category',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
+        
     );
     
     protected static $_belongs_to = array(

@@ -19,7 +19,7 @@
           <b class="col-xs-6">Создана</b> <a class="col-xs-6 text-right"><?= Date::forge($cmodel->updated_at)->format("%d/%m/%Y %H:%M");?></a>
         </li>
         <li class="list-group-item clearfix">
-          <b class="col-xs-6">Связанных категорий</b> <a class="col-xs-6 text-right"><?= count($cmodel->related_category); ?></a>
+          <b class="col-xs-6">Связанных категорий</b> <a class="col-xs-6 text-right"><?= count($cmodel->subsidiary_category); ?></a>
         </li>
         <li class="list-group-item clearfix">
           <b class="col-xs-6">Пренадлежит категориям</b> <a class="col-xs-6 text-right"><?= count($cmodel->master_category); ?></a>
