@@ -17,24 +17,24 @@ class Controller_Admin_Link extends Controller_Admin {
         if(Fuel\Core\Input::post()) {
             if(Model_Link::get_validator()->run()) {
                 $fields = Model_Link::get_validator()->validated();
-                if(Fuel\Core\Input::all('image')) {
-                    $config = \Config::get('application.galery.upload');
-                    Upload::process($config);
-		    if (Upload::is_valid()) {
-                        Upload::save();
-			$logo = Model_Image::forge();
-                        try {
-                            $logo->save();
-                        } catch (Exception $ex) {
-                            $this->template->set_global('model', Model_Link::forge(Fuel\Core\Input::post()));
-                            $this->template->set_global('errors', e(array('image' => $ex)));
-                            \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
-                            return;
-                        }
-                        
-                        $fields['image'] = $logo->id;
-			
-                    } else {
+                $config = \Config::get('application.galery.upload');
+                Upload::process($config);
+                if (Upload::is_valid()) {
+                    Upload::save();
+                    $logo = Model_Image::forge();
+                    try {
+                        $logo->save();
+                    } catch (Exception $ex) {
+                        $this->template->set_global('model', Model_Link::forge(Fuel\Core\Input::post()));
+                        $this->template->set_global('errors', e(array('image' => $ex)));
+                        \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                        return;
+                    }
+
+                    $fields['image'] = $logo->id;
+
+                } else {
+                    if(\Fuel\Core\Upload::get_errors('image')['file'] !== '') {
                         $this->template->set_global('model', Model_Link::forge(Fuel\Core\Input::post()));
                         $this->template->set_global('errors', e(array('image' => 'error')));
                         \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
@@ -68,24 +68,24 @@ class Controller_Admin_Link extends Controller_Admin {
             if(Fuel\Core\Input::post()) {
                 if(Model_Link::get_validator()->run()) {
                     $fields = Model_Link::get_validator()->validated();
-                    if(Fuel\Core\Input::all('image')) {
-                        $config = \Config::get('application.galery.upload');
-                        Upload::process($config);
-                        if (Upload::is_valid()) {
-                            Upload::save();
-                            $logo = Model_Image::forge();
-                            try {
-                                $logo->save();
-                            } catch (Exception $ex) {
-                                $this->template->set_global('model', $model->from_array($fields));
-                                $this->template->set_global('errors', e(array('image' => $ex)));
-                                \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
-                                return;
-                            }
+                    $config = \Config::get('application.galery.upload');
+                    Upload::process($config);
+                    if (Upload::is_valid()) {
+                        Upload::save();
+                        $logo = Model_Image::forge();
+                        try {
+                            $logo->save();
+                        } catch (Exception $ex) {
+                            $this->template->set_global('model', $model->from_array($fields));
+                            $this->template->set_global('errors', e(array('image' => $ex)));
+                            \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                            return;
+                        }
 
-                            $fields['image'] = $logo->id;
+                        $fields['image'] = $logo->id;
 
-                        } else {
+                    } else {
+                        if(\Fuel\Core\Upload::get_errors('image')['file'] !== '') {
                             $this->template->set_global('model', $model->from_array($fields));
                             $this->template->set_global('errors', e(array('image' => 'error')));
                             \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
