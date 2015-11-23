@@ -66,6 +66,16 @@ class Model_Category extends Model_Base {
             'cascade_save' => true,
             'cascade_delete' => false,
         ),
+        'content' => array(
+            'key_from' => 'id',
+            'key_through_from' => 'category_id',
+            'table_through' => 'content_in_category',
+            'key_through_to' => 'content_id',
+            'model_to' => 'Model_Content',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
         
     );
     

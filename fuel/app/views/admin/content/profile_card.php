@@ -16,7 +16,7 @@
           <b class="col-xs-6">Связанных категорий</b> <a class="col-xs-6 text-right"><?= ''; //count($cmodel->subsidiary_category); ?></a>
         </li>
         <li class="list-group-item clearfix">
-          <b class="col-xs-6">Пренадлежит категориям</b> <a class="col-xs-6 text-right"><?= ''; //count($cmodel->master_category); ?></a>
+          <b class="col-xs-6">Пренадлежит категориям</b> <a class="col-xs-6 text-right"><?= count($cmodel->master_categories); ?></a>
         </li>
       </ul>
 

@@ -294,5 +294,48 @@ class Controller_Admin_Category extends Controller_Admin {
         }
             
     }
+    
+    public function action_add_content($id = null) {
+        if(isset($id) and $model = Model_Category::find($id)) {
+            if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
+                foreach (\Fuel\Core\Input::post('relations') as $related_id) {
+                    if($related_model = Model_Content::find((int)$related_id)) {
+                        $model->content[] = $related_model;
+                    }
+                }
+                try {
+                    $model->save();	
+                    
+                } catch (Exception $ex) {
+                    \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                }
+                \Fuel\Core\Session::set_flash('success', 'Контент успешно добавлен');
+                Fuel\Core\Response::redirect_back();
+                
+            } else {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                Fuel\Core\Response::redirect_back();
+            }
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+    }
+    
+    public function action_drop_content($id = null, $content_id = null) {
+        if(isset($id) and isset($content_id) and $model = Model_Category::find($id) and $cmodel = Model_Content::find($content_id)) {
+            try {
+                unset($model->content[$content_id]);
+                $model->save();
+            } catch (Exception $ex) {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+            }
+            
+            \Fuel\Core\Session::set_flash('success', 'Контент успешно отвязан');
+            Fuel\Core\Response::redirect_back();
+            
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+    }
 }
 

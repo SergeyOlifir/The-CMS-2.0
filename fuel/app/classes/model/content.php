@@ -66,6 +66,17 @@ class Model_Content extends Model_Base {
             'cascade_delete' => false,
         ),
         
+        'master_categories' => array(
+            'key_from' => 'id',
+            'key_through_from' => 'content_id',
+            'table_through' => 'content_in_category',
+            'key_through_to' => 'category_id',
+            'model_to' => 'Model_Category',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
+        
     );
     
     protected static $_belongs_to = array(
@@ -106,6 +117,10 @@ class Model_Content extends Model_Base {
     
     public static function to_array_for_dropdown ($key, $value) {
         return Arr::assoc_to_keyval(\Fuel\Core\DB::select($key, $value)->from(self::table())->execute()->as_array(), $key, $value);
+    }
+    
+    public function get_images() {
+        return Model_Image::query()->where('owner_id', '=', $this->id)->where('owner_type', '=', get_class($this))->get();
     }
 }
 

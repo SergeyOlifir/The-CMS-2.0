@@ -4,7 +4,7 @@
             <?= render('admin/category/profile_card', array('cmodel' => $model)); ?>
             <div class="box-footer">
                 <a href="/admin/category/edit/<?= $model->id;?>" class="btn btn-primary btn-block btn-flat"><b>Редатировать</b></a>
-                <a href="/admin/category/edit/<?= $model->id;?>" class="btn btn-primary btn-block btn-flat"><b>Привязать контент</b></a>
+                <button data-toggle="modal" data-target="#add_content_form" class="btn btn-primary btn-block btn-flat"><b>Добавить</b></button>
             </div>
         </div>
         <? if(count($model->links) > 0): ?>
@@ -86,7 +86,7 @@
                 <? endif;?>
             </div>
             <div class="box-footer">
-                <button data-toggle="modal" data-target="#reladet_categiry_form" class="btn btn-primary btn-block btn-flat"><b>Добавить</b></botton>
+                <button data-toggle="modal" data-target="#reladet_categiry_form" class="btn btn-primary btn-block btn-flat"><b>Добавить</b></button>
             </div>
         </div>
         <div class="box box-primary">
@@ -250,11 +250,74 @@
                 <? endif;?>
             </div>
             <div class="box-footer">
-                <button data-toggle="modal" data-target="#reladet_related_to_categiry_form" class="btn btn-primary btn-block btn-flat"><b>Привязать</b></botton>
+                <button data-toggle="modal" data-target="#reladet_related_to_categiry_form" class="btn btn-primary btn-block btn-flat"><b>Привязать</b></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Контент</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <? if(count($model->content) > 0): ?>
+                    <div class="dataTables_wrapper form-inline dt-bootstrap">
+                        <table id="example1" class="table table-bordered table-striped table-data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Заголовок</th>
+                                    <th>Встречающий текст</th>
+                                    <th>Дата Создания</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <? foreach($model->content as $rmodel): ?>
+                                    <tr>
+                                        <td><?= $rmodel->id; ?></td>
+                                        <td><?= $rmodel->title; ?></td>
+                                        <td><?= $rmodel->description; ?></td>
+                                        <td><?= Date::forge($rmodel->created_at)->format("%d/%m/%Y %H:%M"); ?></td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <a id="drop1" href="#" class="dropdown-toggle btn btn-block btn-default btn-flat" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                  Действия
+                                                  <span class="caret"></span>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="drop1">
+                                                  <li><a href="/admin/content/view/<?= $rmodel->id ;?>">Просмотреть</a></li>
+                                                  <li><a href="/admin/content/edit/<?= $rmodel->id ;?>">Редактировать</a></li>
+                                                  <li><a onclick="confirm('Вы уверены?')" href="/admin/category/drop_content/<?= $model->id ;?>/<?= $rmodel->id ;?>">Отвязать</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <? endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                <? else: ?>
+                    <p class="text-center">Пока ничего нет</p>
+                <? endif;?> 
+            </div>
+            <div class="box-footer">
+                <button data-toggle="modal" data-target="#add_content_form" class="btn btn-primary btn-block btn-flat"><b>Добавить</b></button>
             </div>
         </div>
     </div>
 </div>
+
+<?= render('admin/category/add_content', array(
+    'relations' => $model->content,
+    'action' => "admin/category/add_content/{$model->id}",
+    'popup_id' => 'add_content_form', 
+    'models' => Model_Content::find('all')
+)); ?>
 
 <?= render('admin/category/reladet_categiry_form', array(
     'relations' => $model->subsidiary_category,

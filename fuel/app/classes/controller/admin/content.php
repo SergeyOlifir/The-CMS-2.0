@@ -221,5 +221,50 @@ class Controller_Admin_Content extends Controller_Admin {
             Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
         }
     }
+    
+    public function action_add_image($id = null) {
+        if(isset($id) and $model = Model_Content::find($id)) {
+            $config = \Config::get('application.galery.upload');
+            Upload::process($config);
+            if ((count(\Fuel\Core\Upload::get_files()) > 0) and Upload::is_valid()) {
+                Upload::save();
+                $logo = Model_Image::forge(array(
+                    'owner_id' => $id,
+                    'owner_type' => get_class($model)
+                ));
+                try {
+                    $logo->save();
+                } catch (Exception $ex) {
+                    $this->template->set_global('model', $model->from_array($fields));
+                    $this->template->set_global('errors', e(array('image' => $ex)));
+                    \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                    return;
+                }
+                
+                \Fuel\Core\Session::set_flash('success', 'Изображение привязано');
+
+            } else {
+                if(\Fuel\Core\Upload::get_errors('image')['file'] !== '') {
+                    \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                    return;
+                }
+
+            }
+        } else {
+            
+        }
+        \Fuel\Core\Response::redirect_back();
+    }
+    
+    public function action_remove_image($image_id = null) {
+        if(isset($id) and $model = Model_Image::find($image_id)) {
+            $model->delete();
+            \Fuel\Core\Session::set_flash('success', 'Изображение удалено');
+        } else {
+            \Fuel\Core\Session::set_flash('error', 'Нет такой картинки');
+        }
+        
+        \Fuel\Core\Response::redirect_back();
+    }
         
 }

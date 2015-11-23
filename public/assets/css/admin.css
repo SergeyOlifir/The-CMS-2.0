@@ -143,3 +143,19 @@ body > .alert {
     z-index: 99999;
     min-width: 208px;
 }
+
+.position-relative {
+    position: relative;
+}
+
+input[type="file"].transparent {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 3;
+    width: 100%;
+    cursor: pointer;
+}

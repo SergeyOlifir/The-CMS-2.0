@@ -28,7 +28,7 @@
           <b class="col-xs-6">Ссылки</b> <a class="col-xs-6 text-right"><?= count($cmodel->links); ?></a>
         </li>
         <li class="list-group-item clearfix">
-          <b class="col-xs-6">Всего контента</b> <a class="col-xs-6 text-right">13,287</a>
+          <b class="col-xs-6">Всего контента</b> <a class="col-xs-6 text-right"><?= count($cmodel->content);?></a>
         </li>
       </ul>
 

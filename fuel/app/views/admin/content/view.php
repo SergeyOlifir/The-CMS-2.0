@@ -6,6 +6,23 @@
                 <a href="/admin/content/edit/<?= $model->id;?>" class="btn btn-primary btn-block btn-flat"><b>Редатировать</b></a>
             </div>
         </div>
+        <? if(count($model->master_categories) > 0): ?>
+            <? foreach($model->master_categories as $cmodel): ?>
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Пренадлежит категории</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        </div>
+                    </div>
+                        <?= render('admin/category/profile_card', array('cmodel' => $cmodel)); ?>
+                    <div class="box-footer">
+                      <a href="/admin/category/view/<?= $cmodel->id;?>" class="btn btn-primary btn-block btn-flat"><b>Просмотр</b></a>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            <? endforeach;?>
+        <? endif;?>
     </div>
     <div class="col-md-8">
         <div class="box box-primary">
@@ -71,7 +88,7 @@
                 <? endif;?>
             </div>
             <div class="box-footer">
-                <button data-toggle="modal" data-target="#reladet_content_form" class="btn btn-primary btn-block btn-flat"><b>Добавить</b></botton>
+                <button data-toggle="modal" data-target="#reladet_content_form" class="btn btn-primary btn-block btn-flat"><b>Добавить</b></button>
             </div>
         </div>
         
@@ -125,9 +142,39 @@
                 <? endif;?>
             </div>
             <div class="box-footer">
-                <button data-toggle="modal" data-target="#related_to_content_form" class="btn btn-primary btn-block btn-flat"><b>Привязать</b></botton>
+                <button data-toggle="modal" data-target="#related_to_content_form" class="btn btn-primary btn-block btn-flat"><b>Привязать</b></button>
             </div>
         </div>
+    </div>
+    <div class="col-md-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Галерея</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                <? $images = $model->get_images(); ?>
+                <? if(count($images) > 0): ?>
+                    <? foreach($images as $image): ?>
+                        <div class="pull-left">
+                            <?= Fuel\Core\Html::img('files/' . $image->small, array('class' => 'img-responsive img-bordered img-lg')); ?>
+                        </div>
+                    <? endforeach;?>
+                <? else: ?>
+                    <p class="text-center img-lg">Пока ничего нет</p>
+                <? endif;?>
+                
+            </div>
+            <div class="box-footer">
+                <?= \Fuel\Core\Form::open(array('action' => '/admin/content/add_image/' . $model->id, 'enctype'=>'multipart/form-data')); ?>
+                    <a class="btn btn-primary btn-block btn-flat position-relative">
+                        <b>Добавить</b>
+                        <?= \Fuel\Core\Form::file('image', array('class' => 'transparent autosubmit')); ?>
+                    </a>
+                <?= \Fuel\Core\Form::close(); ?>
+            </div>
     </div>
 </div>
 
