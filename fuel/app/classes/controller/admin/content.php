@@ -266,5 +266,49 @@ class Controller_Admin_Content extends Controller_Admin {
         
         \Fuel\Core\Response::redirect_back();
     }
+    
+    public function action_add_promo($id = null) {
+        if(isset($id) and $model = Model_Content::find($id)) {
+            if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
+                foreach (\Fuel\Core\Input::post('relations') as $related_id) {
+                    if($related_model = Model_Category::find((int)$related_id)) {
+                        $model->promoted_category[] = $related_model;
+                    }
+                }
+                try {
+                    $model->save();	
+                    
+                } catch (Exception $ex) {
+                    \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                }
+                \Fuel\Core\Session::set_flash('success', 'Категории успешно привязаны');
+                Fuel\Core\Response::redirect_back();
+                
+            } else {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                Fuel\Core\Response::redirect_back();
+            }
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+    }
+    
+    public function action_drop_promo($id = null, $related_id = null) {
+        if(isset($id) and isset($related_id) and $model = Model_Content::find($id) and $rmodel = Model_Category::find($related_id)) {
+            try {
+                unset($model->promoted_category[$related_id]);
+                $model->save();
+            } catch (Exception $ex) {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+            }
+            
+            \Fuel\Core\Session::set_flash('success', 'Категория успешно отвязана');
+            Fuel\Core\Response::redirect_back();
+            
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+            
+    }
         
 }

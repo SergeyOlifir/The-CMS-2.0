@@ -77,6 +77,17 @@ class Model_Content extends Model_Base {
             'cascade_delete' => false,
         ),
         
+        'promoted_category' => array(
+            'key_from' => 'id',
+            'key_through_from' => 'content_id',
+            'table_through' => 'promo_category_in_content',
+            'key_through_to' => 'category_id',
+            'model_to' => 'Model_Category',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
+        
     );
     
     protected static $_belongs_to = array(
