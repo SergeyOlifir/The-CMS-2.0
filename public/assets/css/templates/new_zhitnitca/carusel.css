@@ -1,0 +1,332 @@
+html {
+    color: #fefefe;
+    font-family: 'Verdana';
+}
+
+.container {
+    max-width: 1080px;
+    width: 100%;
+}
+
+header .navbar {
+    background-color: rgba( 98, 52, 0, 0.8 );
+    border: 0 none;
+    border-radius: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .navbar-default .navbar-nav > li > a {
+    color: rgb( 254, 254, 254 );
+    font-size: 17px;
+    font-family: 'Verdana';
+    font-weight: normal;
+    padding: 40px 5px;
+    -moz-transform: scale(1, 1.2);
+    -webkit-transform: scale(1, 1.2);
+    -ms-transform: scale(1, 1.2);
+}
+
+header .navbar-default .navbar-nav > li > a.active, 
+header .navbar-default .navbar-nav > li > a:hover {
+    text-decoration: underline;
+    color: rgb( 254, 254, 254 );
+}
+
+header .navbar-collapse {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#main-carousel .carousel-inner > .item {
+    width: 100%;
+    height: 600px;
+    background: center no-repeat;
+    background-size: cover;
+}
+
+#main-carousel .carousel-indicators {
+    position: absolute;
+    bottom: 60px;
+    z-index: 15;
+    width: auto;
+    padding-left: 0;
+    margin-left: 0;
+    text-align: center;
+    list-style: none;
+    left: 250px;
+}
+
+#main-carousel .carousel-indicators li {
+    border: 2px solid #825000;
+    width: 15px;
+    height: 15px;
+    margin: 1px;
+}
+
+#main-carousel .carousel-indicators li.active {
+    border-color: #fff;
+    background-color: #825000;
+}
+
+#main-carousel .carousel-bg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background: url('../../../img/templates/new_zhitnitca/main-carusel-bg.png') no-repeat left center;
+    background-size: auto 101%;
+    z-index: 12;
+}
+
+.carusel-sm #main-carousel .carousel-bg {
+    display: none;
+}
+
+.carusel-sm #main-carousel .carousel-inner > .item {
+    height: 237px;
+}
+
+.carusel-sm #main-carousel .carousel-indicators {
+    bottom: 16px;
+}
+
+.content-galery-carusel .carousel-indicators {
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 100%;
+    bottom: initial;
+    margin: 0;
+}
+
+.content-galery-carusel .carousel-indicators li {
+    float: left;
+    display: block;
+    width: 20%;
+    background-color: transparent;
+    border-radius: 0;
+    border: 2px solid #fff;
+    margin: 0;
+    height: 65px;
+    background: no-repeat center;
+    background-size: cover;
+}
+
+.content-galery-carusel .carousel-indicators li.active {
+    border-color: #398800;
+}
+
+.content-galery-carusel .carousel-inner > .item {
+    width: 100%;
+    height: 317px;
+    background: center no-repeat;
+    background-size: cover;
+}
+
+
+
+.content-galery-carusel .carousel-indicators li img {
+    width: 100%;
+    display: block;
+}
+
+.breadcrumb {
+    border-radius: 0;
+    border: 1px solid #ece5e0;
+}
+
+.breadcrumb a {
+    font-size: 15px;
+    color: rgb( 68, 51, 0 );
+    font-weight: bold;
+}
+
+.breadcrumb > li + li:before {
+    color: #ece5e0;
+}
+
+.all-wrapper h4.page-count {
+    font-size: 18px;
+    color: rgb( 68, 51, 0 );
+    padding-top: 22px;
+    text-align: center;
+}
+
+.pagination span {
+    display: inline;
+    font-size: 0;
+}
+
+.pagination a {
+    color: #825000;
+    font-size: 12px;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    border-right: 0 none;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover {
+    background: #825000;
+    color: #fff;
+}
+
+.pagination span:last-child a {
+    border-right: 1px solid #dddddd;
+}
+
+.pg-wrapp-top .pagination {
+    margin: 31px 0 0 0;
+}
+
+.page-descr-wrapp {
+    padding: 20px 0 20px 0;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #398800;
+    margin-top: 20px;
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+    color: #fff;
+    cursor: default;
+    background-color: #398800;
+    border: 1px solid #398800;
+    border-bottom-color: transparent;
+}
+
+.nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 0;
+    color: #443300;
+    font-size: 14px;
+}
+
+.nav-tabs > li > a:hover {
+    border-color: #398800;
+    background-color: #bcdfa3;
+}
+
+.all-wrapper h2 {
+    font-size: 30px;
+    color: rgb( 68, 51, 0 );
+    margin: 20px 0;
+}
+
+.all-wrapper h4 {
+    color: #443300;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.all-wrapper .related-wrapper {
+    padding: 20px 0 115px 0;
+}
+
+.all-wrapper a.all_content {
+    color: #443300;
+    float: right;
+    padding-top: 26px;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.sm {
+    font-size: 12px;
+    color: #443300;
+    margin-bottom: 5px;
+}
+
+.sm a {
+    color: #443300;
+    text-decoration: underline;
+}
+
+.tiles {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.tiles > div {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.projects .item {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.projects .item > a {
+    text-decoration: none;
+}
+
+.projects .item  article {
+    border: 2px solid #e5e5e5;
+    padding: 4px;
+    height: 205px;
+    margin-bottom: 10px;
+}
+
+.projects .item.fool  article {
+    height: 313px;
+}
+
+.projects .item.fool .details {
+    height: 63px;
+    color: #443300;
+    font-size: 13px;
+    padding-top: 8px;
+}
+
+.projects .item.fool .sm {
+    margin-bottom: 0;
+    font-size: 10px;
+}
+
+.projects .item img {
+    width: 100%;
+    height: 140px;
+}
+
+.projects .item h1, .projects .item h1 a {
+    font-weight: normal;
+    font-size: 18px;
+    color: #443300;
+    margin: 10px 0 0 0;
+}
+
+footer {
+    background: url('../../../img/templates/new_zhitnitca/footer-bg.jpg') no-repeat center;
+    background-size: cover;
+}
+footer .posts-count-section {
+    background-color: rgba( 98, 52, 0, 0.8 );
+    text-align: center;
+    padding: 17px;
+}
+
+footer .posts-count-section h5 {
+    color: rgb( 253, 253, 253 );
+    text-shadow: 1px 1.732px 3px rgb( 51, 51, 51 );
+}
+
+footer .posts-count-section i {
+    background-color: rgba( 114, 80, 0, 0.9 );
+    display: inline-block;
+    font-size: 32px;
+    padding: 5px 7px;
+    border-bottom: 4px solid #331000;
+}
+
+footer .posts-count-section h5 span {
+    font-size: 37px;
+}

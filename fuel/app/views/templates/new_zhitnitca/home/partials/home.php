@@ -1,0 +1,1 @@
+<?= TCCore\TCTheme::render('home/partials/gallery'); ?>

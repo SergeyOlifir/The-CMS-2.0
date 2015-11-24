@@ -13,4 +13,6 @@ class Controller_Application extends Fuel\Core\Controller_Template {
         Session::set_flash('notice_type', $notiseType);
         Session::set_flash('notice', $notiseText);
     }
+    
+    public static $current_page = "";
 }
