@@ -19,7 +19,7 @@
                         <tr>
                             <td><?= $model->id; ?></td>
                             <td><?= $model->title; ?></td>
-                            <td><?= $model->category->title; ?></td>
+                            <td><?= (!is_null($model->category)) ? $model->category->title : '-'; ?></td>
                             <td><?= Date::forge($model->created_at)->format("%d/%m/%Y %H:%M"); ?></td>
                             <td>
                                 <div class="dropdown">

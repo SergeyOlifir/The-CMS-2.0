@@ -25,7 +25,7 @@
         <? if(count($content) > 0): ?>
             <div class="row tiles">
                 <div class="col-md-9">
-                    <h2 class="pull-left"><?= $page->title; ?></h2>
+                    <h2 class="pull-left"><?= $current_category->title; ?></h2>
                     <div class="pull-right pg-wrapp-top">
                         <?= $pagination; ?>
                     </div>
@@ -35,7 +35,7 @@
                 </div>
             </div>
     
-            <?= \TCCore\TCTheme::render("content/tiles", array('content' => $content, 'category' => $page, 'fool_view' => true)); ?>
+            <?= \TCCore\TCTheme::render("content/tiles", array('content' => $content, 'category' => $current_category, 'fool_view' => true)); ?>
             
             <div class="row tiles">
                 <div class="col-md-9">
@@ -48,5 +48,29 @@
                 </div>
             </div>
         <? endif; ?>
-    <? endif; ?> 
+    <? else: ?>
+        <p class="lead">
+            Контента пока нет
+        </p>
+    <? endif; ?>
+    <div class="related-categoryes">
+        <? if(count($current_category->related_category) > 0): ?>
+            <? foreach($current_category->related_category as $rcategory): ?>
+                <? if(count($rcategory->get_own_content(4)) > 0): ?>
+                    <div class="related-category">
+                        <h2 class="related-cat-title"><?=$rcategory->title; ?></h2>
+                        <div class="row tiles">
+                            <?= \TCCore\TCTheme::render("content/tiles", array('content' => $rcategory->get_own_content(4), 'category' => $rcategory, 'fool_view' => false)); ?>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9"></div>
+                            <div class="col-md-3">
+                                <h4 class="page-count"><?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
+                            </div>
+                        </div>
+                    </div>
+                <? endif; ?>
+            <? endforeach; ?>
+        <? endif; ?>
+    </div>
 </div>

@@ -5,7 +5,7 @@
                     <article>
                         <a href="/home/content/view/<?= $project->id; ?>">
                             <div class="img-wrapper">
-                                <?= Html::img("files/{$project->logo->tile}"); ?>
+                                <?= Html::img((!is_null($project->logo)) ? "files/{$project->logo->tile}" : 'assets/img/default.png'); ?>
                             </div>
                         </a>
                             <div class="description">
@@ -22,7 +22,7 @@
                                             <?= \Fuel\Core\Str::truncate(strip_tags($project->description), 100, '...') ;?>
                                         </p>
                                         <div class="meta">
-                                            <p class="sm">Раздел: <?= Fuel\Core\Html::anchor("/home/category/view/{$project->id}", $project->title) ;?></p>
+                                            <p class="sm">Раздел: <?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_category', array('alias' => $category->alias)), $category->title) ;?></p>
                                             <p class="sm">Количество комментариев: <a href="#">27</a></p>
                                             <p class="sm">Автор: <a href="#">Редактор, ТМ «Рiдна Житница» </a></p>
                                             <p class="sm">Дата: <?= Date::forge($project->created_at)->format("%d.%m.%Y", true); ?></p>

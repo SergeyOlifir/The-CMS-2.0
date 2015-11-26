@@ -149,7 +149,7 @@ header .navbar-collapse {
     color: #ece5e0;
 }
 
-.all-wrapper h4.page-count {
+.all-wrapper .page-count {
     font-size: 18px;
     color: rgb( 68, 51, 0 );
     padding-top: 22px;
@@ -307,6 +307,7 @@ header .navbar-collapse {
 footer {
     background: url('../../../img/templates/new_zhitnitca/footer-bg.jpg') no-repeat center;
     background-size: cover;
+    margin-top: 50px;
 }
 footer .posts-count-section {
     background-color: rgba( 98, 52, 0, 0.8 );

@@ -16,11 +16,16 @@
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 </div>
             </div>
+            <? if(!is_null($model->category)): ?> 
                 <? $kmodel = $model->category; ?>
                 <?= render('admin/category/profile_card', array('cmodel' => $kmodel)); ?>
-            <div class="box-footer">
-              <a href="/admin/category/view/<?= $kmodel->id;?>" class="btn btn-primary btn-block btn-flat"><b>Просмотр</b></a>
-            </div>
+                <div class="box-footer">
+                    <a href="/admin/category/view/<?= $kmodel->id;?>" class="btn btn-primary btn-block btn-flat"><b>Просмотр</b></a>
+                </div>
+            <? else: ?>
+                <p class="text-center">Ничего нет</p>
+            <? endif;?>
+            
             <!-- /.box-body -->
         </div>
     </div>

@@ -8,6 +8,7 @@ class Controller_Home_Category extends Controller_Home {
             $this->template->set_global('page', $model);
             $this->template->set_global('title', $model->page_title);//$current_category_id
             $this->template->set_global('current_category_id', $model->id);
+            $this->template->set_global('current_category', $model);
             $base_url = '';
             if($id = Fuel\Core\Request::active()->param('parent_category') and $pmodel = Model_Category::find($id)) {
                 $this->template->set_global('parent', $pmodel);
@@ -35,14 +36,15 @@ class Controller_Home_Category extends Controller_Home {
 
             $pagination = Pagination::forge('category_pagination', $config);
 
-            $content = Model_Content::query()
+            $content = $model->get_content($per_page, $pagination->offset);
+                    /*Model_Content::query()
                     ->related('master_categories')
                     ->related('master_categories.master_category')
                     ->where('master_categories.master_category.id', '=', $model->id)
                     ->or_where('master_categories.id', '=', $model->id)
                     ->limit($per_page)
                     ->offset($pagination->offset)
-                    ->get();//($this->lang_id, $category_alias, $pagination->per_page, $pagination->offset);
+                    ->get();*///($this->lang_id, $category_alias, $pagination->per_page, $pagination->offset);
             
             $this->template->content = \TCCore\TCTheme::load_view('page/view', array(
                 'content' => $content, 

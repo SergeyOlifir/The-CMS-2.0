@@ -119,5 +119,41 @@ class Model_Category extends Model_Base {
     public static function to_array_for_dropdown ($key, $value) {
         return Arr::assoc_to_keyval(\Fuel\Core\DB::select($key, $value)->from(self::table())->execute()->as_array(), $key, $value);
     }
+    
+    public function get_content($limit = null, $offset = null) {
+        $content = Model_Content::query()
+            ->related('master_categories')
+            ->related('master_categories.master_category')
+            ->where('master_categories.master_category.id', '=', $this->id)
+            ->or_where('master_categories.id', '=', $this->id);
+        if(!is_null($limit)) {
+            $content->limit($limit);
+        }
+        
+        if(!is_null($offset)) {
+            $content->offset($offset);
+        }
+            
+        return $content->get();
+    }
+    
+    public function get_own_content ($limit = null, $offset = null) {
+        
+        $condition = array();
+        
+        if(!is_null($limit)) {
+            $condition['limit'] = array($limit);
+        }
+        
+        if(!is_null($offset)) {
+            $condition['offset'] = array($offset);
+        }
+        
+        $content = Model_Content::query()
+                ->related('master_categories', array('limit' => array($limit)))
+                ->where('master_categories.id', $this->id);
+        
+        return $content->get();
+    }
 }
 
