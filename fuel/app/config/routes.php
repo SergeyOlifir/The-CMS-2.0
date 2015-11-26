@@ -5,5 +5,7 @@ return array(
     '404'   => array('welcome/404', 'name' => '404'),
     'hello(/:name)?' => array('welcome/hello', 'name' => 'hello'),
     'page/(:alias)/(:parent_category)' => array('home/category/view', 'name' => 'view_subsidiary_category'),
-    'page/(:alias)' => array('home/category/view', 'name' => 'view_category')
+    'page/(:alias)' => array('home/category/view', 'name' => 'view_category'),
+    'article/(:id)/(:parent_category)' => array('home/content/view', 'name' => 'view_subsidiary_content'),
+    'article/(:id)' => array('home/content/view', 'name' => 'view_content')
 );
