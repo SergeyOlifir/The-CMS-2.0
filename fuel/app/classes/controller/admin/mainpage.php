@@ -56,4 +56,104 @@ class Controller_Admin_Mainpage extends Controller_Admin {
         
         Fuel\Core\Response::redirect_back();
     }
+    
+    public function action_add_promo($id = null) {
+        if($model = Model_MainPage::query()->get_one()) {
+            if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
+                foreach (\Fuel\Core\Input::post('relations') as $related_id) {
+                    if($related_model = Model_Category::find((int)$related_id)) {
+                        $model->promoted_category[] = $related_model;
+                    }
+                }
+                try {
+                    $model->save();	
+                    
+                } catch (Exception $ex) {
+                    \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                }
+                \Fuel\Core\Session::set_flash('success', 'Категории успешно привязаны');
+                Fuel\Core\Response::redirect_back();
+                
+            } else {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                Fuel\Core\Response::redirect_back();
+            }
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+    }
+    
+    public function action_drop_promo($id = null, $related_id = null) {
+        if(isset($related_id) and $model = Model_MainPage::query()->get_one() and $rmodel = Model_Category::find($related_id)) {
+            try {
+                unset($model->promoted_category[$related_id]);
+                $model->save();
+            } catch (Exception $ex) {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+            }
+            
+            \Fuel\Core\Session::set_flash('success', 'Категория успешно отвязана');
+            Fuel\Core\Response::redirect_back();
+            
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+            
+    }
+    
+    public function action_add_featured($id = null, $type = 1) {
+        if($model = Model_MainPage::query()->get_one()) {
+            if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
+                foreach (\Fuel\Core\Input::post('relations') as $related_id) {
+                    //TODO Fix this
+                    if($related_model = Model_Category::find((int)$related_id)) {
+                        $query = Fuel\Core\DB::insert('featured_category_in_mainpage');
+                        $query->columns(array(
+                            'main_id',
+                            'type',
+                            'category_id'
+                        ));
+                        $query->values(array(
+                            $model->id,
+                            $type,
+                            $related_model->id,
+                        ));
+                        try {
+                            $query->execute();	
+                            \Fuel\Core\Session::set_flash('success', 'Категории успешно привязаны');
+                        } catch (Exception $ex) {
+                            \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                        }
+                    }
+                }
+                
+            } else {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+                Fuel\Core\Response::redirect_back();
+            }
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+        
+        Fuel\Core\Response::redirect_back();
+
+    }
+    
+    public function action_remove_featured($type = null, $rid = 1) {
+        if($model = Model_MainPage::query()->get_one()) {
+            $query = DB::delete('featured_category_in_mainpage')
+                ->where('featured_category_in_mainpage.category_id', '=', $rid)
+                ->where('featured_category_in_mainpage.type', '=', $type);
+            try {
+                $query->execute();	
+                \Fuel\Core\Session::set_flash('success', 'Категории успешно отвязаны');
+            } catch (Exception $ex) {
+                \Fuel\Core\Session::set_flash('error', 'Чтото не так');
+            }
+        } else {
+            Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
+        }
+        
+        Fuel\Core\Response::redirect_back();
+    }
 }

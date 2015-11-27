@@ -5,7 +5,9 @@
     <head>
         <title><?= isset($title) ? $title : '' ?></title>
         <meta charset="utf-8"/>
-        <link rel="shortcut icon" href="assets/img/templates/<?= $template; ?>/favicon.png" type="image/png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="/assets/img/templates/<?= $template; ?>/favicon.png" type="image/png">
         <?= Asset::css('bootstrap.min.css'); ?>
         <?= TCCore\TCTheme::add_css("carusel.css"); ?>
 

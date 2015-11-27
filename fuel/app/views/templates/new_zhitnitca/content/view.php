@@ -11,7 +11,7 @@
                 <li><a><?= $content->title; ?></a></li>
             </ol>
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-sm-8 col-xs-12">
                     <div id="content-carousel" class="carousel slide content-galery-carusel">
                         <div class="carousel-inner">
                             <? $i = 0; ?> 
@@ -30,7 +30,7 @@
                         </ol>
                     </div>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-sm-4 col-xs-12 details">
                     <p class="sm">Раздел: <?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_category', array('alias' => $parent_category->alias)), $parent_category->title) ;?></p>
                     <p class="sm">Количество комментариев: <a href="#">27</a></p>
                     <p class="sm">Автор: <a href="#">Редактор, ТМ «Рiдна Житница» </a></p>

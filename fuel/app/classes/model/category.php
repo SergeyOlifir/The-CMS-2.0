@@ -120,6 +120,11 @@ class Model_Category extends Model_Base {
         return Arr::assoc_to_keyval(\Fuel\Core\DB::select($key, $value)->from(self::table())->execute()->as_array(), $key, $value);
     }
     
+    public function get_logo($name) {
+        return (!is_null($this->logo)) ? "/files/{$this->logo->get($name)}" : '/assets/img/default.png';
+    }
+
+
     public function get_content($limit = null, $offset = null) {
         $content = Model_Content::query()
             ->related('master_categories')

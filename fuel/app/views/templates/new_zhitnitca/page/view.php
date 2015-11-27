@@ -24,13 +24,13 @@
     <? if($content): ?>
         <? if(count($content) > 0): ?>
             <div class="row tiles">
-                <div class="col-md-9">
+                <div class="col-md-9 col-xs-12">
                     <h2 class="pull-left"><?= $current_category->title; ?></h2>
                     <div class="pull-right pg-wrapp-top">
                         <?= $pagination; ?>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-xs-12">
                     <h4 class="page-count">Количество страниц: <?= $total; ?></h5>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <?= \TCCore\TCTheme::render("content/tiles", array('content' => $content, 'category' => $current_category, 'fool_view' => true)); ?>
             
             <div class="row tiles">
-                <div class="col-md-9">
+                <div class="col-md-9 clearfix">
                     <div class="pull-right pg-wrapp-top">
                         <?= $pagination; ?>
                     </div>

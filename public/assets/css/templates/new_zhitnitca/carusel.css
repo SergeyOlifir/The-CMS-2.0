@@ -331,3 +331,107 @@ footer .posts-count-section i {
 footer .posts-count-section h5 span {
     font-size: 37px;
 }
+
+.featured-wrp-type1 .categoty-card {
+    background: no-repeat transparent center;
+    background-size: cover;
+    height: 300px;
+    border-radius: 0 0 30px 0;
+    position: relative;
+    margin-top: 30px;
+}
+
+.featured-wrp-type1 .categoty-card h4 {
+    background-color: rgba(183, 156, 130, 0.7);
+    padding: 15px;
+    color: #290d00;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin: 0;
+    transform: translateY(-50%);
+    font-size: 20px;
+    min-width: 50%;
+    text-align: right;
+}
+
+.featured-wrp-type2 {
+    background: #ffe4bf;
+    margin-top: 30px;
+    text-align: center;
+    padding: 30px 0;
+   
+}
+
+.featured-wrp-type2 .categoty-card {
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: no-repeat center;
+    background-size: cover;
+}
+
+.featured-wrp-type2  h4 {
+    font-size: 21px;
+    height: 49px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+@media (max-width: 767px) {
+    header .navbar-collapse {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    
+    header .navbar-default .navbar-nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 20px;
+    }
+    
+    #main-carousel .carousel-inner > .item {
+        height: 60vw;
+        
+    }
+    
+    #main-carousel .carousel-indicators {
+        bottom: 4%;
+        left: 10%;
+    }
+    
+    .carusel-sm #main-carousel .carousel-indicators {
+        bottom: 0px;
+    }
+    
+    .carusel-sm #main-carousel .carousel-inner > .item {
+        height: 35vw;
+    }
+    
+    .all-wrapper h2 {
+        font-size: 30px;
+        color: rgb( 68, 51, 0 );
+        margin: 20px 0;
+        word-wrap: break-word;
+        white-space: normal;
+        word-break: break-all;
+    }
+    
+    .content-galery-carusel .carousel-inner > .item {
+        width: 100%;
+        height: 60vw;
+    }
+    
+    .content-galery-carusel .carousel-indicators li {
+        height: 13vw;
+    }
+    
+    .details {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+}
+

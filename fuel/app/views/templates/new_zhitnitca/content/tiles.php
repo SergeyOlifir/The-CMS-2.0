@@ -1,7 +1,7 @@
 <section class="projects clearfix app-categories left">
     <div class="row tiles">
         <? foreach ($content as $project): ?>
-            <div class="<?= (isset($one_column) and $one_column == true) ? 'col-xs-12' : 'col-md-3 col-xs-6'; ?> item <?= ((isset($fool_view) and $fool_view) ? 'fool' : '') ?>">
+            <div class="<?= (isset($one_column) and $one_column == true) ? 'col-xs-12 col-sm-4' : 'col-md-3 col-sm-4 col-xs-12'; ?> item <?= ((isset($fool_view) and $fool_view) ? 'fool' : '') ?>">
                     <article>
                         <a href="<?= \Fuel\Core\Router::get('view_subsidiary_content', array('id' => $project->id, 'parent_category' => $category->id)) ?>">
                             <div class="img-wrapper">
