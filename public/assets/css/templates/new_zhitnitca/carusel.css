@@ -380,6 +380,12 @@ footer .posts-count-section h5 span {
     word-wrap: break-word;
 }
 
+.content .related-categoryes .related-cat-title {
+    font-size: 15px;
+    color: #443300;
+    margin: 12px 0 30px 0;
+}
+
 @media (max-width: 767px) {
     header .navbar-collapse {
         padding-right: 15px;

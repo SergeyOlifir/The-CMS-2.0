@@ -19,7 +19,7 @@ class Controller_Home_Category extends Controller_Home {
             }
             
             $count = count($model->content);
-            $per_page = 2;
+            $per_page = 18;
             $config = array(
                 'pagination_url' => $base_url,
                 'total_items'    => $count,

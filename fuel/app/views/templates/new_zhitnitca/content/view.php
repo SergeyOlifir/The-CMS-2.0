@@ -1,10 +1,11 @@
 <div class="carusel-sm">
     <?= TCCore\TCTheme::render('home/partials/gallery'); ?>
 </div>
-<div class="container">
+<div class="container content">
     <div class="row tiles">
+        <h2><?= $content->title; ?></h2>
         <div class="col-md-9">
-            <h2><?= $content->title; ?></h2>
+            
             <ol class="breadcrumb">
                 <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
                 <li><?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_category', array('alias' => $parent_category->alias)), $parent_category->title) ;?></li>
