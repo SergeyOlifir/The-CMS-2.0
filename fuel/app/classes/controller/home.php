@@ -27,6 +27,7 @@ class Controller_Home extends Controller_Application {
         $main = self::get_main_page();
         if(!is_null($main)) {
             $this->template->set_global('title', $main->title);
+            $this->template->set_global('meta_keywrd', $main->meta);
         }
         $this->template->content = TCCore\TCTheme::load_view('home/partials/home');
     }

@@ -7,6 +7,9 @@
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <? if(isset($meta_keywrd)): ?>
+            <meta name="keywords" content="<?= $meta_keywrd;?>">
+        <? endif; ?>
         <link rel="shortcut icon" href="/assets/img/templates/<?= $template; ?>/favicon.png" type="image/png">
         <?= Asset::css('bootstrap.min.css'); ?>
         <?= TCCore\TCTheme::add_css("carusel.css"); ?>

@@ -44,6 +44,11 @@
                 </p>
             </div>
             
+            <div class="commetnts-wrp">
+                <textarea class="comment-field form-control" placeholder="Введите текст коментария"></textarea>
+                <button class="btn btn-success btn-lg">Отправить</button>
+            </div>
+            
         </div>
         <div class="col-md-3">
             <div class="related-categoryes">

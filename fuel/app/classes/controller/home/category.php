@@ -6,6 +6,7 @@ class Controller_Home_Category extends Controller_Home {
         $alias = Fuel\Core\Request::active()->param('alias');
         if($model = Model_Category::query()->where('alias', '=', $alias)->get_one()) {
             $this->template->set_global('page', $model);
+            $this->template->set_global('meta_keywrd', $model->meta);
             $this->template->set_global('title', $model->page_title);//$current_category_id
             $this->template->set_global('current_category_id', $model->id);
             $this->template->set_global('current_category', $model);
