@@ -159,3 +159,30 @@ input[type="file"].transparent {
     width: 100%;
     cursor: pointer;
 }
+
+.img-bg {
+    width: 15%;
+    padding-bottom: 15%;
+    background: no-repeat center;
+    background-size: cover;
+    border: 2px solid #999;
+    margin: 0.8%;
+    position: relative;
+}
+
+.btn-remove {
+    color: #000;
+    display: inline-block;
+    padding: 1px 7px 3px 7px;
+    border: 1px solid #333;
+    border-radius: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    background: #fff;
+    line-height: 1;
+    position: absolute;
+    top: -8px;
+    right: -6px;
+    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,0.8);
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.8);
+}

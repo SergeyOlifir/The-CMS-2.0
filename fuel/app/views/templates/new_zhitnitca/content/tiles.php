@@ -5,7 +5,7 @@
                     <article>
                         <a href="<?= \Fuel\Core\Router::get('view_subsidiary_content', array('id' => $project->id, 'parent_category' => $category->id)) ?>">
                             <div class="img-wrapper">
-                                <?= Html::img((!is_null($project->logo)) ? "files/{$project->logo->tile}" : 'assets/img/default.png'); ?>
+                                <div class="content-img-bg" style="background-image: url('<?= $project->get_logo('tile'); ?>')"></div>
                             </div>
                         </a>
                             <div class="description">

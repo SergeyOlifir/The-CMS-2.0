@@ -8,6 +8,7 @@
                     <div class="col-md-6, col-sm-6 col-xs-12">
                         <a href="<?= \Fuel\Core\Router::get('view_category', array('alias' => $rcategory->alias)) ;?>">
                             <div class="categoty-card" style="background-image: url('<?= $rcategory->get_logo('small');?>')">
+                                <div class="overlay"></div>
                                 <h4><?= $rcategory->title; ?></h4>
                             </div>
                         </a>
@@ -26,7 +27,7 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <a href="<?= \Fuel\Core\Router::get('view_category', array('alias' => $rcategory->alias)) ;?>">
                             <div class="categoty-card" style="background-image: url('<?= $rcategory->get_logo('small');?>')">
-                                
+                                <div class="overlay"></div>
                             </div>
                             <h4><?= $rcategory->title; ?></h4>
                         </a>

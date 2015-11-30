@@ -257,7 +257,7 @@ class Controller_Admin_Content extends Controller_Admin {
     }
     
     public function action_remove_image($image_id = null) {
-        if(isset($id) and $model = Model_Image::find($image_id)) {
+        if(isset($image_id) and $model = Model_Image::find($image_id)) {
             $model->delete();
             \Fuel\Core\Session::set_flash('success', 'Изображение удалено');
         } else {

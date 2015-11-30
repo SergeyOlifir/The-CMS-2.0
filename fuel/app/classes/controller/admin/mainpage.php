@@ -57,6 +57,17 @@ class Controller_Admin_Mainpage extends Controller_Admin {
         Fuel\Core\Response::redirect_back();
     }
     
+    public function action_remove_image($image_id = null) {
+        if(isset($image_id) and $model = Model_Image::find($image_id)) {
+            $model->delete();
+            \Fuel\Core\Session::set_flash('success', 'Изображение удалено');
+        } else {
+            \Fuel\Core\Session::set_flash('error', 'Нет такой картинки');
+        }
+        
+        \Fuel\Core\Response::redirect_back();
+    }
+    
     public function action_add_promo($id = null) {
         if($model = Model_MainPage::query()->get_one()) {
             if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {

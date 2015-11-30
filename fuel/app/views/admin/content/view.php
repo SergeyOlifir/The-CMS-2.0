@@ -214,8 +214,8 @@
                 <? $images = $model->get_images(); ?>
                 <? if(count($images) > 0): ?>
                     <? foreach($images as $image): ?>
-                        <div class="pull-left">
-                            <?= Fuel\Core\Html::img('files/' . $image->small, array('class' => 'img-responsive img-bordered img-lg')); ?>
+                        <div class="pull-left img-bg" style="background-image: url('<?= "/files/" . $image->small; ?>')">
+                            <?= Fuel\Core\Html::anchor('/admin/content/remove_image/' . $image->id, 'x', array('class' => 'btn-remove')); ?>
                         </div>
                     <? endforeach;?>
                 <? else: ?>

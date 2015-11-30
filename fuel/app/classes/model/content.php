@@ -133,5 +133,9 @@ class Model_Content extends Model_Base {
     public function get_images() {
         return Model_Image::query()->where('owner_id', '=', $this->id)->where('owner_type', '=', get_class($this))->get();
     }
+    
+    public function get_logo($name) {
+        return (!is_null($this->logo)) ? "/files/{$this->logo->get($name)}" : '/assets/img/default.png';
+    }
 }
 
