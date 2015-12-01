@@ -455,6 +455,90 @@ footer .posts-count-section h5 span {
     margin: 12px 0 30px 0;
 }
 
+footer .info-wrp {
+    padding: 0 20px 20px 20px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+footer .info-wrp p {
+    color: #fff;
+    font-size: 14px;
+}
+
+footer .info-wrp h3 {
+    font-weight: normal;
+    color: #fff;
+    font-size: 19px;
+}
+
+footer nav {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-bottom: 80px;
+}
+
+footer .second-menu-wrp {
+    display: table;
+    width: 100%;
+}
+
+footer .second-menu-wrp .menu-row {
+    display: table-row;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+footer .second-menu-wrp .menu-row .sub-menu-wrp.home {
+    padding: 0;
+}
+
+footer .second-menu-wrp .menu-row .sub-menu-wrp.home li:before {
+    content: '';
+}
+
+footer .second-menu-wrp .menu-row .sub-menu-wrp.home li a {
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 15px 5px 5px; 
+}
+
+footer .second-menu-wrp .menu-row > li{
+    display: table-cell;
+}
+
+footer .second-menu-wrp .menu-row > li a {
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 15px 5px 5px; 
+}
+
+footer .second-menu-wrp .menu-row .sub-menu-wrp {
+    padding-left: 10px;
+    list-style: none;
+    
+}
+
+footer .second-menu-wrp .menu-row .sub-menu-wrp li:before{ 
+    content: "-";
+    position: relative;
+    left: 0px;
+    color: #fff;
+    font-size: 13px;
+}
+
+footer .second-menu-wrp .menu-row .sub-menu-wrp li { 
+    text-indent:-5px; 
+}
+
+footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
+    font-size: 12px;
+}
+
 @media (max-width: 767px) {
     header .navbar-collapse {
         padding-right: 15px;

@@ -23,18 +23,67 @@
 </div>
 
 
-<nav class="clearfix">
-    <div class="clearfix">
-        <ul class="social clearfix left">
-            <li>
-                <a class="fb" target="_blank" href="http://vk.com/club87835656"></a>
-            </li>
-            <li>
-                <a class="vk" target="_blank" href="https://www.facebook.com/groups/1468409396731180/"></a>
-            </li>
-        </ul>
-        <a class="mail left" href="mailto:karuselkafest@mail.ru" target="_blank">karuselkafest@mail.ru</a>
-        
+<div class="container">
+    <div class="info-wrp">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Контакты</h3>
+                <p><strong>ТМ «РІДНА ЖИТНИЦЯ»</strong></br>
+                    Украина, с. Чернече<br>
+                    Криничанского района,<br>
+                    Днепропетровской обл. <br>
+                </p>
+                <h3>Контактные телефоны</h3>
+                <p>
+                    + 38 (063) 685-16-67 - консультации<br>
+                    + 38 (095) 061-65-93 - качество<br> 
+                    + 38 (067) 633-42-85 - предложения<br>
+                </p>
+            </div>
+            <div class="col-sm-4 hidden-xs">
+                <h3>Карта проезда</h3>
+            </div>
+            <div class="col-sm-4">
+                <h3>Где купить?</h3>
+                <h3>Реквизиты для оплаты</h3>
+                <p>А-Банк<br>
+                    4323 3553 0170 7683<br>
+                    Сбербанк Росии<br>
+                    4323 3553 0170 7683<br>
+                </p>
+            </div>
+        </div>
     </div>
-    <a class="gorod-forum" href="http://forum.gorod.dp.ua/archive/index.php/t-323016-p-12.html" target="_blank"></a>
-</nav>
+    <nav class="clearfix hidden-xs">
+        <div class="second-menu-wrp">
+            <ul class="menu-row">
+                <li>
+                    <? $links = Model_Link::query()->order_by('weight')->get(); ?>
+                    <?= Controller_Application::$current_page == "Home" ? \Fuel\Core\Html::anchor("/", "Глагне", array('class' => 'active')) :  \Fuel\Core\Html::anchor("/", "Главная"); ?>
+                    <ul class="sub-menu-wrp home">
+                        <?php foreach ($links as $link): ?>
+                            <li>
+                                <? $utl = Router::get('view_category', array('alias' => $link->category->alias)); ?>
+                                <?= \Fuel\Core\Html::anchor($utl, $link->title, array('class' => ($utl . '.html' == Controller_Application::$current_page) ? "active" : "")); ?>
+                            </li>
+                        <?php endforeach;?>
+                    </ul>
+                </li>
+                
+                <?php foreach ($links as $link): ?>
+                    <li>
+                        <? $utl = Router::get('view_category', array('alias' => $link->category->alias)); ?>
+                        <?= \Fuel\Core\Html::anchor($utl, $link->title, array('class' => ($utl . '.html' == Controller_Application::$current_page) ? "active" : "")); ?>
+                        <ul class="sub-menu-wrp">
+                            <?php foreach ($link->category->subsidiary_category as $cat): ?>
+                                <? $ul = Router::get('view_category', array('alias' => $cat->alias)); ?>
+                                <li><?= \Fuel\Core\Html::anchor($ul, $cat->title, array('class' => ($ul . '.html' == Controller_Application::$current_page) ? "active" : "")); ?></li>
+                            <?php endforeach;?>
+                        </ul>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </nav>
+</div>
+
