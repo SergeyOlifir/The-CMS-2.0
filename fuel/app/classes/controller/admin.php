@@ -12,6 +12,10 @@ class Controller_Admin extends Controller_Application {
         
         return parent::before();
     }
+    
+    public function action_index() {
+        \Fuel\Core\Response::redirect('/admin/dashboard');
+    }
 
 }
 
