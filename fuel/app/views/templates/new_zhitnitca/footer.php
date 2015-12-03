@@ -17,7 +17,7 @@
                     <i><?php echo $count[$i]; ?></i>
                 <?php endif; ?>
             <?php endfor; ?>
-            <span>количество постов на сайте...</span>
+            <span>количество постов на сайте</span>
         </h5>
     </div>
 </div>
