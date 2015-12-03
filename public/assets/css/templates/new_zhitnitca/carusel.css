@@ -43,7 +43,7 @@ header .navbar-collapse {
 
 #main-carousel .carousel-inner > .item {
     width: 100%;
-    height: 600px;
+    height: 500px;
     background: center no-repeat;
     background-size: cover;
 }
@@ -537,6 +537,15 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li {
 
 footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     font-size: 12px;
+}
+
+.commetnts-wrp {
+    
+}
+
+.commetnts-wrp textarea {
+    border-radius: 0;
+    border: 1px solid #999;
 }
 
 @media (max-width: 767px) {

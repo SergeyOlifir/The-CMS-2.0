@@ -44,10 +44,7 @@
                 </p>
             </div>
             
-            <div class="commetnts-wrp">
-                <textarea class="comment-field form-control" placeholder="Введите текст коментария"></textarea>
-                <button class="btn btn-success btn-lg">Отправить</button>
-            </div>
+            <?= TCCore\TCTheme::render('content/comments_block'); ?>
             
         </div>
         <div class="col-md-3">
