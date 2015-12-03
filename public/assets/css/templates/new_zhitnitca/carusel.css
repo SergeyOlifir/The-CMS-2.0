@@ -21,10 +21,10 @@ header .navbar {
 
 header .navbar-default .navbar-nav > li > a {
     color: rgb( 254, 254, 254 );
-    font-size: 17px;
+    font-size: 15px;
     font-family: 'Verdana';
     font-weight: normal;
-    padding: 40px 5px;
+    padding: 30px 5px;
     -moz-transform: scale(1, 1.2);
     -webkit-transform: scale(1, 1.2);
     -ms-transform: scale(1, 1.2);
