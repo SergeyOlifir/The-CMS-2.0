@@ -57,7 +57,7 @@ header .navbar-collapse {
     margin-left: 0;
     text-align: center;
     list-style: none;
-    left: 250px;
+    left: 35px;
 }
 
 #main-carousel .carousel-indicators li {
@@ -77,6 +77,7 @@ header .navbar-collapse {
     width: 100%;
     top: 0;
     bottom: 0;
+    left: -10%;
     background: url('../../../img/templates/new_zhitnitca/main-carusel-bg.png') no-repeat left center;
     background-size: auto 101%;
     z-index: 12;
