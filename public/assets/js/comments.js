@@ -6,6 +6,7 @@
         $scope.user_name = '';
         $scope.user_email = '';
         $scope.errors = new Array();
+        $scope.capcha = '';
         
         $scope.comments_list = [
             
@@ -18,6 +19,7 @@
         };
         
         var validate = function(user_name, user_email, text) {
+            if($scope.capcha === '') return false;
             $scope.errors = new Array();
             if(user_name === '') {
                 $scope.errors['comment-name'] = true;

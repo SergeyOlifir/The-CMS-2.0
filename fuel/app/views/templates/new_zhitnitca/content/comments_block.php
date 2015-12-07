@@ -14,9 +14,16 @@
             </div>
             <div class="form-group" data-ng-class="{'has-error' : errors['comment-email']}" >
                 <textarea class="comment-field form-control" placeholder="Введите текст коментария" data-ng-model="comment_text"></textarea>
+                <p class="help-block">Обязательно для заполнения</p>
             </div>
-            <div class="clearfix">
-                <button class="btn btn-success btn-lg pull-right" data-ng-click="addComment(user_name, user_email, comment_text)">Отправить</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <span class="capcha">3 + 5 = </span>
+                    <input data-ng-model="capcha" class="capcha-result" type="text" />
+                </div>
+                <div class="col-md-6 ">
+                    <button data-ng-class="{disabled: capcha == ''}" class="btn btn-success btn-lg pull-right " data-ng-click="addComment(user_name, user_email, comment_text)">Отправить</button>
+                </div>
             </div>
         </div>
         <div class="comments" >

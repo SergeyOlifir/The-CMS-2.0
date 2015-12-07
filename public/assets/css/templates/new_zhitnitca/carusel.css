@@ -578,6 +578,12 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     height: 0;
 }
 
+.commetnts-wrp .capcha {
+    font-size: 20px;
+    font-weight: bold;
+    color: #443300;
+}
+
 @media (min-width: 768px) {
     .content .description {
         padding-top: 10px;
@@ -635,6 +641,14 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     .details {
         padding-top: 15px;
         padding-bottom: 15px;
+    }
+    
+    .commetnts-wrp .btn {
+        width: 100%;
+    }
+    
+    .commetnts-wrp .capcha, .commetnts-wrp .capcha-result {
+        margin-bottom: 20px;
     }
 
 }
