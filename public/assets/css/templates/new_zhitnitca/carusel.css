@@ -546,9 +546,42 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     
 }
 
-.commetnts-wrp textarea {
+.commetnts-wrp textarea, .commetnts-wrp input {
     border-radius: 0;
     border: 1px solid #999;
+    resize: none;
+}
+
+.commetnts-wrp .btn {
+    border-radius: 0;
+    
+}
+
+.commetnts-wrp.close {
+    height: 0;
+}
+
+.commetnts-wrp h5 {
+    color: #443300;
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.commetnts-wrp h5 + div {
+    overflow: hidden;
+    transition: height .2s;
+    -webkit-transition: height .2s;
+}
+
+.commetnts-wrp h5 + div.close {
+    height: 0;
+}
+
+@media (min-width: 768px) {
+    .content .description {
+        padding-top: 10px;
+    }
 }
 
 @media (max-width: 767px) {

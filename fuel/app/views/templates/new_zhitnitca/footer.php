@@ -59,7 +59,7 @@
             <ul class="menu-row">
                 <li>
                     <? $links = Model_Link::query()->order_by('weight')->get(); ?>
-                    <?= Controller_Application::$current_page == "Home" ? \Fuel\Core\Html::anchor("/", "Глагне", array('class' => 'active')) :  \Fuel\Core\Html::anchor("/", "Главная"); ?>
+                    <?= Controller_Application::$current_page == "Home" ? \Fuel\Core\Html::anchor("/", "Главная", array('class' => 'active')) :  \Fuel\Core\Html::anchor("/", "Главная"); ?>
                     <ul class="sub-menu-wrp home">
                         <?php foreach ($links as $link): ?>
                             <li>
