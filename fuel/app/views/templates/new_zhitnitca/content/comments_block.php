@@ -16,9 +16,9 @@
                 <textarea class="comment-field form-control" placeholder="Введите текст коментария" data-ng-model="comment_text"></textarea>
                 <p class="help-block">Обязательно для заполнения</p>
             </div>
-            <div class="row">
+            <div class="row form-group" data-ng-class="{'has-error' : errors['capcha']}">
                 <div class="col-md-6">
-                    <span class="capcha">3 + 5 = </span>
+                    <span class="capcha">{{capcha_numbers.first}} + {{capcha_numbers.second}} = </span>
                     <input data-ng-model="capcha" class="capcha-result" type="text" />
                 </div>
                 <div class="col-md-6 ">

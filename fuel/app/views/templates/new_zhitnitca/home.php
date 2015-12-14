@@ -16,7 +16,8 @@
 
         <?= Asset::js('jQuery-2.1.4.min.js'); ?>
         <?= Asset::js('bootstrap.min.js'); ?>
-        <?= Asset::js('angular.min.js'); ?>
+        <?= Asset::js('bower_components/angular/angular.min.js'); ?>
+        <?= Asset::js('bower_components/angular-resource/angular-resource.min.js'); ?>
         <?= Asset::js('comments.js'); ?>
         <?= TCCore\TCTheme::add_js('application.js'); ?>
         <?= Asset::render('javascripts'); ?>
