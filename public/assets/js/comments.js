@@ -1,10 +1,6 @@
 (function() {
     var comments = angular.module('comments', ['ngResource']);
 
-    comments.factory('Capcha',['$resource', function($resource) {
-        return $resource('/home/comment/capcha.json');
-    }]);
-
     comments.factory('Comment',['$resource', function($resource) {
         return $resource('/home/comment/index.json', {}, {
             save: {
@@ -72,6 +68,7 @@
             $scope.comment_text = '';
             $scope.user_name = '';
             $scope.user_email = '';
+            $scope.capcha = '';
         };
         
         var update_capcha = function() {
