@@ -40,7 +40,7 @@
                     + 38 (067) 633-42-85 - предложения<br>
                 </p>
             </div>
-            <div class="col-sm-4 hidden-xs">
+            <div class="col-sm-4 hidden-xs hidden-sm">
                 <h3>Карта проезда</h3>
             </div>
             <div class="col-sm-4">
