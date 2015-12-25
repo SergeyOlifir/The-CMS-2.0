@@ -100,7 +100,7 @@ header .navbar-collapse {
     position: relative;
     left: 0;
     top: 100%;
-    bottom: initial;
+    bottom: -5px;
     margin: 0;
 }
 
