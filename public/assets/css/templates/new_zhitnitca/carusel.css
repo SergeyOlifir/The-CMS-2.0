@@ -466,8 +466,8 @@ footer .info-wrp {
     margin-top: 30px;
     padding-left: 10%;
     padding-right: 10%;
-    -webkit-box-shadow:inset 0 0 5px 1px rgba(0,0,0,0.5);
-    box-shadow:inset 0 0 5px 1px rgba(0,0,0,0.5);
+    -webkit-box-shadow:inset 0 0 3px 1px rgba(0,0,0,0.3);
+    box-shadow:inset 0 0 3px 1px rgba(0,0,0,0.3);
     border-radius: 3px;
 }
 
@@ -486,8 +486,8 @@ footer nav {
     padding: 20px 10px 20px 30px;
     background: rgba(0, 0, 0, 0.2);
     margin-bottom: 80px;
-    -webkit-box-shadow:inset 0 0 5px 1px rgba(0,0,0,0.5);
-    box-shadow:inset 0 0 5px 1px rgba(0,0,0,0.5);
+    -webkit-box-shadow:inset 0 0 3px 1px rgba(0,0,0,0.3);
+    box-shadow:inset 0 0 3px 1px rgba(0,0,0,0.3);
     border-radius: 3px;
 }
 
