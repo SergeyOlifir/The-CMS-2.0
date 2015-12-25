@@ -464,19 +464,19 @@ footer .info-wrp {
     background: rgba(255, 255, 255, 0.3);
     margin-bottom: 30px;
     margin-top: 30px;
-    padding-left: 12%;
-    padding-right: 12%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 footer .info-wrp p {
     color: #fff;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 footer .info-wrp h3 {
     font-weight: normal;
     color: #fff;
-    font-size: 19px;
+    font-size: 21px;
 }
 
 footer nav {
