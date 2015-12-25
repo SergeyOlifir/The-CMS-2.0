@@ -185,6 +185,7 @@ header .navbar-collapse {
 
 .page-descr-wrapp {
     padding: 20px 0 20px 0;
+    font-size: 19px;
 }
 
 .nav-tabs {
@@ -208,7 +209,8 @@ header .navbar-collapse {
     border: 1px solid transparent;
     border-radius: 0;
     color: #443300;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .nav-tabs > li > a:hover {
