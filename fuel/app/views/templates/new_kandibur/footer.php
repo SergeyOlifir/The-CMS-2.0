@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-    <nav class="clearfix hidden-xs hidden-sm">
+    <nav class="clearfix hidden-xs hidden-sm hidden-md">
         <div class="second-menu-wrp">
             <ul class="menu-row">
                 <li>
