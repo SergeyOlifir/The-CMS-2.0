@@ -294,7 +294,7 @@ header .navbar-collapse {
 .projects .item  article {
     border: 2px solid #e5e5e5;
     padding: 7px;
-    height: 205px;
+    height: 225px;
     margin-bottom: 10px;
     -moz-transition: 0.3s all ease;
     -o-transition: 0.3s all ease;
@@ -659,6 +659,14 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     
     .commetnts-wrp .capcha, .commetnts-wrp .capcha-result {
         margin-bottom: 20px;
+    }
+    
+    .projects .item.fool article {
+        height: 395px;
+    }
+    
+    .projects .item .content-img-bg {
+        height: 200px;
     }
 
 }
