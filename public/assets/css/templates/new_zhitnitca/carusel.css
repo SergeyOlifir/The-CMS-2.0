@@ -461,11 +461,14 @@ footer .posts-count-section h5 span {
 
 footer .info-wrp {
     padding: 0 20px 20px 20px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
     margin-top: 30px;
     padding-left: 10%;
     padding-right: 10%;
+    -webkit-box-shadow:inset 0 0 5px 1px rgba(0,0,0,0.5);
+    box-shadow:inset 0 0 5px 1px rgba(0,0,0,0.5);
+    border-radius: 3px;
 }
 
 footer .info-wrp p {
@@ -481,8 +484,11 @@ footer .info-wrp h3 {
 
 footer nav {
     padding: 20px 10px 20px 30px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.2);
     margin-bottom: 80px;
+    -webkit-box-shadow:inset 0 0 5px 1px rgba(0,0,0,0.5);
+    box-shadow:inset 0 0 5px 1px rgba(0,0,0,0.5);
+    border-radius: 3px;
 }
 
 footer .second-menu-wrp {
