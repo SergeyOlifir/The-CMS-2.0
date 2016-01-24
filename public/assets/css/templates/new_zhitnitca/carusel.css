@@ -595,9 +595,17 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 }
 
 .commetnts-wrp .capcha {
+    color: #443300;
     font-size: 20px;
     font-weight: bold;
-    color: #443300;
+}
+
+.commetnts-wrp .form-group.has-error .capcha {
+    color: #a94442;
+}
+
+.commetnts-wrp .form-group.has-error .capcha-result {
+    border-color: #a94442;
 }
 
 @media (min-width: 768px) {

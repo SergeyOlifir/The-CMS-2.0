@@ -1,4 +1,4 @@
-<div class="commetnts-wrp" data-ng-app="comments" data-ng-controller="comment">
+<div class="commetnts-wrp" data-ng-app="comments" data-ng-controller="comment" data-content-id="<?= $content->id;?>">
     <h5 data-ng-click="toggleHeight()">Комментарии ({{comments_list.length}}) <i class="glyphicon glyphicon-chevron-down"></i></h5>
     <div data-ng-class="{close: collapsed}">
         <div class="fotm-wrp comment-form" >

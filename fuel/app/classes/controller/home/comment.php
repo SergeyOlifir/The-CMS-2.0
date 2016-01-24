@@ -12,9 +12,20 @@ class Controller_Home_Comment extends Fuel\Core\Controller_Rest {
     }
     
     public function post_create() {
+        $status = 'ok';
+        $errors = array();
         $numbers = Fuel\Core\Session::get('capcha');
         if($numbers && (($numbers['first'] +  $numbers['second']) == \Fuel\Core\Input::post('capcha_result'))) {
-            return $this->response(array('status' => 'ok'));
+            ///return $this->response(array('status' => 'ok'));
+            
+            if(Model_Comment::get_validator()->run()) {
+                if($content = Model_Content::find(\Fuel\Core\Input::post('id'))) {
+                    $content->comments[] = Model_Comment::forge(Model_Comment::get_validator()->validated());
+                    $content->save();
+                    return $this->response(array('status' => 'ok'));
+                }
+            }
+            
         } else {
             return $this->response(array('status' => 'fail', 'errors' => array('capcha' => true)));
         }

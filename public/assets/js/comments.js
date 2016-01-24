@@ -28,7 +28,7 @@
         });
     }]);
     
-    comments.controller('comment',['$scope', 'Capcha', 'Comment', function ($scope, Capcha, Comment) {
+    comments.controller('comment',['$scope', 'Comment', function ($scope, Comment) {
         $scope.comment_text = '';
         $scope.user_name = '';
         $scope.user_email = '';
@@ -77,8 +77,11 @@
         
         var create_comment = function(obj) {
             Comment.save(obj, function(e) {
+                console.log(e);
                 if(e.status === 'fail') {
                     $scope.errors = e.errors;
+                } else {
+                    reset_fields();
                 }
                 update_capcha();
             });
@@ -86,20 +89,14 @@
         
         $scope.addComment = function(user_name, user_email, text) {
             if(validate(user_name, user_email, text)) {
-                $scope.comments_list.push({
-                    id: 23,
-                    content: $scope.comment_text,
-                    user_name: $scope.user_name,
-                    date: new Date().getTime()
-                });
                 create_comment({
-                    id: 23,
-                    content: $scope.comment_text,
+                    id: $('[data-content-id]').attr('data-content-id'),
+                    text: $scope.comment_text,
                     user_name: $scope.user_name,
+                    user_email: $scope.user_email,
                     date: new Date().getTime(),
                     capcha_result: $scope.capcha
                 });
-                reset_fields();
             } else {
                 update_capcha();
             }
