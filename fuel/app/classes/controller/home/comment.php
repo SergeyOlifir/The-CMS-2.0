@@ -30,5 +30,13 @@ class Controller_Home_Comment extends Fuel\Core\Controller_Rest {
             return $this->response(array('status' => 'fail', 'errors' => array('capcha' => true)));
         }
     }
+    
+    public function get_all ($id = null) {
+        if(isset($id) and $model = Model_Content::find($id)) {
+            return $this->response(array_values($model->approved_comments));
+        }
+        
+        return $this->response(array('comments' => array()));
+    }
 }
 

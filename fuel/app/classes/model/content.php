@@ -107,7 +107,25 @@ class Model_Content extends Model_Base {
             'key_to' => 'content_id',
             'cascade_save' => true,
             'cascade_delete' => false,
-        )
+        ),
+        
+        'approved_comments' => array(
+            'key_from' => 'id',
+            'model_to' => 'Model_Comment',
+            'key_to' => 'content_id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+            'conditions' => array(
+                'where' => array(
+                    array('validated', '=', 2)
+                ),
+                'order_by' => array('created_at' => 'asc'),
+            )
+        ),
+    );
+    
+    protected static $_conditions = array(
+        'order_by' => array('created_at' => 'desc'),
     );
     
     private static $validator;

@@ -19,6 +19,12 @@
                 url: '/home/comment/create.json'
             },
             
+            all: {
+                method: 'GET',
+                isArray: true,
+                url: '/home/comment/all/:id/.json'
+            },
+            
             request_capcha: {
                 method: 'GET',
                 url: '/home/comment/capcha.json'
@@ -29,6 +35,9 @@
     }]);
     
     comments.controller('comment',['$scope', 'Comment', function ($scope, Comment) {
+        
+        var content_id = $('[data-content-id]').attr('data-content-id');
+        
         $scope.comment_text = '';
         $scope.user_name = '';
         $scope.user_email = '';
@@ -36,9 +45,11 @@
         $scope.capcha_numbers = Comment.request_capcha();
         $scope.capcha = '';
         
-        $scope.comments_list = [
-            
-        ];
+        $scope.count = 0;
+        
+        $scope.comments_list = Comment.all({id: content_id}, function () {
+            $scope.count = Object.keys($scope.comments_list).length - 2;
+        });
         
         $scope.collapsed = false;
         

@@ -1,5 +1,5 @@
 <div class="commetnts-wrp" data-ng-app="comments" data-ng-controller="comment" data-content-id="<?= $content->id;?>">
-    <h5 data-ng-click="toggleHeight()">Комментарии ({{comments_list.length}}) <i class="glyphicon glyphicon-chevron-down"></i></h5>
+    <h5 data-ng-click="toggleHeight()">Комментарии ({{count}}) <i class="glyphicon glyphicon-chevron-down"></i></h5>
     <div data-ng-class="{close: collapsed}">
         <div class="fotm-wrp comment-form" >
             <div class="form-group" data-ng-class="{'has-error' : errors['comment-name']}" >
@@ -27,9 +27,9 @@
             </div>
         </div>
         <div class="comments" >
-            <div class="comment_item" data-ng-repeat="comment in comments_list">
-                <h5>{{comment.user_name}} {{comment.date | date:'HH:mm yyyy-MM-dd'}}</h5>
-                <p>{{comment.content}}</p>
+            <div class="comment_item" data-ng-repeat="comment in comments_list ">
+                <h5>{{comment.user_name}} {{(comment.created_at * 1000) | date:'HH:mm yyyy-MM-dd'}}</h5>
+                <p>{{comment.text}}</p>
             </div>
         </div>
     </div>

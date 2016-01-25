@@ -12,7 +12,7 @@ class Controller_Home_Category extends Controller_Home {
             $this->template->set_global('current_category', $model, false);
             $base_url = '';
             if($id = Fuel\Core\Request::active()->param('parent_category') and $pmodel = Model_Category::find($id)) {
-                $this->template->set_global('parent', $pmodel);
+                $this->template->set_global('parent', $pmodel, false);
                 $this->template->set_global('page', $pmodel, false);
                 $base_url = \Fuel\Core\Router::get('view_subsidiary_category', array('alias' => $model->alias, 'parent_category' => $id));
             } else {
