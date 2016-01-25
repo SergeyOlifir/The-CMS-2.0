@@ -5,15 +5,15 @@ class Controller_Home_Category extends Controller_Home {
     public function action_view ($category_alias = null) {
         $alias = Fuel\Core\Request::active()->param('alias');
         if($model = Model_Category::query()->where('alias', '=', $alias)->get_one()) {
-            $this->template->set_global('page', $model);
+            $this->template->set_global('page', $model, false);
             $this->template->set_global('meta_keywrd', $model->meta);
             $this->template->set_global('title', $model->page_title);//$current_category_id
             $this->template->set_global('current_category_id', $model->id);
-            $this->template->set_global('current_category', $model);
+            $this->template->set_global('current_category', $model, false);
             $base_url = '';
             if($id = Fuel\Core\Request::active()->param('parent_category') and $pmodel = Model_Category::find($id)) {
                 $this->template->set_global('parent', $pmodel);
-                $this->template->set_global('page', $pmodel);
+                $this->template->set_global('page', $pmodel, false);
                 $base_url = \Fuel\Core\Router::get('view_subsidiary_category', array('alias' => $model->alias, 'parent_category' => $id));
             } else {
                 $base_url = \Fuel\Core\Router::get('view_category', array('alias' => $model->alias));

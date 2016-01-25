@@ -137,8 +137,8 @@ class Controller_Admin_Category extends Controller_Admin {
     
     public function action_view ($id) {
         if(isset($id) and $model = Model_Category::find($id)) {
-            $this->template->set_global('model', $model);
-            $this->template->set_global('models', Model_Category::find('all'));
+            $this->template->set_global('model', $model, false);
+            $this->template->set_global('models', Model_Category::find('all'), false);
             $this->template->header = 'Категории';
             $this->template->description = 'Просмотр';
             $this->template->content = \Fuel\Core\View::forge('admin/category/view');

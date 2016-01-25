@@ -51,7 +51,8 @@
             'field' => 'description',
             'label' => 'Описание',
             'placeholder' => 'Описание',
-            'description' => 'Встречающий текст категории.'
+            'description' => 'Встречающий текст категории.',
+            'editor' => true,
         )); ?>
         
         <?= TCForm::Textarea(array(

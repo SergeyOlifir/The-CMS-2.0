@@ -49,5 +49,18 @@ class Model_Comment extends Model_Base {
         return self::$validator;
     }
     
+    public function get_status () {
+        switch ($this->validated) {
+            case 0:
+                return 'Не проверен';
+            case 1:
+                return 'Отклонен';
+            case 2:
+                return 'Проверен';
+            default :
+                return 'Не проверен';
+        }
+    }
+    
 }
 

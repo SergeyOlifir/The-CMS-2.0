@@ -238,6 +238,7 @@ class Controller_Admin_Content extends Controller_Admin {
                     $this->template->set_global('model', $model->from_array($fields));
                     $this->template->set_global('errors', e(array('image' => $ex)));
                     \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                    \Fuel\Core\Response::redirect_back();
                     return;
                 }
                 
@@ -246,6 +247,7 @@ class Controller_Admin_Content extends Controller_Admin {
             } else {
                 if(\Fuel\Core\Upload::get_errors('image')['file'] !== '') {
                     \Fuel\Core\Session::set_flash('error', 'Ошибки валидации');
+                    \Fuel\Core\Response::redirect_back();
                     return;
                 }
 

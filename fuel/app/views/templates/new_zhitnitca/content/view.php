@@ -40,7 +40,7 @@
             </div>
             <div class="description">
                 <p>
-                    <?=$content->content; ?>
+                    <?= $content->content; ?>
                 </p>
             </div>
             

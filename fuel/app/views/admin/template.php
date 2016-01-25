@@ -13,6 +13,7 @@
         <!-- Theme style -->
         <?= \Fuel\Core\Asset::css('admin/AdminLTE.min.css'); ?>
         <?= \Fuel\Core\Asset::css('plugins/datatables/dataTables.bootstrap.css'); ?>
+        <?= \Fuel\Core\Asset::css('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'); ?>
         <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
               page. However, you can choose any other skin. Make sure you
               apply the skin class to the body tag so the changes take effect.
@@ -25,6 +26,7 @@
         <?= \Fuel\Core\Asset::js('plugins/slimScroll/jquery.slimscroll.min.js'); ?>
         <?= \Fuel\Core\Asset::js('plugins/datatables/jquery.dataTables.min.js'); ?>
         <?= \Fuel\Core\Asset::js('plugins/datatables/dataTables.bootstrap.min.js'); ?>
+        <?= \Fuel\Core\Asset::js('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>
         <?= \Fuel\Core\Asset::js('admin/app.min.js'); ?>
         <?= \Fuel\Core\Asset::js('admin/admin.js'); ?>
     </head>

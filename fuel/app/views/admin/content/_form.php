@@ -42,7 +42,8 @@
             'field' => 'content',
             'label' => 'Текст',
             'placeholder' => 'Текст',
-            'description' => 'Основной текст контента'
+            'description' => 'Основной текст контента',
+            'editor' => true,
         )); ?>
         
         <?= TCForm::Textarea(array(
