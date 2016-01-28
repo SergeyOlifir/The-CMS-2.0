@@ -18,6 +18,13 @@
                         <?= \Fuel\Core\Html::anchor($utl, $link->title, array('class' => ($utl . '.html' == Controller_Application::$current_page) ? "active" : "")); ?>
                     </li>
                 <?php endforeach; ?>
+                <?php foreach (Model_Language::find('all') as $lang): ?>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="<?= $lang->get_logo('small') ?>" style="max-width: 30px; height: 15px; display: none;" class="lang-img" />
+                        </a>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>
