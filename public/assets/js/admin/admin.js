@@ -7,8 +7,17 @@ $(document).ready(function() {
 
     $('.modal-with-param').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
-        var passData = button.data('pass');
+        var index = 1;
         var modal = $(this);
-        modal.find('input.param-input').val(passData);
+        do {
+            var passData = button.data('pass-' + index.toString());
+            if (passData != undefined) {
+                modal.find('input.param-input[data-target-index="' + index.toString() + '"]').val(passData);
+                index++;
+            } else {
+                break;
+            }
+        } while (true);
+        //modal.find('input.param-input').val(passData);
     });
 });

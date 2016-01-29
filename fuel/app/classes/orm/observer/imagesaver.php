@@ -9,7 +9,7 @@ class Observer_ImageSaver extends Observer
         } else {
             return false;
         }
-        
+
     }
 
     public function save_image($obj) {

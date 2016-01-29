@@ -24,7 +24,7 @@
                     <? foreach($images as $image): ?>
                         <div class="pull-left img-bg" style="background-image: url('<?= "/files/" . $image->small; ?>')">
                             <?= Fuel\Core\Html::anchor('/admin/mainpage/remove_image/' . $image->id, 'x', array('class' => 'btn-remove')); ?>
-                            <a href="" class="btn-edit" data-toggle="modal" data-target="#image_label_form" data-pass="<?= $image->id ?>">
+                            <a href="" class="btn-edit" data-toggle="modal" data-target="#image_label_form" data-pass1="<?= $image->id ?>" data-pass2="<?= $image->title ?>">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </a>
                         </div>

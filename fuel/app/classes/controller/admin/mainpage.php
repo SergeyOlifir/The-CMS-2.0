@@ -73,16 +73,13 @@ class Controller_Admin_Mainpage extends Controller_Admin {
             $imageID = \Fuel\Core\Input::post('imageID');
             $label = \Fuel\Core\Input::post('title');
             $model = Model_Image::find($imageID);
-            $model->title = $label;
-            try {
-                $model->save();
+            if (!is_null($model)) {
+                $query = DB::update('users')->table('images')->value('title', $label)->where('id', '=', $imageID);
+                $query->execute();
                 \Fuel\Core\Session::set_flash('success', 'Описание картинки успешно обновлено!');
                 Fuel\Core\Response::redirect_back();
-            } catch (Exception $ex) {
-                echo('<pre>');
-                var_dump($ex);
-                die();
-                \Fuel\Core\Session::set_flash('error', 'Ошибка обновления картинки! Описание не обновлено!!');
+            } else {
+                \Fuel\Core\Session::set_flash('error', 'Ошибка обновления картинки! Картинка не найдена!!');
                 Fuel\Core\Response::redirect_back();
             }
         }

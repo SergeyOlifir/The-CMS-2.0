@@ -7,8 +7,8 @@
             <h4 class="modal-title">Описание картинки</h4>
           </div>
           <div class="modal-body">
-              <input type="hidden" name="imageID" class="param-input" />
-              <input type="text" name="title" class="form-control" />
+              <input type="hidden" name="imageID" class="param-input" data-target-index="1" />
+              <input type="text" name="title" class="form-control param-input" data-target-index="2" />
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
