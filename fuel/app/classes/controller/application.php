@@ -15,4 +15,12 @@ class Controller_Application extends Fuel\Core\Controller_Template {
     }
     
     public static $current_page = "";
+    
+    function before() {
+        parent::before();
+        
+        $lang = Fuel\Core\Request::active()->param('lang');
+        TCLocal::setCurrentLang($lang);
+        //echo $lang;
+    }
 }

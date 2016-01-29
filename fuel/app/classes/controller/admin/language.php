@@ -65,7 +65,7 @@ class Controller_Admin_Language extends Controller_Admin {
         if($id and $model = Model_Language::find($id)) {
             $this->template->header = 'Языки';
             $this->template->description = 'Редактирование';
-            $this->template->content = \Fuel\Core\View::forge('admin/langue/edit');
+            $this->template->content = \Fuel\Core\View::forge('admin/language/edit');
             if(Fuel\Core\Input::post()) {
                 if(Model_Language::get_validator()->run()) {
                     $fields = Model_Language::get_validator()->validated();

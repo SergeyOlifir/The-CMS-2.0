@@ -6,7 +6,7 @@
             <div class="row">
                 <? foreach($main_page_model->get_featured_categories(1) as $rcategory): ?>
                     <div class="col-md-6, col-sm-6 col-xs-12">
-                        <a href="<?= Router::get('view_category', array('alias' => $rcategory->alias)) ;?>">
+                        <a href="<?= TCRouter::get('view_category', array('alias' => $rcategory->alias)) ;?>">
                             <div class="categoty-card" style="background-image: url('<?= $rcategory->get_logo('small');?>')">
                                 <div class="overlay"></div>
                                 <h4><?= $rcategory->title; ?></h4>
@@ -27,7 +27,7 @@
                     <div class="row">
                         <? foreach ($rcategory->get_own_content(4) as $cat): ?>
                             <div class="col-md-3 col-sm-6 col-xs-12">
-                                <a href="<?= Router::get('view_category', array('alias' => $rcategory->alias)) ;?>">
+                                <a href="<?= TCRouter::get('view_category', array('alias' => $rcategory->alias)) ;?>">
                                     <div class="categoty-card" style="background-image: url('<?= $cat->get_logo('small');?>')">
                                         <div class="overlay"></div>
                                     </div>
@@ -54,7 +54,7 @@
                         <div class="row">
                             <div class="col-md-9"></div>
                             <div class="col-md-3">
-                                <h4 class="page-count"><?= Fuel\Core\Html::anchor(Router::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
+                                <h4 class="page-count"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
                             </div>
                         </div>
                     </div>
