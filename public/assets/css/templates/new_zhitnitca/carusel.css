@@ -33,10 +33,10 @@ header .navbar {
 
 header .navbar-default .navbar-nav > li > a {
     color: rgb( 254, 254, 254 );
-    font-size: 15px;
+    font-size: 17px;
     font-family: 'CyrillicOld';
     font-weight: normal;
-    padding: 42px 5px 30px 5px;
+    padding: 42px 5px 30px 10px;
     -moz-transform: scale(1, 1.2);
     -webkit-transform: scale(1, 1.2);
     -ms-transform: scale(1, 1.2);
