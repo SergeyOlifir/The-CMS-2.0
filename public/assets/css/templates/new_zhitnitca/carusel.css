@@ -508,16 +508,15 @@ footer .posts-count-section h5 span {
     padding: 0px 10px 10px 10px;
     max-height: 117px;
     overflow: hidden;
-    word-wrap: break-word;
     
 }
 
 .content .related-categoryes .projects .item .content-img-bg {
-    height: 110px;
+    height: 85px;
 }
 
 .content .related-categoryes .projects .item article {
-    height: 128px;
+    height: 104px;
 }
 
 .content .related-categoryes .projects .item h1 {
@@ -525,7 +524,8 @@ footer .posts-count-section h5 span {
 }
 
 .content .related-categoryes .projects .item h1 a {
-    font-size: 17px;
+    font-size: 19px;
+    color: rgb( 68, 34, 0 )
 }
 
 
