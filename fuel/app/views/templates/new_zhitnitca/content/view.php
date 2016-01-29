@@ -38,7 +38,7 @@
                         <p class="sm">Раздел: <?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $parent_category->alias)), $parent_category->title) ;?></p>
                     <?endif; ?>
                     <p class="sm">Количество комментариев: <a href="#">27</a></p>
-                    <p class="sm">Автор: <a href="#">Редактор, ТМ «Рiдна Житница» </a></p>
+                    <p class="sm">Автор: <a href="#">ТМ «Рiдна Житница» </a></p>
                     <p class="sm">Дата: <?= Date::forge($content->created_at)->format("%d.%m.%Y", true); ?></p>
                 </div>
             </div>
