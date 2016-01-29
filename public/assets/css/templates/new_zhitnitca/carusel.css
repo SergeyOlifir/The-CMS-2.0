@@ -347,19 +347,20 @@ header .navbar-collapse {
 }
 
 .projects .item.fool  article {
-    height: 360px;
+    height: 375px;
 }
 
 .projects .item.fool .details {
-    height: 63px;
-    color: #443300;
-    font-size: 14px;
+    height: 68px;
+    color: #442200;
+    font-size: 15px;
     padding-top: 8px;
+    overflow: hidden;
 }
 
 .projects .item.fool .sm {
     margin-bottom: 0;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .projects .item img {
