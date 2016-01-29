@@ -427,7 +427,7 @@ footer .posts-count-section h5 span {
 }
 
 .featured-wrp-type1 .categoty-card h4 {
-    background-color: rgba(183, 156, 130, 0.7);
+    background-color: rgba(183, 156, 130, 0.6);
     padding: 15px;
     color: #290d00;
     position: absolute;
@@ -435,7 +435,7 @@ footer .posts-count-section h5 span {
     top: 50%;
     margin: 0;
     transform: translateY(-50%);
-    font-size: 31px;
+    font-size: 39px;
     min-width: 50%;
     text-align: right;
     font-weight: 400;
