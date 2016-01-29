@@ -650,10 +650,15 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 }
 
 .commetnts-wrp h5 {
-    color: #443300;
-    font-size: 16px;
+    color: rgb( 68, 34, 0 );
+    font-size: 17px;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.commetnts-wrp label {
+    font-size: 17px;
+    color: rgb( 68, 34, 0 );
 }
 
 .commetnts-wrp h5 + div {
@@ -684,6 +689,7 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     padding-top: 25px;
     font-size: 17px;
     line-height: 1.6;
+    color: rgb( 68, 34, 0 );
 }
 
 @media (min-width: 768px) {
