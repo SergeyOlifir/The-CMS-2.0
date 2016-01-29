@@ -6,7 +6,7 @@
             <div class="row">
                 <? foreach($main_page_model->get_featured_categories(1) as $rcategory): ?>
                     <div class="col-md-6, col-sm-6 col-xs-12">
-                        <a href="<?= \Fuel\Core\Router::get('view_category', array('alias' => $rcategory->alias)) ;?>">
+                        <a href="<?= Router::get('view_category', array('alias' => $rcategory->alias)) ;?>">
                             <div class="categoty-card" style="background-image: url('<?= $rcategory->get_logo('small');?>')">
                                 <div class="overlay"></div>
                                 <h4><?= $rcategory->title; ?></h4>
@@ -22,18 +22,21 @@
 <div class="featured-wrp-type2">
     <div class="container">
         <? if(count($main_page_model->get_featured_categories(2)) > 0): ?>
-            <div class="row">
+            
                 <? foreach($main_page_model->get_featured_categories(2) as $rcategory): ?>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="<?= \Fuel\Core\Router::get('view_category', array('alias' => $rcategory->alias)) ;?>">
-                            <div class="categoty-card" style="background-image: url('<?= $rcategory->get_logo('small');?>')">
-                                <div class="overlay"></div>
+                    <div class="row">
+                        <? foreach ($rcategory->get_own_content(4) as $cat): ?>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <a href="<?= Router::get('view_category', array('alias' => $rcategory->alias)) ;?>">
+                                    <div class="categoty-card" style="background-image: url('<?= $cat->get_logo('small');?>')">
+                                        <div class="overlay"></div>
+                                    </div>
+                                    <h4><?= $cat->title; ?></h4>
+                                </a>
                             </div>
-                            <h4><?= $rcategory->title; ?></h4>
-                        </a>
+                        <? endforeach; ?>
                     </div>
                 <? endforeach; ?>
-            </div>
         <? endif; ?>
     </div>
 </div>
@@ -51,7 +54,7 @@
                         <div class="row">
                             <div class="col-md-9"></div>
                             <div class="col-md-3">
-                                <h4 class="page-count"><?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
+                                <h4 class="page-count"><?= Fuel\Core\Html::anchor(Router::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
                             </div>
                         </div>
                     </div>
