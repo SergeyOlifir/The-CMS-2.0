@@ -1,7 +1,9 @@
 <div class="container">
     <div class="login-container">
         <div id="output"></div>
-        <div class="avatar"></div>
+        <div class="avatar">
+            <?= \Fuel\Core\Asset::img('avatar_main.jpg', array('class' => 'main-avatar')); ?>
+        </div>
         <div class="form-box">
             <?= Fuel\Core\Form::open();?>
                 <input name="username" type="text" placeholder="username">

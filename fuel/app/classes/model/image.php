@@ -12,6 +12,7 @@ class Model_Image extends Model_Base {
         'small',
         'owner_id',
         'owner_type',
+        'title',
         'created_at',
         'updated_at',
     );

@@ -67,6 +67,26 @@ class Controller_Admin_Mainpage extends Controller_Admin {
         
         \Fuel\Core\Response::redirect_back();
     }
+
+    public function action_edit_image_label() {
+        if(Fuel\Core\Input::post()) {
+            $imageID = \Fuel\Core\Input::post('imageID');
+            $label = \Fuel\Core\Input::post('title');
+            $model = Model_Image::find($imageID);
+            $model->title = $label;
+            try {
+                $model->save();
+                \Fuel\Core\Session::set_flash('success', 'Описание картинки успешно обновлено!');
+                Fuel\Core\Response::redirect_back();
+            } catch (Exception $ex) {
+                echo('<pre>');
+                var_dump($ex);
+                die();
+                \Fuel\Core\Session::set_flash('error', 'Ошибка обновления картинки! Описание не обновлено!!');
+                Fuel\Core\Response::redirect_back();
+            }
+        }
+    }
     
     public function action_add_promo($id = null) {
         if($model = Model_MainPage::query()->get_one()) {

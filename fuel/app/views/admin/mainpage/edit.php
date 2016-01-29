@@ -24,6 +24,9 @@
                     <? foreach($images as $image): ?>
                         <div class="pull-left img-bg" style="background-image: url('<?= "/files/" . $image->small; ?>')">
                             <?= Fuel\Core\Html::anchor('/admin/mainpage/remove_image/' . $image->id, 'x', array('class' => 'btn-remove')); ?>
+                            <a href="" class="btn-edit" data-toggle="modal" data-target="#image_label_form" data-pass="<?= $image->id ?>">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
                         </div>
                     <? endforeach;?>
                 <? else: ?>
@@ -228,4 +231,9 @@
     'action' => "admin/mainpage/add_featured/{$model->id}/2",
     'popup_id' => 'featured_categiry_form_type_2',
     'models' => Model_Category::find('all')
+)); ?>
+
+<?= render('admin/mainpage/image_label_form', array(
+    'action' => "admin/mainpage/edit_image_label",
+    'popup_id' => 'image_label_form'
 )); ?>
