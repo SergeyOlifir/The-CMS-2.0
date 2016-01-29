@@ -25,13 +25,13 @@
             
                 <? foreach($main_page_model->get_featured_categories(2) as $rcategory): ?>
                     <div class="row">
-                        <? foreach ($rcategory->get_own_content(4) as $cat): ?>
+                        <? foreach ($rcategory->get_own_content(4) as $cont): ?>
                             <div class="col-md-3 col-sm-6 col-xs-12">
-                                <a href="<?= TCRouter::get('view_category', array('alias' => $rcategory->alias)) ;?>">
-                                    <div class="categoty-card" style="background-image: url('<?= $cat->get_logo('small');?>')">
+                                <a href="<?= TCRouter::get('view_subsidiary_content', array('id' => $cont->id, 'parent_category' => $rcategory->id)) ;?>">
+                                    <div class="categoty-card" style="background-image: url('<?= $cont->get_logo('small');?>')">
                                         <div class="overlay"></div>
                                     </div>
-                                    <h4><?= $cat->title; ?></h4>
+                                    <h4><?= $cont->title; ?></h4>
                                 </a>
                             </div>
                         <? endforeach; ?>

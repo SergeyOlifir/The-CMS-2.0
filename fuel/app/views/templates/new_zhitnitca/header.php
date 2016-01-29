@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <?= \Fuel\Core\Html::img('/assets/img/templates/new_zhitnitca/logo.png'); ?>
             </a>
         </div>

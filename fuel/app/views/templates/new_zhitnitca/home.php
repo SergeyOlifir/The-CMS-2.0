@@ -11,7 +11,6 @@
             <meta name="keywords" content="<?= $meta_keywrd;?>">
         <? endif; ?>
         <link rel="shortcut icon" href="/assets/img/templates/<?= $template; ?>/favicon.png" type="image/png">
-        <link href="http://allfont.ru/allfont.css?fonts=cyrillicold" rel="stylesheet" type="text/css" />
         <?= Asset::css('bootstrap.min.css'); ?>
         <?= TCCore\TCTheme::add_css("carusel.css"); ?>
 
@@ -25,12 +24,6 @@
     </head>
 
     <body>
-        <style>
-            * {
-              font-family: 'CyrillicOld', arial !important;
-              
-            }
-          </style>
         <header id="header">
             <?= TCCore\TCTheme::render("header",array()); ?>
         </header>

@@ -1,6 +1,11 @@
-html {
+@font-face {
+  font-family: 'CyrillicOld';
+  src: url('../../../fonts/cyrillicold.ttf');
+}
+
+html, body {
     color: #fefefe;
-    font-family: 'Verdana';
+    font-family: 'CyrillicOld';
 }
 
 .container {
@@ -22,7 +27,7 @@ header .navbar {
 header .navbar-default .navbar-nav > li > a {
     color: rgb( 254, 254, 254 );
     font-size: 15px;
-    font-family: 'Verdana';
+    font-family: 'CyrillicOld';
     font-weight: normal;
     padding: 42px 5px 30px 5px;
     -moz-transform: scale(1, 1.2);
@@ -467,6 +472,39 @@ footer .posts-count-section h5 span {
     margin: 12px 0 30px 0;
     font-weight: bold;
 }
+
+.content .related-categoryes  .projects article > a {
+    float: left;
+    width: 50%;
+    
+}
+
+.content .related-categoryes  .projects article .description {
+    float: right;
+    width: 50%;
+    padding: 0px 10px 10px 10px;
+    max-height: 117px;
+    overflow: hidden;
+    word-wrap: break-word;
+    
+}
+
+.content .related-categoryes .projects .item .content-img-bg {
+    height: 110px;
+}
+
+.content .related-categoryes .projects .item article {
+    height: 128px;
+}
+
+.content .related-categoryes .projects .item h1 {
+    margin: 0;
+}
+
+.content .related-categoryes .projects .item h1 a {
+    font-size: 17px;
+}
+
 
 footer .info-wrp {
     padding: 0 20px 20px 20px;
