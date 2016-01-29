@@ -3,8 +3,11 @@
   src: url('../../../fonts/cyrillicold.ttf');
 }
 
-html, body {
+html {
     color: #fefefe;
+}
+
+html, body {
     font-family: 'CyrillicOld';
 }
 
