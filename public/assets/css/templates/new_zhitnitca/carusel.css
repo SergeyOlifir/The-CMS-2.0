@@ -379,6 +379,13 @@ header .navbar-collapse {
     text-decoration: none;
 }
 
+.content .breadcrumb + .row + .description {
+    padding-top: 25px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgb( 68, 34, 0 );
+}
+
 footer {
     background: url('../../../img/templates/new_zhitnitca/footer-bg.jpg') no-repeat center;
     background-size: cover;
