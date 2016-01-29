@@ -690,6 +690,10 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     -webkit-transition: height .2s;
 }
 
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    opacity: 0.7;
+}
+
 .commetnts-wrp h5 + div.close {
     height: 0;
 }
