@@ -140,23 +140,23 @@ header .navbar-collapse {
     border-radius: 0;
     border: 3px solid #fff;
     margin: 0;
-    height: 75px;
+    height: 63px;
     background: no-repeat center;
     background-size: cover;
 }
 
 .content-galery-carusel .carousel-indicators li:hover {
-    border-color: #398800;
+    border-color: #009900;
     cursor: pointer;
 }
 
 .content-galery-carusel .carousel-indicators li.active {
-    border-color: #398800;
+    border-color: #009900;
 }
 
 .content-galery-carusel .carousel-inner > .item {
     width: 100%;
-    height: 317px;
+    height: 331px;
     background: center no-repeat;
     background-size: cover;
 }
@@ -682,7 +682,9 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 
 @media (min-width: 768px) {
     .content .description {
-        padding-top: 10px;
+        padding-top: 25px;
+        font-size: 17px;
+        line-height: 1.6;
     }
 }
 
