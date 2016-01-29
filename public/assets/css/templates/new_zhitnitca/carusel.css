@@ -651,9 +651,14 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 
 .commetnts-wrp h5 {
     color: rgb( 68, 34, 0 );
-    font-size: 17px;
+    font-size: 19px;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.commetnts-wrp .comment_item p {
+    color: rgb( 68, 34, 0 );
+    font-size: 17px;
 }
 
 .commetnts-wrp label {
