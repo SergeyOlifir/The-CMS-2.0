@@ -112,7 +112,8 @@ header .navbar-collapse {
 }
 
 .carusel-sm #main-carousel .carousel-inner > .item {
-    height: 237px;
+    height: 175px;
+    background-position-y: bottom;
 }
 
 .carusel-sm #main-carousel .carousel-inner > .item .image-title {
