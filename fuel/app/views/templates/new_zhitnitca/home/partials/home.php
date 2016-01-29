@@ -25,7 +25,7 @@
             
                 <? foreach($main_page_model->get_featured_categories(2) as $rcategory): ?>
                     <div class="row">
-                        <? foreach ($rcategory->get_own_content(4) as $cont): ?>
+                        <? foreach ($rcategory->get_content(4) as $cont): ?>
                             <div class="col-md-3 col-sm-6 col-xs-12">
                                 <a href="<?= TCRouter::get('view_subsidiary_content', array('id' => $cont->id, 'parent_category' => $rcategory->id)) ;?>">
                                     <div class="categoty-card" style="background-image: url('<?= $cont->get_logo('small');?>')">
