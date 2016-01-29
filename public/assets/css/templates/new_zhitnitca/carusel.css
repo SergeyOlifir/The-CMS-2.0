@@ -222,17 +222,17 @@ header .navbar-collapse {
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #398800;
+    border-bottom: 1px solid #006600;
     margin-top: 20px;
 }
 
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:hover {
-    color: #fff;
+    color: #FEFEFE;
     cursor: default;
-    background-color: #398800;
-    border: 1px solid #398800;
+    background-color: #009900;
+    border: 1px solid #006600;
     border-bottom-color: transparent;
 }
 
@@ -241,14 +241,14 @@ header .navbar-collapse {
     line-height: 1.42857143;
     border: 1px solid transparent;
     border-radius: 0;
-    color: #443300;
-    font-size: 15px;
+    color: #442200;
+    font-size: 19px;
     font-weight: 600;
 }
 
 .nav-tabs > li > a:hover {
-    border-color: #398800;
-    background-color: #bcdfa3;
+    border-color: #006600;
+    background-color: #66cc66;
 }
 
 .all-wrapper h2 {
