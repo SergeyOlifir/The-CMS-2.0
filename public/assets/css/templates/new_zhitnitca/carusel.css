@@ -528,6 +528,12 @@ footer .posts-count-section h5 span {
     color: rgb( 68, 34, 0 )
 }
 
+.tiles .description {
+    padding-top: 0;
+    font-size: 23px;
+    color: rgb( 68, 34, 0 )
+}
+
 
 footer .info-wrp {
     padding: 0 20px 20px 20px;
