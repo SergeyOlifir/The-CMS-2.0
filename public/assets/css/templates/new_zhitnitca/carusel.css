@@ -521,6 +521,10 @@ footer .info-wrp {
     border-radius: 3px;
 }
 
+footer .info-wrp a, footer .info-wrp:hover, footer .info-wrp a:visited {
+    color: #fff;
+}
+
 footer .info-wrp p {
     color: #fff;
     font-size: 15px;
