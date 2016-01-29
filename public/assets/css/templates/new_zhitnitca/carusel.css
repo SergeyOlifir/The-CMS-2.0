@@ -661,6 +661,29 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     color: rgb( 68, 34, 0 );
 }
 
+.commetnts-wrp .form-control {
+    font-size: 15px;
+}
+
+.commetnts-wrp .help-block {
+    color: #939393;
+    font-size: 16px;
+}
+
+.commetnts-wrp .btn-lg {
+    font-size: 21px;
+}
+
+.commetnts-wrp .btn-success:hover {
+    background: #009900;
+    border-color: #006600;
+}
+
+.commetnts-wrp .btn-success {
+    background: #339933;
+    border-color: #006600;
+}
+
 .commetnts-wrp h5 + div {
     overflow: hidden;
     transition: height .2s;
