@@ -680,6 +680,11 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
         margin: 0;
     }
     
+    .projects .item article {
+        height: 303px;
+        overflow: hidden;
+    }
+    
     header .navbar-collapse {
         padding-right: 15px;
         padding-left: 15px;
