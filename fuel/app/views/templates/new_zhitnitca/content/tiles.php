@@ -12,7 +12,7 @@
                                 <header>
                                     <h1>
                                         <a href="<?= TCRouter::get('view_subsidiary_content', array('id' => $project->id, 'parent_category' => $category->id)) ?>">
-                                            <?= Str::truncate($project->title, 30, '...'); ?>
+                                            <?= Str::truncate($project->title, 50, '...'); ?>
                                         </a>
                                     </h1>
                                 </header>
