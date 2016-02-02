@@ -461,7 +461,7 @@ footer .posts-count-section h5 span {
 
 .featured-wrp-type2 .categoty-card .overlay, .featured-wrp-type1 .categoty-card .overlay {
     background: #433107;
-    opacity: 0.7;
+    opacity: 0.5;
     -webkit-transition: 0.3s all ease;
     transition: 0.3s all ease;
     width: 0;
