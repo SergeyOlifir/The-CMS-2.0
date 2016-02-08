@@ -126,20 +126,9 @@ class Model_Category extends Model_Base {
 
 
     public function get_content($limit = null, $offset = null) {
-        $content = Model_Content::query()
-            ->related('master_categories')
-            ->related('master_categories.master_category')
-            ->where('master_categories.master_category.id', '=', $this->id)
-            ->or_where('master_categories.id', '=', $this->id);
-        if(!is_null($limit)) {
-            $content->limit($limit);
-        }
-        
-        if(!is_null($offset)) {
-            $content->offset($offset);
-        }
-            
-        return $content->get();
+        $result = \DB::query('CALL `get_content_for_category`(\''.$this->id.'\', \''.$limit.'\', \''.$offset.'\');', DB::SELECT)->as_object('Model_Content')->execute();
+
+        return $result;
     }
     
     public function get_own_content ($limit = null, $offset = null) {
