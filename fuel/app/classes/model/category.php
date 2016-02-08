@@ -127,7 +127,7 @@ class Model_Category extends Model_Base {
 
     public function get_content($limit = null, $offset = null) {
         $db = \Database_Connection::instance(null);
-        $result = \DB::query('CALL `get_content_for_category`(\''.$this->id.'\', \''.$limit.'\', \''.$offset.'\');')->as_object('Model_Content')->execute($db);
+        $result = \DB::query('CALL `get_content_for_category`(\''.$this->id.'\', \''.$limit.'\', \''.$offset.'\');', Fuel\Core\DB::SELECT)->as_object('Model_Content')->execute($db);
         $db->disconnect();
         return $result;
     }
