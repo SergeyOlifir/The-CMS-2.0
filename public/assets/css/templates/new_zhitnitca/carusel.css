@@ -743,6 +743,14 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     color: rgb( 68, 34, 0 );
 }
 
+footer .footer-map {
+    background: url('../../../img/templates/new_zhitnitca/map_img_footer.jpg') no-repeat center center;
+    display: block;
+    width: 100%;
+    height: 213px;
+    background-size: cover;
+}
+
 @media (min-width: 768px) {
     .content .description {
         padding-top: 25px;
