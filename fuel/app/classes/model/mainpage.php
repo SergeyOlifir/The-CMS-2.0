@@ -43,16 +43,19 @@ class Model_MainPage extends Model_Base {
         
         //var_dump(Model_Category::getTablesRow()); die();
          
-        $result = Fuel\Core\DB::select_array(Model_Category::getTablesRow())->from(Model_Category::table())->join('featured_category_in_mainpage')->on(Model_Category::table() . '.id', '=', 'featured_category_in_mainpage.category_id') //->from('featured_category_in_mainpage')->where('featured_category_in_mainpage.main_id', '=', $this->id)
-                ->where('featured_category_in_mainpage.type', '=', $type);
+        $result = Fuel\Core\DB::select_array(Model_Category::getTablesRow())
+            ->from(Model_Category::table())
+            ->join('featured_category_in_mainpage')
+            ->on(Model_Category::table() . '.id', '=', 'featured_category_in_mainpage.category_id') //->from('featured_category_in_mainpage')->where('featured_category_in_mainpage.main_id', '=', $this->id)
+            ->where('featured_category_in_mainpage.type', '=', $type);
+        
         if(!is_null($limit)) {
             $result->limit($limit);
         }
                 
         $res = $result->as_object('Model_Category')
-                ->execute()->as_array('id');
+            ->execute()->as_array('id');
         
-        //var_dump($res); die();
         return $res;
     }
 }
