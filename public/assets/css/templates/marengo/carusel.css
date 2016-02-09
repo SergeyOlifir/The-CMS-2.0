@@ -954,15 +954,32 @@ footer .footer-map {
         margin-top: 53px;
     }
     
-    .featured-wrp-type1 .feat-cat-link .round-arrow {
+    .featured-wrp-type1 .feat-cat-link .round-arrow, .featured-wrp-type1 .feat-cat-link:hover .round-arrow {
         bottom: 50%;
         right: 50%;
-        transform: translate3d(50%, 50%, 0);
+        transform: translate3d(0, 0, 0);
+        margin: 0 -30px -30px 0;
+        -moz-transition: 0.3s all ease;
+        -o-transition: none;
+        -webkit-transition: none;
+        transition: none;
     }
 
     .featured-wrp-type1 .feat-cat-link .categoty-card .round-arrow i {
-        __font-size: 44px;
         padding: 18px;
+        -moz-transition: 0.3s all ease;
+        -o-transition: none;
+        -webkit-transition: none;
+        transition: none;
+    }
+    
+    .featured-wrp-type1 .categoty-card, .featured-wrp-type1 .feat-cat-link:hover .categoty-card {
+        -moz-transition: 0.3s all ease;
+        -o-transition: none;
+        -webkit-transition: none;
+        transition: none;
+        transform: none;
+        box-shadow: none;
     }
 
 }
