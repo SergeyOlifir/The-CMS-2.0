@@ -953,6 +953,17 @@ footer .footer-map {
      #main-carousel {
         margin-top: 53px;
     }
+    
+    .featured-wrp-type1 .feat-cat-link .round-arrow {
+        bottom: 50%;
+        right: 50%;
+        transform: translate3d(50%, 50%, 0);
+    }
+
+    .featured-wrp-type1 .feat-cat-link .categoty-card .round-arrow i {
+        __font-size: 44px;
+        padding: 18px;
+    }
 
 }
 
