@@ -1,14 +1,10 @@
-@font-face {
-  font-family: 'CyrillicOld';
-  src: url('../../../fonts/cyrillicold.ttf');
-}
-
 html {
     color: #fefefe;
 }
 
 html, body {
-    font-family: 'CyrillicOld';
+    font-family: 'Minion Pro';
+    font-style: italic;
 }
 
 body {
@@ -21,7 +17,7 @@ body {
 }
 
 header .navbar {
-    background-color: rgba( 98, 52, 0, 0.8 );
+    background-color: rgba( 255, 255, 255, 1 );
     border: 0 none;
     border-radius: 0;
     position: fixed;
@@ -29,23 +25,29 @@ header .navbar {
     top: 0;
     left: 0;
     z-index: 1000;
+    border-bottom: 5px solid #007878;
+}
+
+header .navbar-brand {
+    float: left;
+    height: auto;
+    padding: 0px 85px 0 15px;
+    font-size: 18px;
+    line-height: 20px;
 }
 
 header .navbar-default .navbar-nav > li > a {
-    color: rgb( 254, 254, 254 );
-    font-size: 17px;
-    font-family: 'CyrillicOld';
+    color: #1e5f7e;
+    font-size: 18px;
     font-weight: normal;
     padding: 42px 5px 30px 10px;
-    -moz-transform: scale(1, 1.2);
-    -webkit-transform: scale(1, 1.2);
-    -ms-transform: scale(1, 1.2);
+    
 }
 
 header .navbar-default .navbar-nav > li > a.active, 
 header .navbar-default .navbar-nav > li > a:hover {
     text-decoration: underline;
-    color: rgb( 254, 254, 254 );
+    color: #ff0011;
 }
 
 header .navbar-collapse {
@@ -60,18 +62,26 @@ header .navbar-collapse {
     background-size: cover;
 }
 
+#main-carousel {
+    margin-top: 93px;
+}
+
+.carusel-sm #main-carousel {
+    margin-top: 0;
+}
+
 #main-carousel .carousel-inner > .item .image-title {
     display: block;
     position: absolute;
-    background-color: rgba( 98, 52, 0, 0.7 );
+    background-color: rgba( 255, 255, 255, 0.8 );
     padding: 35px 15px 20px 15px;
     width: 400px;
     min-width: 30%;
-    left: 20%;
+    right: 20%;
     bottom: 10%;
-    font-size: 41px;
-    text-align: right;
-    color: #fefefe;
+    font-size: 42px;
+    text-align: left;
+    color: #006270;
     overflow: hidden;
     max-height: 55%;
 }
@@ -83,21 +93,22 @@ header .navbar-collapse {
     width: auto;
     padding-left: 0;
     margin-left: 0;
-    text-align: center;
+    text-align: right;
     list-style: none;
-    left: 20%;
+    right: 20%;
 }
 
 #main-carousel .carousel-indicators li {
-    border: 2px solid #825000;
+    border: 2px solid #fff;
+    background-color: #007878;
     width: 15px;
     height: 15px;
     margin: 1px;
 }
 
 #main-carousel .carousel-indicators li.active {
-    border-color: #fff;
-    background-color: #825000;
+    border-color: #007878;
+    background-color: #fff;
 }
 
 #main-carousel .carousel-bg {
@@ -114,6 +125,11 @@ header .navbar-collapse {
 .carusel-sm #main-carousel .carousel-bg {
     display: none;
 }
+
+#main-carousel .carousel-inner {
+    border-bottom: 5px solid #007878;
+}
+
 
 .carusel-sm #main-carousel .carousel-inner > .item {
     height: 175px;
@@ -420,25 +436,97 @@ footer .posts-count-section h5 span {
 .featured-wrp-type1 .categoty-card {
     background: no-repeat transparent center;
     background-size: cover;
-    height: 270px;
-    border-radius: 0 0 30px 0;
+    height: 220px;
+    border-radius: 0;
     position: relative;
     margin-top: 30px;
+    margin-bottom: 22px;
+    -moz-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
+
+.featured-wrp-type1 .feat-cat-link {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.featured-wrp-type1 .feat-cat-link:hover .categoty-card {
+    transform: scale(1.09);
+    z-index: 10;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.featured-wrp-type1 .feat-cat-link:hover .round-arrow {
+    bottom: 50%;
+    right: 50%;
+        __margin: 0 -44px -44px 0;
+    transform: translate3d(50%, 50%, 0);
+}
+
+.featured-wrp-type1 .feat-cat-link:hover .categoty-card .round-arrow i {
+    __font-size: 44px;
+    padding: 18px;
+}
+
+.featured-wrp-type1 .col-md-3, .featured-wrp-type1 .col-sm-6 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.featured-wrp-type1 .row {
+    margin-right: -5px;
+    margin-left: -5px;
 }
 
 .featured-wrp-type1 .categoty-card h4 {
-    background-color: rgba(183, 156, 130, 0.6);
-    padding: 15px;
-    color: #290d00;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    margin: 0;
-    transform: translateY(-50%);
-    font-size: 39px;
-    min-width: 50%;
-    text-align: right;
+    background-color: rgba(0, 150, 150, 0.8);
+    padding: 20px 5px;
+    color: #fff;
+    position: relative;
+    font-size: 23px;
+    text-align: center;
     font-weight: 400;
+}
+
+.featured-wrp-type1 [data-position="0"] .categoty-card h4, .featured-wrp-type1 [data-position="0"] .categoty-card .round-arrow i {
+    background-color: rgba(255, 170, 0, 0.8);
+}
+
+.featured-wrp-type1 [data-position="1"] .categoty-card h4, .featured-wrp-type1 [data-position="1"] .categoty-card .round-arrow i {
+    background-color: rgba(102, 146, 17, 0.8);
+}
+
+.featured-wrp-type1 [data-position="2"] .categoty-card h4, .featured-wrp-type1 [data-position="2"] .categoty-card .round-arrow i {
+    background-color: rgba(175, 0, 75, 0.8);
+}
+
+.featured-wrp-type1 .categoty-card .round-arrow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    __margin: 0 7px -20px 0;
+    -moz-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+    transform: translate3d(-20%, 50%, 0);
+}
+
+.featured-wrp-type1 .categoty-card .round-arrow i {
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 150, 150, 0.8);
+    border-radius: 100%;
+    padding: 11px;
+    -moz-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
 }
 
 .featured-wrp-type2 {
@@ -644,8 +732,8 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 
 .navbar-brand > img {
     display: block;
-    height: 65px;
-    margin-top: -2px;
+    height: 80px;
+    margin-top: 5px;
     margin-left: -55px;
 }
 
@@ -862,10 +950,8 @@ footer .footer-map {
         height: 230px;
     }
     
-    .navbar-brand {
-        float: left;
-        height: auto;
-        padding: 5px 15px;
+     #main-carousel {
+        margin-top: 53px;
     }
 
 }
@@ -876,5 +962,5 @@ footer .footer-map {
         padding: 10px;
     }
     
-    
+   
 }

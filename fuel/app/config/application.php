@@ -22,8 +22,8 @@ return array(
                 'height' => 100,
             ),
             'small' => array(
-                'width' => 250,
-                'height' => 250,
+                'width' => 800,
+                'height' => 800,
             ),
         )
     ),
@@ -56,8 +56,8 @@ return array(
                 'height' => 250,
             ),
             'small' => array(
-                'width' => 400,
-                'height' => 400,
+                'width' => 800,
+                'height' => 800,
             ),
         ),
     ),
