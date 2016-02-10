@@ -89,7 +89,7 @@ header .navbar-collapse {
     width: auto;
     padding-left: 0;
     margin-left: 0;
-    text-align: right;
+    text-align: left;
     list-style: none;
     right: 20%;
 }
