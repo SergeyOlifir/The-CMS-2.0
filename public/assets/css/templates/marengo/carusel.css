@@ -73,7 +73,7 @@ header .navbar-collapse {
     padding: 35px 15px 20px 15px;
     width: 400px;
     min-width: 30%;
-    right: 20%;
+    left: 50%;
     bottom: 10%;
     font-size: 42px;
     text-align: left;
