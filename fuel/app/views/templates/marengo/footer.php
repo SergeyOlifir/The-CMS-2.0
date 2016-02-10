@@ -1,7 +1,6 @@
 <div class="container">
-    <a href="#"><img src="/assets/img/templates/marengo/logo_footer.png"</a>
+    <a class="bn-big" href="#"><img src="/assets/img/templates/marengo/banner_01.jpg"</a>
 </div>
-
 <div class="container">
     <div class="info-wrp">
         <div class="row">
