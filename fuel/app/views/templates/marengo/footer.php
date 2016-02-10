@@ -1,4 +1,8 @@
 <div class="container">
+    <a href="#"><img src="/assets/img/templates/marengo/logo_footer.png"</a>
+</div>
+
+<div class="container">
     <div class="info-wrp">
         <div class="row">
             <h4 class="footer-sub-logo">Marengo Tour</h4>
