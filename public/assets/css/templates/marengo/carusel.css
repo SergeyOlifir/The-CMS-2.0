@@ -70,7 +70,7 @@ header .navbar-collapse {
     display: block;
     position: absolute;
     background-color: rgba( 255, 255, 255, 0.8 );
-    padding: 35px 15px 20px 15px;
+    padding: 10px 15px 10px 25px;
     width: 400px;
     left: 50%;
     bottom: 10%;
@@ -461,7 +461,7 @@ footer .bn-big img {
 }
 
 .featured-wrp-type1 .categoty-card h4 {
-    background-color: rgba(0, 150, 150, 1);
+    background-color: rgba(0, 150, 150, 0.95);
     padding: 20px 5px;
     color: #fff;
     position: relative;
@@ -471,15 +471,15 @@ footer .bn-big img {
 }
 
 .featured-wrp-type1 [data-position="0"] .categoty-card h4, .featured-wrp-type1 [data-position="0"] .categoty-card .round-arrow i {
-    background-color: rgba(255, 170, 0, 1);
+    background-color: rgba(255, 170, 0, 0.95);
 }
 
 .featured-wrp-type1 [data-position="1"] .categoty-card h4, .featured-wrp-type1 [data-position="1"] .categoty-card .round-arrow i {
-    background-color: rgba(102, 146, 17, 1);
+    background-color: rgba(102, 146, 17, 0.95);
 }
 
 .featured-wrp-type1 [data-position="2"] .categoty-card h4, .featured-wrp-type1 [data-position="2"] .categoty-card .round-arrow i {
-    background-color: rgba(175, 0, 75, 1);
+    background-color: rgba(175, 0, 75, 0.95);
 }
 
 .featured-wrp-type1 .categoty-card .round-arrow {
@@ -497,7 +497,7 @@ footer .bn-big img {
 .featured-wrp-type1 .categoty-card .round-arrow i {
     font-size: 24px;
     color: #fff;
-    background: rgba(0, 150, 150, 1);
+    background: rgba(0, 150, 150, 0.95);
     border-radius: 100%;
     padding: 11px;
     -moz-transition: 0.3s all ease;
