@@ -1,5 +1,5 @@
 <div class="container">
-    <a class="bn-big" href="#"><img src="/assets/img/templates/marengo/banner_01.jpg"</a>
+    <a class="bn-big" href="#"><img src="/assets/img/templates/marengo/banner_01.jpg"/></a>
 </div>
 <div class="container">
     <div class="info-wrp">
