@@ -17,7 +17,7 @@ body {
 }
 
 header .navbar {
-    background-color: rgba( 255, 255, 255, 0.8 );
+    background-color: rgba( 255, 255, 255, 0.75 );
     border: 0 none;
     border-radius: 0;
     position: fixed;
@@ -25,7 +25,7 @@ header .navbar {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 5px solid #007878;
+    border-bottom: 3px solid #007878;
 }
 
 header .navbar-brand {
@@ -38,9 +38,9 @@ header .navbar-brand {
 
 header .navbar-default .navbar-nav > li > a {
     color: #1e5f7e;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: normal;
-    padding: 42px 5px 30px 10px;
+    padding: 39px 5px 27px 10px;
     
 }
 
@@ -842,6 +842,10 @@ footer .footer-map {
     .navbar-brand > img {
         height: 42px;
         margin-top: 5px;
+    }
+    
+    header .navbar-brand {
+        padding: 0px 0px 0 15px;
     }
     
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
