@@ -194,8 +194,8 @@ header .navbar-collapse {
 }
 
 .all-wrapper .page-count {
-    font-size: 17px;
-    color: rgb( 68, 51, 0 );
+    font-size: 16px;
+    color: #005569;
     padding-top: 22px;
     text-align: center;
 }
@@ -263,7 +263,7 @@ header .navbar-collapse {
 
 .all-wrapper h2 {
     font-size: 32px;
-    color: rgb( 68, 51, 0 );
+    color: #005569;
     margin: 20px 0;
 }
 
@@ -335,7 +335,7 @@ header .navbar-collapse {
 }
 
 .projects .item  article {
-    border: 2px solid #e5e5e5;
+    border: 2px solid #a6dada;
     padding: 7px;
     height: 230px;
     margin-bottom: 10px;
@@ -376,8 +376,8 @@ header .navbar-collapse {
 
 .projects .item h1, .projects .item h1 a {
     font-weight: normal;
-    font-size: 21px;
-    color: #442200;
+    font-size: 19px;
+    color: #005569;
     margin: 10px 0 0 0;
 }
 
