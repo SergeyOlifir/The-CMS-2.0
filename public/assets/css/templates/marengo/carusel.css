@@ -583,6 +583,7 @@ footer .bn-big img {
     color: #fff;
     margin: 0;
     padding: 0;
+    margin-top: -12px;
 }
 
 .featured-wrp-type2 .text-area .cat-title.bottom {
@@ -595,6 +596,9 @@ footer .bn-big img {
     max-height: 50%;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-top: 0;
+    margin-bottom: -2px;
+    padding-bottom: 0;
 }
 
 .featured-wrp-type2 .text-area .cont-title {
