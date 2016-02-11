@@ -36,7 +36,6 @@ class Controller_Home_Category extends Controller_Home {
             );
 
             $pagination = Pagination::forge('category_pagination', $config);
-
             $content = $model->get_content($per_page, $pagination->offset);
                     /*Model_Content::query()
                     ->related('master_categories')
