@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-    color: #442200;
+    color: #005569;
 }
 
 .container {
@@ -218,20 +218,20 @@ header .navbar-default .navbar-toggle .icon-bar {
 }
 
 .pagination a {
-    color: #825000;
+    color: #005569;
     font-size: 12px;
-    border: 1px solid #dddddd;
+    border: 1px solid #005575;
     padding: 8px;
     border-right: 0 none;
 }
 
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover {
-    background: #825000;
+    background: #007878;
     color: #fff;
 }
 
 .pagination span:last-child a {
-    border-right: 1px solid #dddddd;
+    border-right: 1px solid #005575;
 }
 
 .pg-wrapp-top .pagination {
@@ -240,21 +240,21 @@ header .navbar-default .navbar-toggle .icon-bar {
 
 .page-descr-wrapp {
     padding: 20px 0 20px 0;
-    font-size: 19px;
+    font-size: 20px;
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #006600;
+    border-bottom: 1px solid #007872;
     margin-top: 20px;
 }
 
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:hover {
-    color: #FEFEFE;
+    color: #ffffff;
     cursor: default;
-    background-color: #009900;
-    border: 1px solid #006600;
+    background-color: #007878;
+    border: 1px solid #005575;
     border-bottom-color: transparent;
 }
 
@@ -263,14 +263,14 @@ header .navbar-default .navbar-toggle .icon-bar {
     line-height: 1.42857143;
     border: 1px solid transparent;
     border-radius: 0;
-    color: #442200;
+    color: #005575;
     font-size: 19px;
     font-weight: 600;
 }
 
 .nav-tabs > li > a:hover {
-    border-color: #006600;
-    background-color: #66cc66;
+    border-color: #007872;
+    background-color: #a6dada;
 }
 
 .all-wrapper h2 {
@@ -365,12 +365,12 @@ header .navbar-default .navbar-toggle .icon-bar {
 }
 
 .projects .item.fool  article {
-    height: 375px;
+    height: 270px;
 }
 
 .projects .item.fool .details {
     height: 68px;
-    color: #442200;
+    color: #005569;
     font-size: 15px;
     padding-top: 8px;
     overflow: hidden;
@@ -1006,7 +1006,7 @@ footer .footer-map {
     }
     
     .projects .item.fool article {
-        height: 420px;
+        height: 355px;
     }
     
     .projects .item .content-img-bg {
