@@ -5,7 +5,7 @@
                     <article>
                         <a href="<?= TCRouter::get('view_subsidiary_content', array('id' => $project->id, 'parent_category' => $category->id)) ?>">
                             <div class="img-wrapper">
-                                <div class="content-img-bg" style="background-image: url('<?= $project->get_logo('tile'); ?>')"></div>
+                                <div class="content-img-bg" style="background-image: url('<?= $project->get_logo('small'); ?>')"></div>
                             </div>
                         </a>
                             <div class="description">
