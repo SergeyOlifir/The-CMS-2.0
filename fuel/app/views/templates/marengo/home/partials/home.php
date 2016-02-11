@@ -57,7 +57,8 @@
                                 <a class="feat-wrp" href="<?= TCRouter::get('view_subsidiary_content', array('id' => $cont->id, 'parent_category' => $rcategory->id)) ;?>">
                                     <div class="clearfix">
                                         <div class="text-area <?= (($i < 2) ? 'pull-left' : 'pull-right'); ?>" data-position="<?= $i; ?>">
-                                            <h4 class="cat-title <?= (($i < 2) ? 'top' : 'bottom'); ?>"><?= $rcategory->title; ?></h4>
+                                            <? $category = ((count($cont->master_category) > 0) ? array_pop($cont->master_category) : $rcategory); ?>
+                                            <h4 class="cat-title <?= (($i < 2) ? 'top' : 'bottom'); ?>"><?= $category->title; ?></h4>
                                             <h4 class="cont-title <?= (($i < 2) ? 'bottom' : 'top'); ?>"><?= $cont->title; ?></h4>
                                         </div>
                                         <div class="image-area <?= (($i < 2) ? 'pull-right' : 'pull-left'); ?>">

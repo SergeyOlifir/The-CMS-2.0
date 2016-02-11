@@ -77,6 +77,21 @@ class Model_Content extends Model_Base {
             'cascade_delete' => false,
         ),
         
+        'master_category' => array(
+            'key_from' => 'id',
+            'key_through_from' => 'content_id',
+            'table_through' => 'content_in_category',
+            'key_through_to' => 'category_id',
+            'model_to' => 'Model_Category',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+            'conditions' => array(
+                'limit' => array(1),
+                'order_by' => array('created_at' => 'asc'),
+            )
+        ),
+        
         'promoted_category' => array(
             'key_from' => 'id',
             'key_through_from' => 'content_id',
@@ -155,5 +170,6 @@ class Model_Content extends Model_Base {
     public function get_logo($name) {
         return (!is_null($this->logo)) ? "/files/{$this->logo->get($name)}" : '/assets/img/default.png';
     }
+    
 }
 
