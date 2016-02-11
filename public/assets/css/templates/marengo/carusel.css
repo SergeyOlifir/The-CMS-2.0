@@ -969,7 +969,6 @@ footer .footer-map {
     
     .all-wrapper h2 {
         font-size: 30px;
-        color: rgb( 68, 51, 0 );
         margin: 20px 0;
         word-wrap: break-word;
         white-space: normal;
@@ -1048,7 +1047,7 @@ footer .footer-map {
         box-shadow: none;
     }
     
-    .featured-wrp-type2 .feat-wrp:hover .image-area {
+    .featured-wrp-type2 .feat-wrp .image-area {
         -moz-transition: none;
         -o-transition: none;
         -webkit-transition: none;
