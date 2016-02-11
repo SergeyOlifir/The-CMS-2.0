@@ -708,6 +708,7 @@ footer .footer-sub-logo {
     background: url('../../../img/templates/marengo/logo_footer.png') no-repeat center;
     margin-bottom: 30px;
     margin-top: 20px;
+    background-size: contain;
 }
 
 footer .info-wrp p {
