@@ -608,6 +608,7 @@ footer .bn-big img {
     padding: 0;
     width: 70%;
     max-height: 50%;
+    padding-left: 5px;
 }
 
 .featured-wrp-type2 .text-area .cont-title.bottom {
@@ -620,6 +621,7 @@ footer .bn-big img {
     padding: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-right: 15px;
 }
 
 .featured-wrp-type2 .image-area {
