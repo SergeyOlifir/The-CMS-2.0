@@ -534,7 +534,7 @@ footer .bn-big img {
 
 .featured-wrp-type2 .text-area {
     height: 160px;
-    width: 49%;
+    width: 54%;
     float: left;
     background: #669210;
     padding: 10px;
@@ -579,7 +579,7 @@ footer .bn-big img {
 }
 
 .featured-wrp-type2 .text-area .cat-title {
-    font-size: 32px;
+    font-size: 21px;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -598,30 +598,29 @@ footer .bn-big img {
 }
 
 .featured-wrp-type2 .text-area .cont-title {
-    font-size: 24px;
+    font-size: 18px;
     color: #fff;
     margin: 0;
     padding: 0;
+    width: 70%;
+    max-height: 50%;
 }
 
 .featured-wrp-type2 .text-area .cont-title.bottom {
-    font-size: 24px;
     color: #fff;
     margin: 0;
     position: absolute;
-    width: 100%;
     bottom: 0;
     right: 0;
     text-align: right;
     padding: 10px;
-    max-height: 50%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .featured-wrp-type2 .image-area {
     float: left;
-    width: 51%;
+    width: 46%;
     -moz-transition: 0.9s all ease;
     -o-transition: 0.9s all ease;
     -webkit-transition: 0.9s all ease;
