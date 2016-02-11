@@ -574,11 +574,29 @@ footer .bn-big img {
     padding: 0;
 }
 
+.featured-wrp-type2 .text-area .cat-title.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    padding: 10px;
+    max-height: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .featured-wrp-type2 .text-area .cont-title {
     font-size: 24px;
     color: #fff;
     margin: 0;
     padding: 0;
+}
+
+.featured-wrp-type2 .text-area .cont-title.bottom {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
     position: absolute;
     width: 100%;
     bottom: 0;
