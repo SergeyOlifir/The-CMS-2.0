@@ -579,11 +579,11 @@ footer .bn-big img {
 }
 
 .featured-wrp-type2 .text-area .cat-title {
-    font-size: 21px;
+    font-size: 24px;
     color: #fff;
     margin: 0;
     padding: 0;
-    margin-top: -12px;
+    margin-top: -5px;
 }
 
 .featured-wrp-type2 .text-area .cat-title.bottom {
@@ -597,8 +597,8 @@ footer .bn-big img {
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 0;
-    margin-bottom: -2px;
-    padding-bottom: 0;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
 }
 
 .featured-wrp-type2 .text-area .cont-title {
