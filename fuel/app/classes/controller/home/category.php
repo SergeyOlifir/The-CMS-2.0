@@ -19,7 +19,7 @@ class Controller_Home_Category extends Controller_Home {
                 $base_url = \Fuel\Core\Router::get('view_category', array('alias' => $model->alias));
             }
             
-            $count = count($model->content);
+            $count = $model->get_content_count();
             $per_page = 18;
             $config = array(
                 'pagination_url' => $base_url,

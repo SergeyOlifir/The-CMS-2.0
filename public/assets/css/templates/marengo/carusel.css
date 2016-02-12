@@ -150,7 +150,7 @@ header .navbar-default .navbar-toggle .icon-bar {
     position: relative;
     left: 0;
     top: 100%;
-    bottom: -5px;
+    bottom: -20px;
     margin: 0;
 }
 
@@ -165,15 +165,16 @@ header .navbar-default .navbar-toggle .icon-bar {
     height: 63px;
     background: no-repeat center;
     background-size: cover;
+    border-radius: 4px;
 }
 
 .content-galery-carusel .carousel-indicators li:hover {
-    border-color: #009900;
+    border-color: #007878;
     cursor: pointer;
 }
 
 .content-galery-carusel .carousel-indicators li.active {
-    border-color: #009900;
+    border-color: #007878;
 }
 
 .content-galery-carusel .carousel-inner > .item {
@@ -280,7 +281,7 @@ header .navbar-default .navbar-toggle .icon-bar {
 }
 
 .all-wrapper h4 {
-    color: #442200;
+    color: #007878;
     font-size: 19px;
     font-weight: bold;
 }
@@ -642,7 +643,7 @@ footer .bn-big img {
 
 .content .related-categoryes .related-cat-title {
     font-size: 19px;
-    color: #442200;
+    color: #007878;
     margin: 12px 0 30px 0;
     font-weight: bold;
 }
@@ -676,13 +677,16 @@ footer .bn-big img {
 
 .content .related-categoryes .projects .item h1 a {
     font-size: 19px;
-    color: rgb( 68, 34, 0 )
+    color: #007878;
+}
+
+.content .content-bg .description {
+    padding-top: 40px;
 }
 
 .content .tiles .description {
-    padding-top: 0;
-    font-size: 23px;
-    color: rgb( 68, 34, 0 )
+    font-size: 17px;
+    color: #007878;
 }
 
 
@@ -884,10 +888,20 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 }
 
 .content .description {
-    padding-top: 25px;
+    
     font-size: 17px;
     line-height: 1.6;
-    color: rgb( 68, 34, 0 );
+    
+}
+
+.content .content-bg {
+    background: #e5f1f1;
+    padding: 20px;
+    border-top: 4px solid #339393;
+}
+
+.content .details {
+    font-size: 17px;
 }
 
 footer .footer-map {
@@ -899,7 +913,7 @@ footer .footer-map {
 }
 
 @media (min-width: 768px) {
-    .content .description {
+    .content .content-bg .description {
         padding-top: 25px;
         font-size: 17px;
         line-height: 1.6;
@@ -993,8 +1007,8 @@ footer .footer-map {
     }
     
     .details {
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 40px;
+        padding-bottom: 0px;
     }
     
     .commetnts-wrp .btn {
