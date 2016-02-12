@@ -127,11 +127,24 @@ class Model_Category extends Model_Base {
 
     public function get_content($limit = null, $offset = null) {
         $db = \Database_Connection::instance(null);
+        if (is_null($limit)) {
+            $limit = 0;
+        }
+        if (is_null($offset)) {
+            $offset = 0;
+        }
         $result = \DB::query("CALL `get_content_for_category`(" . Fuel\Core\DB::escape($this->id) . " , " . Fuel\Core\DB::escape($limit) . " , " . Fuel\Core\DB::escape($offset) . ");", Fuel\Core\DB::SELECT)->as_object('Model_Content')->execute($db);
         $db->disconnect();
         return $result;
     }
-    
+
+    public function get_content_count() {
+        $db = \Database_Connection::instance(null);
+        $result = \DB::query("CALL `get_content_count_for_category`(" . Fuel\Core\DB::escape($this->id). ");", Fuel\Core\DB::SELECT)->as_object('stdClass')->execute($db)[0]->content_count;
+        $db->disconnect();
+        return (int)$result;
+    }
+
     public function get_own_content ($limit = null, $offset = null) {
         
         $condition = array();
