@@ -276,8 +276,8 @@ header .navbar-default .navbar-toggle .icon-bar {
 }
 
 .all-wrapper h2 {
-    font-size: 32px;
-    color: #005569;
+    font-size: 25px;
+    color: #005235;
     margin: 20px 0;
 }
 
@@ -896,9 +896,10 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 }
 
 .content .content-bg {
-    background: #e5f1f1;
+    background: #E5F5F5;
     padding: 20px;
-    border-top: 4px solid #339393;
+    border-top: 3px solid #339393;
+    border-bottom: 2px solid #339393;
 }
 
 .content .details {
