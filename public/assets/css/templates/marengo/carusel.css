@@ -265,8 +265,9 @@ header .navbar-default .navbar-toggle .icon-bar {
     border: 1px solid transparent;
     border-radius: 0;
     color: #005575;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 600;
+    padding: 10px 10px;
 }
 
 .nav-tabs > li > a:hover {
