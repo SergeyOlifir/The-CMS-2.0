@@ -931,7 +931,7 @@ footer .footer-map {
 
 @media (max-width: 769px) {
     .content .content-bg {
-        margin-right: 10px;
+        margin-right: 0px;
     }
 }
 
