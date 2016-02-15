@@ -929,11 +929,15 @@ footer .footer-map {
     }
 }
 
-@media (max-width: 767px) {
-    
+@media (max-width: 769px) {
     .content .content-bg {
         margin-right: 10px;
     }
+}
+
+@media (max-width: 767px) {
+    
+    
     
     .navbar-brand > img {
         height: 42px;
