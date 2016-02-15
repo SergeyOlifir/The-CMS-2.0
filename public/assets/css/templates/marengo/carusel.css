@@ -677,8 +677,8 @@ footer .bn-big img {
 }
 
 .content .related-categoryes .projects .item h1 a {
-    font-size: 19px;
-    color: #007878;
+    font-size: 16px;
+    color: #005235;
 }
 
 .content .content-bg .description {
@@ -821,14 +821,19 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 }
 
 .commetnts-wrp h5 {
-    color: rgb( 68, 34, 0 );
+    color: #005235;
     font-size: 19px;
     text-decoration: underline;
     cursor: pointer;
 }
 
+.commetnts-wrp h5 .glyphicon {
+    top: 5px;
+    left: 3px;
+}
+
 .commetnts-wrp .comment_item p {
-    color: rgb( 68, 34, 0 );
+    color: #005235;
     font-size: 17px;
 }
 
