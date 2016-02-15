@@ -829,7 +829,7 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 
 .commetnts-wrp h5 .glyphicon {
     top: 5px;
-    left: 3px;
+    left: 7px;
 }
 
 .commetnts-wrp .comment_item p {
@@ -839,7 +839,7 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 
 .commetnts-wrp label {
     font-size: 17px;
-    color: rgb( 68, 34, 0 );
+    color: #005235;
 }
 
 .commetnts-wrp .form-control {
