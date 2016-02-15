@@ -900,6 +900,7 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     padding: 20px;
     border-top: 3px solid #339393;
     border-bottom: 2px solid #339393;
+    margin-right: 10px;
 }
 
 .content .details {
@@ -929,6 +930,10 @@ footer .footer-map {
 }
 
 @media (max-width: 767px) {
+    
+    .content .content-bg {
+        margin-right: 10px;
+    }
     
     .navbar-brand > img {
         height: 42px;
