@@ -1,5 +1,5 @@
 html {
-    color: #fefefe;
+    color: #005235;
 }
 
 html, body {
@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-    color: #005569;
+    color: #005235;
 }
 
 .container {
@@ -687,7 +687,7 @@ footer .bn-big img {
 
 .content .tiles .description {
     font-size: 17px;
-    color: #007878;
+    color: #005235;
 }
 
 
