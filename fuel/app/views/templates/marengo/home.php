@@ -1,5 +1,5 @@
 <? $current_page = Controller_Application::$current_page; ?>
-<? $template = "new_zhitnitca"; ?>
+<? $template = "marengo"; ?>
 <!DOCTYPE html>
 <html lang="<?= Config::get('language'); ?>">
     <head>
