@@ -474,7 +474,7 @@ footer .bn-big img {
 }
 
 .featured-wrp-type1 .categoty-card h4 {
-    background-color: rgba(0, 150, 150, 0.95);
+    background-color: rgba(0, 150, 150, 0.85);
     padding: 20px 5px;
     color: #fff;
     position: relative;
@@ -484,15 +484,15 @@ footer .bn-big img {
 }
 
 .featured-wrp-type1 [data-position="0"] .categoty-card h4, .featured-wrp-type1 [data-position="0"] .categoty-card .round-arrow i {
-    background-color: rgba(255, 170, 0, 0.95);
+    background-color: rgba(255, 170, 0, 0.85);
 }
 
 .featured-wrp-type1 [data-position="1"] .categoty-card h4, .featured-wrp-type1 [data-position="1"] .categoty-card .round-arrow i {
-    background-color: rgba(102, 146, 17, 0.95);
+    background-color: rgba(102, 146, 17, 0.85);
 }
 
 .featured-wrp-type1 [data-position="2"] .categoty-card h4, .featured-wrp-type1 [data-position="2"] .categoty-card .round-arrow i {
-    background-color: rgba(175, 0, 75, 0.95);
+    background-color: rgba(175, 0, 75, 0.85);
 }
 
 .featured-wrp-type1 .categoty-card .round-arrow {
@@ -510,7 +510,7 @@ footer .bn-big img {
 .featured-wrp-type1 .categoty-card .round-arrow i {
     font-size: 26px;
     color: #fff;
-    background: rgba(0, 150, 150, 0.95);
+    background: rgba(0, 150, 150, 0.85);
     border-radius: 100%;
     padding: 11px;
     -moz-transition: 0.3s all ease;
@@ -607,8 +607,8 @@ footer .bn-big img {
     color: #fff;
     margin: 0;
     padding: 0;
-    width: 70%;
-    max-height: 50%;
+    width: 80%;
+    max-height: 70%;
     padding-left: 10px;
     padding-top: 5px;
 }
@@ -797,7 +797,7 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     display: block;
     height: 45px;
     margin-top: 25px;
-    margin-left: -10px;
+    margin-left: -2px;
 }
 
 .commetnts-wrp {
