@@ -132,7 +132,7 @@ class Model_Content extends Model_Base {
             'cascade_delete' => false,
             'conditions' => array(
                 'where' => array(
-                    array('validated', '=', 2)
+                    array('validated', '>', 0)
                 ),
                 'order_by' => array('created_at' => 'asc'),
             )

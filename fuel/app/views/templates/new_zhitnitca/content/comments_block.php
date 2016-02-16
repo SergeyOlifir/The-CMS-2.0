@@ -3,9 +3,19 @@
     <div data-ng-class="{close: collapsed}">
         
         <div class="comments" >
-            <div class="comment_item" data-ng-repeat="comment in comments_list ">
+            <!--<div class="comment_item" data-ng-repeat="comment in comments_list ">
                 <h5>{{comment.user_name}} {{(comment.created_at * 1000) | date:'HH:mm yyyy-MM-dd'}}</h5>
                 <p>{{comment.text}}</p>
+            </div>-->
+            <div class="media" data-ng-repeat="comment in comments_list"> 
+                <div class="media-left"> 
+                    <a href="#"> 
+                        <img class="media-object"  alt="64x64" src="/assets/img/templates/new_zhitnitca/aninimus.jpeg" data-holder-rendered="true" style="width: 64px; height: 64px;"> 
+                    </a> 
+                </div> 
+                <div class="media-body"> 
+                    <h4 class="media-heading">{{comment.user_name}}<time class="pull-right">{{(comment.created_at * 1000) | date:'HH:mm yyyy-MM-dd'}}</time></h4>{{comment.text}}
+                </div> 
             </div>
         </div>
         

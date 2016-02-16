@@ -57,6 +57,12 @@
             $scope.collapsed = !$scope.collapsed;
         };
         
+        var updateComments = function() {
+            $scope.comments_list = Comment.all({id: content_id}, function () {
+                $scope.count = Object.keys($scope.comments_list).length - 2;
+            });
+        };
+        
         var validate = function(user_name, user_email, text) {
             if($scope.capcha === '') return false;
             $scope.errors = new Array();
@@ -93,8 +99,10 @@
                     $scope.errors = e.errors;
                 } else {
                     reset_fields();
+                    
                 }
                 update_capcha();
+                updateComments();
             });
         };
         

@@ -653,6 +653,28 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     
 }
 
+.comment-form {
+    background: #f7f5f2;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.commetnts-wrp .comments .media {
+    padding: 10px 20px 10px 10px;
+    margin: 0;
+}
+
+.commetnts-wrp .comments .media .media-left img {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #846f4a;
+    border-radius: 100%;
+}
+
+.commetnts-wrp  .comments .media:nth-child(2n + 1) {
+    background: #f7f5f2;
+}
+
 .commetnts-wrp textarea, .commetnts-wrp input {
     border-radius: 0;
     border: 1px solid #999;

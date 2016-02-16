@@ -8,7 +8,7 @@ class Model_Comment extends Model_Base {
         'user_name',
         'user_email',
         'validated' => array(
-            'default' => 0
+            'default' => 1
         ),
         'created_at',
         'updated_at',
@@ -51,9 +51,9 @@ class Model_Comment extends Model_Base {
     
     public function get_status () {
         switch ($this->validated) {
-            case 0:
-                return 'Не проверен';
             case 1:
+                return 'Не проверен';
+            case 0:
                 return 'Отклонен';
             case 2:
                 return 'Проверен';
