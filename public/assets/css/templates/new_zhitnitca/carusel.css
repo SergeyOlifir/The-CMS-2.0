@@ -382,7 +382,7 @@ header .navbar-collapse {
 
 .content .breadcrumb + .row + .description {
     padding-top: 25px;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.6;
     color: rgb( 68, 34, 0 );
 }
@@ -664,6 +664,10 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     margin: 0;
 }
 
+.commetnts-wrp .comments .media .media-body {
+    font-size: 17px;
+}
+
 .commetnts-wrp .comments .media .media-left img {
     width: 64px;
     height: 64px;
@@ -690,11 +694,17 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     height: 0;
 }
 
+.commetnts-wrp .comments {
+    padding: 0 10px;
+}
+
 .commetnts-wrp h5 {
     color: rgb( 68, 34, 0 );
-    font-size: 19px;
+    font-size: 21px;
     text-decoration: underline;
     cursor: pointer;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 
 .commetnts-wrp .comment_item p {
