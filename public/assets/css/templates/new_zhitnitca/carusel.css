@@ -63,8 +63,8 @@ header .navbar-collapse {
 #main-carousel .carousel-inner > .item .image-title {
     display: block;
     position: absolute;
-    background-color: rgba( 98, 52, 0, 0.7 );
-    padding: 35px 15px 20px 15px;
+    background-color: rgba( 98, 52, 0, 0.55 );
+    padding: 20px 25px 20px 20px;
     width: 400px;
     min-width: 30%;
     left: 20%;
@@ -435,16 +435,16 @@ footer .posts-count-section h5 span {
 }
 
 .featured-wrp-type1 .categoty-card h4 {
-    background-color: rgba(183, 156, 130, 0.6);
+    background-color: rgba(230, 180, 130, 0.7);
     padding: 15px;
-    color: #290d00;
+    color: #442200;
     position: absolute;
     right: 0;
     top: 50%;
     margin: 0;
     transform: translateY(-50%);
     font-size: 39px;
-    min-width: 50%;
+    min-width: 60%;
     text-align: right;
     font-weight: 400;
 }
