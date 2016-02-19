@@ -566,7 +566,7 @@ footer .info-wrp {
     padding-right: 7%;
     -webkit-box-shadow:inset 0 0 2px 0px rgba(0,0,0,0.2);
     box-shadow:inset 0 0 2px 0px rgba(0,0,0,0.2);
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 footer .info-wrp a, footer .info-wrp:hover, footer .info-wrp a:visited {
@@ -586,11 +586,11 @@ footer .info-wrp h3 {
 
 footer nav {
     padding: 20px 10px 20px 30px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.15);
     margin-bottom: 80px;
-    -webkit-box-shadow:inset 0 0 3px 1px rgba(0,0,0,0.3);
-    box-shadow:inset 0 0 3px 1px rgba(0,0,0,0.3);
-    border-radius: 3px;
+    -webkit-box-shadow:inset 0 0 2px 0px rgba(0,0,0,0.2);
+    box-shadow:inset 0 0 2px 0px rgba(0,0,0,0.2);
+    border-radius: 2px;
 }
 
 footer .second-menu-wrp {
