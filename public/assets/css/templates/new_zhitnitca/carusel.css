@@ -492,12 +492,13 @@ footer .posts-count-section h5 span {
 }
 
 .featured-wrp-type2  h4 {
-    font-size: 23px;
-    height: 49px;
+    font-size: 25px;
+    height: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;
     font-weight: normal;
+    margin-bottom: 0;
     
 }
 
