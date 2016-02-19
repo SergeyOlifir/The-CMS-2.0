@@ -10,7 +10,7 @@
             <div class="media" data-ng-repeat="comment in comments_list"> 
                 <div class="media-left"> 
                     <a href="#"> 
-                        <img class="media-object"  alt="64x64" src="/assets/img/templates/new_zhitnitca/aninimus.jpeg" data-holder-rendered="true" style="width: 64px; height: 64px;"> 
+                        <img class="media-object"  alt="64x64" src="/assets/img/templates/new_zhitnitca/users_sm.png" data-holder-rendered="true" style="width: 64px; height: 64px;"> 
                     </a> 
                 </div> 
                 <div class="media-body"> 
