@@ -33,10 +33,10 @@ header .navbar {
 
 header .navbar-default .navbar-nav > li > a {
     color: rgb( 254, 254, 254 );
-    font-size: 17px;
+    font-size: 18px;
     font-family: 'CyrillicOld';
     font-weight: normal;
-    padding: 42px 5px 30px 10px;
+    padding: 35px 5px 25px 10px;
     -moz-transform: scale(1, 1.2);
     -webkit-transform: scale(1, 1.2);
     -ms-transform: scale(1, 1.2);
@@ -652,9 +652,9 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 
 .navbar-brand > img {
     display: block;
-    height: 65px;
-    margin-top: -2px;
-    margin-left: -55px;
+    height: 55px;
+    margin-top: -3px;
+    margin-left: 5px;
 }
 
 .commetnts-wrp {
