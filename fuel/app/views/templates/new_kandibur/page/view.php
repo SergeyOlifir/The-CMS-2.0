@@ -10,9 +10,9 @@
     <div class="row page-nav-wrapp">
         <div class="col-md-9">
             <ul class="nav nav-tabs">
-                <li role="presentation" class="<?= (isset($current_category_id) and $current_category_id === $page->id) ? 'active' : '' ?>"><?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_category', array('alias' => $page->alias)), $page->all_caption); ?></li>
+                <li role="presentation" class="<?= (isset($current_category_id) and $current_category_id === $page->id) ? 'active' : '' ?>"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $page->alias)), $page->all_caption); ?></li>
                 <? foreach ($page->subsidiary_category as $category): ?>
-                    <li role="presentation" class="<?= (isset($current_category_id) and $current_category_id === $category->id) ? 'active' : '' ?>"><?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_subsidiary_category', array('alias' => $category->alias, 'parent_category' => $page->id)), $category->title) ;?></li>
+                    <li role="presentation" class="<?= (isset($current_category_id) and $current_category_id === $category->id) ? 'active' : '' ?>"><?= Fuel\Core\Html::anchor(TCRouter::get('view_subsidiary_category', array('alias' => $category->alias, 'parent_category' => $page->id)), $category->title) ;?></li>
                 <? endforeach; ?>
             </ul>
         </div>
@@ -65,7 +65,7 @@
                         <div class="row">
                             <div class="col-md-9"></div>
                             <div class="col-md-3">
-                                <h4 class="page-count"><?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
+                                <h4 class="page-count"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
                             </div>
                         </div>
                     </div>

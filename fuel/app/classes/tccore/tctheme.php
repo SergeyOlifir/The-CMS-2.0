@@ -33,12 +33,12 @@ namespace TCCore {
 			
 	}
 	
-	public static function render($view, $data = null) {
+	public static function render($view, $data = null, $filter_html = FALSE) {
             self::config_check();
             if(isset($data)) {
-                    return render("templates" . DS . self::$tempalte_dir . DS . $view, $data, FALSE);
+                return render("templates" . DS . self::$tempalte_dir . DS . $view, $data, $filter_html);
             } else {
-                    return render("templates" . DS . self::$tempalte_dir . DS . $view, FALSE);
+                return render("templates" . DS . self::$tempalte_dir . DS . $view, $filter_html);
             }
 	}
 	

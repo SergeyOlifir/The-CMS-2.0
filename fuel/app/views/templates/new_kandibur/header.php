@@ -7,6 +7,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <a class="navbar-brand" href="/">
+                <?= \Fuel\Core\Html::img('/assets/img/templates/new_kandibur/logo.png'); ?>
+            </a>
         </div>
         <div class="collapse navbar-collapse pull-left" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -16,6 +19,13 @@
                     <li>
                         <? $utl = Router::get('view_category', array('alias' => $link->category->alias)); //Fuel\Core\Uri::base() . "home/pages/view/{$link->category->alias}"; ?>
                         <?= \Fuel\Core\Html::anchor($utl, $link->title, array('class' => ($utl == Controller_Application::$current_page) ? "active" : "")); ?>
+                    </li>
+                <?php endforeach; ?>
+                <?php foreach (Model_Language::find('all') as $lang): ?>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <img src="<?= $lang->get_logo('small') ?>" style="max-width: 30px; height: 15px; display: none;" class="lang-img" />
+                        </a>
                     </li>
                 <?php endforeach; ?>
             </ul>
