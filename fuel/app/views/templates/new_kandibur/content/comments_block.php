@@ -1,6 +1,24 @@
-<div class="commetnts-wrp" data-ng-app="comments" data-ng-controller="comment">
-    <h5 data-ng-click="toggleHeight()">Комментарии ({{comments_list.length}}) <i class="glyphicon glyphicon-chevron-down"></i></h5>
+<div class="commetnts-wrp" data-ng-app="comments" data-ng-controller="comment" data-content-id="<?= $content->id;?>">
+    <h5 data-ng-click="toggleHeight()">Комментарии ({{count}}) <i class="glyphicon glyphicon-chevron-down"></i></h5>
     <div data-ng-class="{close: collapsed}">
+        
+        <div class="comments" >
+            <!--<div class="comment_item" data-ng-repeat="comment in comments_list ">
+                <h5>{{comment.user_name}} {{(comment.created_at * 1000) | date:'HH:mm yyyy-MM-dd'}}</h5>
+                <p>{{comment.text}}</p>
+            </div>-->
+            <div class="media" data-ng-repeat="comment in comments_list"> 
+                <div class="media-left"> 
+                    <a href="#"> 
+                        <img class="media-object"  alt="64x64" src="/assets/img/templates/new_zhitnitca/users_sm.png" data-holder-rendered="true" style="width: 64px; height: 64px;"> 
+                    </a> 
+                </div> 
+                <div class="media-body"> 
+                    <h4 class="media-heading">{{comment.user_name}}<time class="pull-right">{{(comment.created_at * 1000) | date:'HH:mm yyyy-MM-dd'}}</time></h4>{{comment.text}}
+                </div> 
+            </div>
+        </div>
+        
         <div class="fotm-wrp comment-form" >
             <div class="form-group" data-ng-class="{'has-error' : errors['comment-name']}" >
                 <label for="comment-name">Имя</label>
@@ -24,12 +42,6 @@
                 <div class="col-md-6 ">
                     <button data-ng-class="{disabled: capcha == ''}" class="btn btn-success btn-lg pull-right " data-ng-click="addComment(user_name, user_email, comment_text)">Отправить</button>
                 </div>
-            </div>
-        </div>
-        <div class="comments" >
-            <div class="comment_item" data-ng-repeat="comment in comments_list">
-                <h5>{{comment.user_name}} {{comment.date | date:'HH:mm yyyy-MM-dd'}}</h5>
-                <p>{{comment.content}}</p>
             </div>
         </div>
     </div>

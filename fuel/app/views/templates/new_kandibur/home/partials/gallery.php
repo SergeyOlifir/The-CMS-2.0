@@ -11,6 +11,9 @@
                 <? $i = 0; ?>
                 <? foreach($main_page_model->get_images() as $image): ?>
                     <div class="item <?= ($i++ === 0) ? 'active' : ''; ?>" style="background-image: url('<?= '/files/' . $image->origin ;?>')">
+                        <? if ((!is_null($image->title) and $image->title != '')): ?>
+                            <span class="image-title"><?= $image->title ?></span>
+                        <? endif; ?>
                     </div>
                 <? endforeach; ?>
             </div>

@@ -8,7 +8,9 @@
             
             <ol class="breadcrumb">
                 <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-                <li><?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_category', array('alias' => $parent_category->alias)), $parent_category->title) ;?></li>
+                <? if(!is_null($parent_category)): ?>
+                    <li><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $parent_category->alias)), $parent_category->title) ;?></li>
+                <? endif;?>
                 <li><a><?= $content->title; ?></a></li>
             </ol>
             <div class="row">
@@ -32,15 +34,17 @@
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 details">
-                    <p class="sm">Раздел: <?= Fuel\Core\Html::anchor(\Fuel\Core\Router::get('view_category', array('alias' => $parent_category->alias)), $parent_category->title) ;?></p>
+                    <? if(!is_null($parent_category)): ?>
+                        <p class="sm">Раздел: <?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $parent_category->alias)), $parent_category->title) ;?></p>
+                    <?endif; ?>
                     <p class="sm">Количество комментариев: <a href="#">27</a></p>
-                    <p class="sm">Автор: <a href="#">Редактор, ТМ «Рiдна Житница» </a></p>
+                    <p class="sm">Автор: <a href="#">ТМ «Рiдна Житница» </a></p>
                     <p class="sm">Дата: <?= Date::forge($content->created_at)->format("%d.%m.%Y", true); ?></p>
                 </div>
             </div>
             <div class="description">
                 <p>
-                    <?=$content->content; ?>
+                    <?= $content->content; ?>
                 </p>
             </div>
             
