@@ -19,7 +19,8 @@ class Controller_Home extends Controller_Application {
         if(!is_null($model_mainpage)) {
             $this->template->set_global('main_page_model', $model_mainpage);
         }
-        
+
+        self::$current_page = \Fuel\Core\Request::active()->uri->current();
     }
 
     function action_index() {

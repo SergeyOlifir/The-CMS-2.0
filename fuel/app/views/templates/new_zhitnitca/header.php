@@ -18,7 +18,7 @@
                 <?php foreach ($links as $link): ?>
                     <li>
                         <? $utl = TCRouter::get('view_category', array('alias' => $link->category->alias)); //Fuel\Core\Uri::base() . "home/pages/view/{$link->category->alias}"; ?>
-                        <?= \Fuel\Core\Html::anchor($utl, $link->title, array('class' => ($utl . '.html' == Controller_Application::$current_page) ? "active" : "")); ?>
+                        <?= \Fuel\Core\Html::anchor($utl, $link->title, array('class' => ($utl == Controller_Application::$current_page) ? "active" : "")); ?>
                     </li>
                 <?php endforeach; ?>
                 <?php foreach (Model_Language::find('all') as $lang): ?>
