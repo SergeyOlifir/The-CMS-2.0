@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'CyrillicOld';
-  src: url('../../../fonts/cyrillicold.ttf');
+  font-family: 'Mistral';
+  src: url('../../../fonts/mistral.ttf');
 }
 
 html {
@@ -67,41 +67,51 @@ header .navbar-collapse {
 #main-carousel .carousel-inner > .item .image-title {
     display: block;
     position: absolute;
-    background-color: rgba( 98, 52, 0, 0.55 );
+    background-color: #f64114;
     padding: 20px 25px 20px 20px;
     width: 400px;
     min-width: 30%;
-    left: 20%;
-    bottom: 10%;
-    font-size: 41px;
-    text-align: right;
+    left: 50%;
+    bottom: 0;
+    font-size: 55px;
+    text-align: left;
     color: #fefefe;
     overflow: hidden;
     max-height: 55%;
+    font-family: 'Mistral';
 }
 
 #main-carousel .carousel-indicators {
     position: absolute;
-    bottom: 0;
+    bottom: -40px;
     z-index: 15;
     width: auto;
     padding-left: 0;
     margin-left: 0;
     text-align: center;
     list-style: none;
-    left: 20%;
+    left: 50%;
+}
+
+#main-carousel .carousel-inner {
+    margin-bottom: 40px;
+}
+
+.carusel-sm #main-carousel .carousel-inner {
+    margin-bottom: 0px;
 }
 
 #main-carousel .carousel-indicators li {
-    border: 2px solid #825000;
+    border: 2px solid #ff2d00;
     width: 15px;
     height: 15px;
     margin: 1px;
+    background-color: #fffaaa;
 }
 
 #main-carousel .carousel-indicators li.active {
-    border-color: #fff;
-    background-color: #825000;
+    border-color: #fffaaa;
+    background-color: #ff2d00;
 }
 
 #main-carousel .carousel-bg {
@@ -400,7 +410,7 @@ header .navbar-collapse {
 }
 
 footer {
-    background: url('../../../img/templates/new_zhitnitca/footer-bg.jpg') no-repeat center;
+    background: url('../../../img/templates/new_kandibur/footer-bg.jpg') no-repeat center;
     background-size: cover;
     margin-top: 50px;
 }
@@ -563,11 +573,10 @@ footer .posts-count-section h5 span {
 
 footer .info-wrp {
     padding: 0 20px 20px 20px;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(255, 249, 153, 0.55);
     margin-bottom: 30px;
     margin-top: 30px;
-    padding-left: 7%;
-    padding-right: 7%;
+    padding: 20px 3%;
     -webkit-box-shadow:inset 0 0 2px 0px rgba(0,0,0,0.2);
     box-shadow:inset 0 0 2px 0px rgba(0,0,0,0.2);
     border-radius: 2px;
@@ -579,7 +588,7 @@ footer .info-wrp a, footer .info-wrp:hover, footer .info-wrp a:visited {
 
 footer .info-wrp p {
     color: #fff;
-    font-size: 17px;
+    font-size: 14px;
 }
 
 footer .info-wrp h3 {
@@ -589,12 +598,10 @@ footer .info-wrp h3 {
 }
 
 footer nav {
-    padding: 20px 10px 20px 30px;
-    background: rgba(0, 0, 0, 0.15);
+    padding: 0;
     margin-bottom: 80px;
     -webkit-box-shadow:inset 0 0 2px 0px rgba(0,0,0,0.2);
     box-shadow:inset 0 0 2px 0px rgba(0,0,0,0.2);
-    border-radius: 2px;
 }
 
 footer .second-menu-wrp {
@@ -789,7 +796,15 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 }
 
 footer .footer-map {
-    background: url('../../../img/templates/new_zhitnitca/map_img_footer.jpg') no-repeat center center;
+    background: url('../../../img/templates/new_kandibur/map_img_footer.jpg') no-repeat center center;
+    display: block;
+    width: 100%;
+    height: 213px;
+    background-size: cover;
+}
+
+footer .f-logo {
+    background: url('../../../img/templates/new_kandibur/f-logo.png') no-repeat center center;
     display: block;
     width: 100%;
     height: 213px;
