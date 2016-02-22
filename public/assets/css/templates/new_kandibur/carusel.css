@@ -8,7 +8,7 @@ html {
 }
 
 html, body {
-    ___font-family: 'CyrillicOld';
+    font-family: 'Tahoma';
 }
 
 body {
@@ -68,7 +68,7 @@ header .navbar-collapse {
     display: block;
     position: absolute;
     background-color: rgba(255, 40, 0, 0.8);
-    padding: 20px 25px 20px 20px;
+    padding: 15px 25px 15px 30px;
     width: 400px;
     min-width: 30%;
     left: 50%;
