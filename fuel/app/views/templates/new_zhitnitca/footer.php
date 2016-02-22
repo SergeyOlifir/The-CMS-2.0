@@ -25,28 +25,7 @@
 
 <div class="container">
     <div class="info-wrp">
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>Контакты</h3>
-                <p><strong>ТМ «РІДНА ЖИТНИЦЯ»</strong></br>
-                    Украина, с. Чернече<br>
-                    Криничанского района,<br>
-                    Днепропетровской обл. <br>
-                </p>
-                <h3>Контактные телефоны</h3>
-                <p>
-                    + 38 (063) 685-16-67 - консультации<br>
-                    + 38 (095) 061-65-93 - качество<br> 
-                    + 38 (067) 633-42-85 - предложения<br>
-                </p>
-            </div>
-            <div class="col-sm-8">
-                <h3>Карта проезда</h3>
-                <p>
-                    <a href="#" class="footer-map"></a>
-                </p>
-            </div>
-        </div>
+        <?= $main_page_model->footer_content; ?>
     </div>
     <nav class="clearfix hidden-xs hidden-sm hidden-md">
         <div class="second-menu-wrp">

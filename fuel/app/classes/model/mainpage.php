@@ -5,6 +5,7 @@ class Model_MainPage extends Model_Base {
         'id',
         'title',
         'meta',
+        'footer_content',
         'created_at',
         'updated_at',
     );
