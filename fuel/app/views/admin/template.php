@@ -26,9 +26,15 @@
         <?= \Fuel\Core\Asset::js('plugins/slimScroll/jquery.slimscroll.min.js'); ?>
         <?= \Fuel\Core\Asset::js('plugins/datatables/jquery.dataTables.min.js'); ?>
         <?= \Fuel\Core\Asset::js('plugins/datatables/dataTables.bootstrap.min.js'); ?>
-        <?= \Fuel\Core\Asset::js('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'); ?>
+        <?= \Fuel\Core\Asset::js('plugins/ckeditor/ckeditor.js'); ?>
         <?= \Fuel\Core\Asset::js('admin/app.min.js'); ?>
         <?= \Fuel\Core\Asset::js('admin/admin.js'); ?>
+        <script type="text/javascript">
+            var extraCss = new Array();
+            <? foreach(Controller_Admin::$extraCSS as $css): ?>
+                extraCss.push('<?= $css; ?>');
+            <? endforeach ?>
+        </script>
     </head>
     <body class="hold-transition skin-blue fixed sidebar-mini">
         <?= render('_messages'); ?>

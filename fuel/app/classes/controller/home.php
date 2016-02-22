@@ -17,7 +17,7 @@ class Controller_Home extends Controller_Application {
         $model_mainpage = self::get_main_page();
         
         if(!is_null($model_mainpage)) {
-            $this->template->set_global('main_page_model', $model_mainpage);
+            $this->template->set_global('main_page_model', $model_mainpage, false);
         }
 
         self::$current_page = \Fuel\Core\Request::active()->uri->current();

@@ -26,14 +26,14 @@ namespace TCCore {
         public static function load_view($view, $data = null) {
             self::config_check();
             if(isset($data)) {
-                return \Fuel\Core\View::forge("templates" . DS . self::$tempalte_dir . DS . $view, $data, FALSE);
+                return \Fuel\Core\View::forge("templates" . DS . self::$tempalte_dir . DS . $view, $data, false);
             } else {
-                return \Fuel\Core\View::forge("templates" . DS . self::$tempalte_dir . DS . $view, FALSE);
+                return \Fuel\Core\View::forge("templates" . DS . self::$tempalte_dir . DS . $view, false);
             }
 			
 	}
 	
-	public static function render($view, $data = null, $filter_html = FALSE) {
+	public static function render($view, $data = null, $filter_html = false) {
             self::config_check();
             if(isset($data)) {
                 return render("templates" . DS . self::$tempalte_dir . DS . $view, $data, $filter_html);

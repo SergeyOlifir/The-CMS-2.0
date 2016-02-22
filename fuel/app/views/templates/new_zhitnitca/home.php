@@ -34,7 +34,7 @@
           <? endif; ?>
         </content>
         <footer id="footer">
-            <?= TCCore\TCTheme::render("footer"); ?>
+            <?= TCCore\TCTheme::render("footer", array(), false); ?>
         </footer>
       </body>
 </html>

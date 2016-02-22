@@ -3,23 +3,7 @@
 </div>
 <div class="container">
     <div class="info-wrp">
-        <div class="row">
-            <h4 class="footer-sub-logo">Marengo Tour</h4>
-            <div class="col-sm-6">
-                <p>
-                    <a href="#" class="footer-map"></a>
-                </p>
-            </div>
-            <div class="col-sm-6">
-                <p>тел. в С-Петербурге +7.911.921-53-02<br>
-                    г. С-Петербург ул. <br>
-                    тел. в Черногории      +382.69.90-18-20<br>
-                    г. Будва ул. <br>
-                </p>
-                
-            </div>
-            
-        </div>
+        <?= $main_page_model->footer_content; ?>
     </div>
     <!--<nav class="clearfix hidden-xs hidden-sm hidden-md">
         <div class="second-menu-wrp">
