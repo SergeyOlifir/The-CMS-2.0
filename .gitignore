@@ -27,3 +27,5 @@ fuel/app/config/development/migrations.php
 .idea/workspace.xml
 
 fuel/app/config/TCTheme.php
+
+fuel/app/config/TCTheme.php
