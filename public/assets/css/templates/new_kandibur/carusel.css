@@ -589,8 +589,9 @@ footer .info-wrp a, footer .info-wrp:hover, footer .info-wrp a:visited {
 
 footer .info-wrp p {
     color: #003355;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
+    line-height: 18px;
 }
 
 footer .info-wrp h3 {
