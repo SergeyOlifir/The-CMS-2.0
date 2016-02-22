@@ -10,7 +10,7 @@ class Model_MainPage extends Model_Base {
         'updated_at',
     );
     
-    protected static $_many_many = array(
+    protected static $_many_many = array (
         'promoted_category' => array(
             'key_from' => 'id',
             'key_through_from' => 'main_id',
@@ -30,6 +30,7 @@ class Model_MainPage extends Model_Base {
             $val = \Fuel\Core\Validation::forge('content');
             $val->add_field('title', 'Title', 'max_length[150]');
             $val->add_field('meta', 'meta', 'max_length[2000]');
+            $val->add_field('footer_content', 'Footer content', 'required');
             self::$validator = $val;
         }
         
