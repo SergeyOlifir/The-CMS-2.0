@@ -7,7 +7,7 @@
                 <? $i = 0; ?>
                 <? foreach($main_page_model->get_featured_categories(1) as $rcategory): ?>
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a class="feat-cat-link" data-position="<?= $i; ?>" href="<?= TCRouter::get('view_category', array('alias' => $rcategory->alias)) ;?>">
+                        <a class="feat-cat-link" data-position="<?= $i; ?>" href="<?= TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)) ;?>">
                             <div class="categoty-card" style="background-image: url('<?= $rcategory->get_logo('small');?>')">
                                 <h4><?= $rcategory->title; ?></h4>
                                 <span class="round-arrow"><i class="glyphicon glyphicon-chevron-right"></i></span>
@@ -34,7 +34,7 @@
                         <div class="row">
                             <div class="col-md-9"></div>
                             <div class="col-md-3">
-                                <h4 class="page-count"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
+                                <h4 class="page-count"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                         <? $i = 0; ?>
                         <? foreach ($rcategory->get_content(4, 0) as $cont): ?>
                             <div class="col-sm-6 col-xs-12">
-                                <a class="feat-wrp" href="<?= TCRouter::get('view_subsidiary_content', array('id' => $cont->id, 'parent_category' => $rcategory->id)) ;?>">
+                                <a class="feat-wrp" href="<?= TCRouter::get('view_subsidiary_content', array('lang' => TCLocal::getCurrentLang(), 'id' => $cont->id, 'parent_category' => $rcategory->id)) ;?>">
                                     <div class="clearfix">
                                         <div class="text-area <?= (($i < 2) ? 'pull-left' : 'pull-right'); ?>" data-position="<?= $i; ?>">
                                             <? $category = ((count($cont->master_category) > 0) ? array_pop($cont->master_category) : $rcategory); ?>
@@ -73,7 +73,7 @@
                     <div class="row">
                         <div class="col-md-9"></div>
                         <div class="col-md-3">
-                            <h4 class="page-count"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
+                            <h4 class="page-count"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
                         </div>
                     </div>
                 <? endforeach; ?>

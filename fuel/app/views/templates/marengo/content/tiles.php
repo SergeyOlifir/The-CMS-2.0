@@ -3,7 +3,7 @@
         <? foreach ($content as $project): ?>
             <div class="<?= (isset($one_column) and $one_column == true) ? 'col-xs-12 col-sm-4 col-md-12' : 'col-md-3 col-sm-4 col-xs-12'; ?> item <?= ((isset($fool_view) and $fool_view) ? 'fool' : '') ?>">
                     <article>
-                        <a href="<?= TCRouter::get('view_subsidiary_content', array('id' => $project->id, 'parent_category' => $category->id)) ?>">
+                        <a href="<?= TCRouter::get('view_subsidiary_content', array('id' => $project->id, 'parent_category' => isset($category) ? $category->id : NULL)) ?>">
                             <div class="img-wrapper">
                                 <div class="content-img-bg" style="background-image: url('<?= $project->get_logo('small'); ?>')"></div>
                             </div>
@@ -11,7 +11,7 @@
                             <div class="description">
                                 <header>
                                     <h1>
-                                        <a href="<?= TCRouter::get('view_subsidiary_content', array('id' => $project->id, 'parent_category' => $category->id)) ?>">
+                                        <a href="<?= TCRouter::get('view_subsidiary_content', array('id' => $project->id, 'parent_category' => isset($category) ? $category->id : NULL)) ?>">
                                             <?= Str::truncate($project->title, 55, '...'); ?>
                                         </a>
                                     </h1>

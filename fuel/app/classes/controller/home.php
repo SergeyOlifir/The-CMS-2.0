@@ -13,7 +13,13 @@ class Controller_Home extends Controller_Application {
             
     function before() {
         $this->template = TCCore\TCTheme::main_view();
+        
         parent::before();
+        
+        $lang = Fuel\Core\Request::active()->param('lang');
+        TCLocal::setCurrentLang($lang);
+        $this->template->set_global('route_params', array('name' => Fuel\Core\Request::active()->route->name, 'named_params' => Fuel\Core\Request::active()->route->named_params));
+        
         $model_mainpage = self::get_main_page();
         
         if(!is_null($model_mainpage)) {

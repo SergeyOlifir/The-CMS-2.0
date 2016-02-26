@@ -11,7 +11,6 @@ class TCLocal {
     protected static $instance; 
     protected static $current_lang = null;
 
-
     public $language = array();
 
     public function __construct() {
@@ -62,6 +61,10 @@ class TCLocal {
     }
     
     public static function getCurrentLang() {
+        return ((self::$current_lang) ? self::$current_lang->code : null);
+    }
+    
+    public static function getCurrentLangModel() {
         return self::$current_lang;
     }
 }
