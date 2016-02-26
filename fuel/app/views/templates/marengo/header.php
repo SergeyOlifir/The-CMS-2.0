@@ -24,7 +24,8 @@
                 <?php foreach (Model_Language::find('all') as $lang): ?>
                     <li>
                         <? $route_params['named_params']['lang'] = $lang->code; ?>
-                        <a href="<?= Fuel\Core\Router::get($route_params['name'] . '_with_lang', $route_params['named_params']) ;?>">
+                        <? //var_dump($route_params); ?>
+                        <a href="<?= Fuel\Core\Router::get(str_replace('_with_lang', '', $route_params['name']) . '_with_lang', $route_params['named_params']) ;?>">
                             <img src="<?= $lang->get_logo('small') ?>" style="max-width: 30px; height: 15px;" class="lang-img" />
                         </a>
                     </li>

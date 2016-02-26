@@ -6,6 +6,7 @@ class Model_Language extends Model_Base {
         'name',
         'code',
         'image',
+        'match',
         'created_at',
         'updated_at',
     );
@@ -51,6 +52,7 @@ class Model_Language extends Model_Base {
             $val = \Fuel\Core\Validation::forge('language');
             $val->add_field('name', 'Name', 'required|max_length[150]');
             $val->add_field('code', 'Code', 'max_length[10]');
+            $val->add_field('match', 'Match', 'max_length[100]');
             self::$validator = $val;
         }
         

@@ -37,7 +37,7 @@ class TCLocal {
                 $languages[strtolower($alias)]=strtolower($lang);
             }
         }
-
+        
         foreach ($this->language as $l => $v) {
             $s = strtok($l, '-');
             if (isset($languages[$s])) {

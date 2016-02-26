@@ -11,6 +11,9 @@
           <b class="col-xs-6">Код</b> <a class="col-xs-6 text-right"><?= $cmodel->code;?></a>
         </li>
         <li class="list-group-item clearfix">
+          <b class="col-xs-6">Соответствия</b> <a class="col-xs-6 text-right"><?= $cmodel->match;?></a>
+        </li>
+        <li class="list-group-item clearfix">
           <b class="col-xs-6">Обновлен</b> <a class="col-xs-6 text-right"><?= Date::forge($cmodel->created_at)->format("%d/%m/%Y %H:%M");?></a>
         </li>
         <li class="list-group-item clearfix">

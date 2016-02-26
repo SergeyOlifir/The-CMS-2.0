@@ -43,6 +43,12 @@ class Controller_Admin_Language extends Controller_Admin {
                         return;
                     }
                 }
+                
+                if(!strpos($fields['match'], $fields['code'])) {
+                    $fields['match'] .= ", {$fields['code']}";
+                    $fields['match'] = preg_replace('/\s/', '', $fields['match']);
+                }
+                
                 $model = Model_Language::forge($fields);
                 try {
                     $model->save();
@@ -94,6 +100,12 @@ class Controller_Admin_Language extends Controller_Admin {
                         }
 
                     }
+                    
+                    if(!strpos($fields['match'], $fields['code'])) {
+                        $fields['match'] .= ", {$fields['code']}";
+                        $fields['match'] = preg_replace('/\s/', '', $fields['match']);
+                    }
+                    
                     $model->from_array($fields);
                     try {
                         $model->save();

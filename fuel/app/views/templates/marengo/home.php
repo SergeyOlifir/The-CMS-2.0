@@ -1,7 +1,7 @@
 <? $current_page = Controller_Application::$current_page; ?>
 <? $template = "marengo"; ?>
 <!DOCTYPE html>
-<html lang="<?= Config::get('language'); ?>">
+<html lang="<?= TCLocal::getCurrentLang(); ?>">
     <head>
         <title><?= isset($title) ? $title : '' ?></title>
         <meta charset="utf-8"/>
