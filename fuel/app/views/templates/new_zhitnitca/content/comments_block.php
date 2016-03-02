@@ -14,7 +14,7 @@
                     </a> 
                 </div> 
                 <div class="media-body"> 
-                    <h4 class="media-heading">{{comment.user_name}}<time class="pull-right">{{(comment.created_at * 1000) | date:'HH:mm yyyy-MM-dd'}}</time></h4>{{comment.text}}
+                    <h4 class="media-heading">{{comment.user_name}}<time class="pull-right">{{(comment.created_at * 1000) | date:'yyyy.MM.dd'}}</time></h4>{{comment.text}}
                 </div> 
             </div>
         </div>
