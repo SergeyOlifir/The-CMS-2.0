@@ -459,8 +459,8 @@ footer .posts-count-section h5 span {
 
 .featured-wrp-type2 .categoty-card {
     display: inline-block;
-    width: 290px;
-    height: 290px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
     background: no-repeat center;
     background-size: cover;
@@ -807,6 +807,12 @@ footer .footer-map {
 }
 
 @media (max-width: 767px) {
+    
+    .featured-wrp-type2 .categoty-card {
+        display: inline-block;
+        width: 290px;
+        height: 290px;
+    }
     
     .navbar-brand > img {
         height: 48px;
