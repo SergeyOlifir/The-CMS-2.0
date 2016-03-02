@@ -809,7 +809,7 @@ footer .footer-map {
 @media (max-width: 767px) {
     
     .navbar-brand > img {
-        height: 42px;
+        height: 48px;
     }
     
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -835,8 +835,7 @@ footer .footer-map {
     }
     
     #main-carousel .carousel-inner > .item {
-        height: 60vw;
-        
+        height: 80vw;
     }
 
     #main-carousel .carousel-inner > .item .image-title {
@@ -906,15 +905,85 @@ footer .footer-map {
     .navbar-brand {
         float: left;
         height: auto;
-        padding: 5px 15px;
+        padding: 6px 15px;
+    }
+    
+    .navbar-toggle {
+        border: 0;
+        color: #fff;
+        margin-top: 12px;
+    }
+    
+    .navbar-default .navbar-toggle .icon-bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        border-radius: 0px;
+        background-color: #fff;
+    }
+    
+    .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+        background-color: transparent;
+    }
+    
+    header .navbar-default .navbar-nav > li > a.active, header .navbar-default .navbar-nav > li > a:hover {
+        background-color: rgba(230, 180, 130, .35);
+        text-decoration: none;
+    }
+    
+    header .navbar-default .navbar-nav > li > a {
+        -moz-transform: none;
+        -webkit-transform: none;
+        -ms-transform: none;
+    }
+    
+    .navbar-second {
+        background: rgba(0, 153, 0, .9);
+        height: auto;
+        min-height: 0;
+        margin-bottom: 0;
+    }
+    
+    .navbar-second .navbar-toggle {
+        margin: 0;
+        padding-bottom: 0;
+        font-size: 19px;
+    }
+    
+    .navbar-second .navbar-brand {
+        color: #fff;
+        font-size: 19px;
+        padding: 11px 15px 6px 15px;
+    }
+    
+    .navbar-second .navbar-nav>li>a {
+        color: #fff;
+        font-size: 19px;
+        padding: 11px 15px 6px 15px;
+    }
+    
+    .navbar-second .navbar-nav>.active>a, .navbar-second .navbar-nav>.active>a:focus, .navbar-second .navbar-nav>.active>a:hover {
+        color: #fff;
+        background-color: rgba(2, 74, 2, .6);
+    }
+    
+    .navbar-second .navbar-collapse, .navbar-second .navbar-form {
+        border-color: #fff;
+        width: 100%;
+        margin: 0;
     }
 
 }
 
 @media (max-width: 479px) {
     #main-carousel .carousel-inner > .item .image-title {
-        font-size: 18px;
-        padding: 10px;
+        font-size: 20px;
+        padding: 17px 10px;
+        height: 62px;
+    }
+    
+    #main-carousel .carousel-indicators {
+        bottom: 65px;
     }
     
     

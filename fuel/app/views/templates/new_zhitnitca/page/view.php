@@ -9,12 +9,30 @@
     <? endif; ?>
     <div class="row page-nav-wrapp">
         <div class="col-md-9">
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs hidden-xs">
                 <li role="presentation" class="<?= (isset($current_category_id) and $current_category_id === $page->id) ? 'active' : '' ?>"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $page->alias)), $page->all_caption); ?></li>
                 <? foreach ($page->subsidiary_category as $category): ?>
                     <li role="presentation" class="<?= (isset($current_category_id) and $current_category_id === $category->id) ? 'active' : '' ?>"><?= Fuel\Core\Html::anchor(TCRouter::get('view_subsidiary_category', array('alias' => $category->alias, 'parent_category' => $page->id)), $category->title) ;?></li>
                 <? endforeach; ?>
             </ul>
+            
+            <nav class="navbar navbar-default navbar-second hidden-sm hidden-mg hidden-lg hidden-print">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                            <i class="glyphicon glyphicon-chevron-down"></i>
+                        </button>
+                        <?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $page->alias)), $page->all_caption, array('class' => 'navbar-brand')); ?>
+                    </div>
+                    <div class="collapse navbar-collapse pull-left" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav">
+                            <? foreach ($page->subsidiary_category as $category): ?>
+                                <li role="presentation" class="<?= (isset($current_category_id) and $current_category_id === $category->id) ? 'active' : '' ?>"><?= Fuel\Core\Html::anchor(TCRouter::get('view_subsidiary_category', array('alias' => $category->alias, 'parent_category' => $page->id)), $category->title) ;?></li>
+                            <? endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
         <div class="col-md-3">
             
