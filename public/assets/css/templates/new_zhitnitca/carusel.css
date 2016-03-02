@@ -808,11 +808,7 @@ footer .footer-map {
 
 @media (max-width: 767px) {
     
-    .featured-wrp-type2 .categoty-card {
-        display: inline-block;
-        width: 290px;
-        height: 290px;
-    }
+    
     
     .navbar-brand > img {
         height: 48px;
@@ -990,6 +986,12 @@ footer .footer-map {
     
     #main-carousel .carousel-indicators {
         bottom: 65px;
+    }
+    
+    .featured-wrp-type2 .categoty-card {
+        display: inline-block;
+        width: 290px;
+        height: 290px;
     }
     
     
