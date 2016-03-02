@@ -138,8 +138,8 @@ class Controller_Admin_Content extends Controller_Admin {
     public function action_view ($id) {
         if(isset($id) and $model = Model_Content::find($id)) {
             $this->template->set_global('model', $model);
-            $this->template->set_global('models', Model_Content::find('all'));
-            $this->template->set_global('models_category', Model_Category::find('all'));
+            $this->template->set_global('models', Model_Content::query()->where('language_id', '=', $model->language_id)->get());
+            $this->template->set_global('models_category', Model_Category::query()->where('language_id', '=', $model->language_id)->get());
             $this->template->header = 'Контент';
             $this->template->description = 'Просмотр';
             $this->template->content = \Fuel\Core\View::forge('admin/content/view');
@@ -199,7 +199,6 @@ class Controller_Admin_Content extends Controller_Admin {
                     if($related_model = Model_Content::find((int)$related_id)) {
                         //$related_model->related_category[] = $model;
                         $model->related_to_content[] = $related_model;
-                        
                     }
                 }
                 

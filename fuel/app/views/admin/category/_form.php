@@ -8,6 +8,17 @@
             'label' => 'Логотип',
             'description' => 'Логотип категории'
         )); ?>
+
+        <? if (Model_Language::query()->count() > 0): ?>
+            <?= TCForm::Select(array(
+                'errors' => isset($errors) ? $errors : null,
+                'model' => isset($model) ? $model : null,
+                'field' => 'language_id',
+                'label' => 'Язык',
+                'options' => Model_Language::to_array_for_dropdown('id', 'name'),
+                'description' => 'Язык категории'
+            )); ?>
+        <? endif; ?>
         
         <?= TCForm::Input(array(
             'errors' => isset($errors) ? $errors : null,
@@ -54,7 +65,8 @@
             'description' => 'Встречающий текст категории.',
             'editor' => true,
         )); ?>
-        
+
+
         <?= TCForm::Textarea(array(
             'errors' => isset($errors) ? $errors : null,
             'model' => isset($model) ? $model : null,
@@ -63,5 +75,6 @@
             'placeholder' => 'Meta',
             'description' => 'Ключевые поисковые слова и словосочетания…'
         )); ?>
+
     </div>
     

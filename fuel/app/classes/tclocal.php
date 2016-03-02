@@ -67,5 +67,9 @@ class TCLocal {
     public static function getCurrentLangModel() {
         return self::$current_lang;
     }
+
+    public static function getCurrentLangID() {
+        return ((self::$current_lang) ? self::$current_lang->id : null);
+    }
 }
 

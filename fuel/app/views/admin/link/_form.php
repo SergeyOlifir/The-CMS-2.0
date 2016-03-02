@@ -43,7 +43,16 @@
             'options' => range(1, 50),
             'description' => 'Порядок ссылки в меню.'
         )); ?>
-        
-        
+
+        <? if (Model_Language::query()->count() > 0): ?>
+            <?= TCForm::Select(array(
+                'errors' => isset($errors) ? $errors : null,
+                'model' => isset($model) ? $model : null,
+                'field' => 'language_id',
+                'label' => 'Язык',
+                'options' => Model_Language::to_array_for_dropdown('id', 'name'),
+                'description' => 'Язык, для которого будет отображаться ссылка'
+            )); ?>
+        <? endif; ?>
     </div>
     

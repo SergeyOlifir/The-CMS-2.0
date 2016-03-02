@@ -8,6 +8,17 @@
             'label' => 'Логотип',
             'description' => 'Логотип контента'
         )); ?>
+
+        <? if (Model_Language::query()->count() > 0): ?>
+            <?= TCForm::Select(array(
+                'errors' => isset($errors) ? $errors : null,
+                'model' => isset($model) ? $model : null,
+                'field' => 'language_id',
+                'label' => 'Язык',
+                'options' => Model_Language::to_array_for_dropdown('id', 'name'),
+                'description' => 'Язык контента'
+        )); ?>
+        <? endif; ?>
         
         <?= TCForm::Input(array(
             'errors' => isset($errors) ? $errors : null,

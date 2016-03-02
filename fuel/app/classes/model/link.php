@@ -8,6 +8,7 @@ class Model_Link extends Model_Base {
         'category_id',
         'image',
         'weight',
+        'language_id',
         'created_at',
         'updated_at',
     );
@@ -37,7 +38,14 @@ class Model_Link extends Model_Base {
             'key_to' => 'id',
             'cascade_save' => true,
             'cascade_delete' => false,
-        )
+        ),
+        'language' => array(
+            'key_from' => 'language_id',
+            'model_to' => 'Model_Language',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
     );
     
     private static $validator;
@@ -49,6 +57,7 @@ class Model_Link extends Model_Base {
             $val->add_field('description', 'description', 'max_length[2000]');
             $val->add_field('category_id', 'category_id', 'required|numeric|max_length[11]');
             $val->add_field('weight', 'weight', 'required|numeric|max_length[11]');
+            $val->add_field('language_id', 'language', 'max_length[11]');
             self::$validator = $val;
         }
         

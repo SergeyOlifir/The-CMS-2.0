@@ -9,6 +9,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Заголовок</th>
+                        <th>Язык</th>
                         <th>Дата Создания</th>
                         <th>Действия</th>
                     </tr>
@@ -18,6 +19,7 @@
                         <tr>
                             <td><?= $model->id; ?></td>
                             <td><?= $model->title; ?></td>
+                            <td><?= !is_null($model->language_id) ? $model->language->name : ''; ?></td>
                             <td><?= Date::forge($model->created_at)->format("%d/%m/%Y %H:%M"); ?></td>
                             <td>
                                 <div class="dropdown">

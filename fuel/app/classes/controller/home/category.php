@@ -5,6 +5,9 @@ class Controller_Home_Category extends Controller_Home {
     public function action_view ($category_alias = null) {
         $alias = Fuel\Core\Request::active()->param('alias');
         if($model = Model_Category::query()->where('alias', '=', $alias)->get_one()) {
+            if ($model->language_id != TCLocal::getCurrentLangID() && Model_Language::query()->count() > 0) {
+                \Fuel\Core\Response::redirect(TCRouter::get('root'));
+            }
             $this->template->set_global('page', $model, false);
             $this->template->set_global('meta_keywrd', $model->meta);
             $this->template->set_global('title', $model->page_title);//$current_category_id

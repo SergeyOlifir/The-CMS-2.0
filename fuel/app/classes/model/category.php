@@ -10,6 +10,7 @@ class Model_Category extends Model_Base {
         'all_caption',
         'meta',
         'image',
+        'language_id',
         'created_at',
         'updated_at',
     );
@@ -86,7 +87,14 @@ class Model_Category extends Model_Base {
             'key_to' => 'id',
             'cascade_save' => true,
             'cascade_delete' => false,
-        )
+        ),
+        'language' => array(
+            'key_from' => 'language_id',
+            'model_to' => 'Model_Language',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
     );
     
     protected static $_has_many = array(
@@ -110,6 +118,7 @@ class Model_Category extends Model_Base {
             $val->add_field('description', 'description', 'max_length[2000]');
             $val->add_field('meta', 'meta', 'max_length[2000]');
             $val->add_field('all_caption', 'all_caption', 'max_length[150]');
+            $val->add_field('language_id', 'language', 'max_length[11]');
             self::$validator = $val;
         }
         

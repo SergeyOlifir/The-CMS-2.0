@@ -9,6 +9,7 @@ class Model_Content extends Model_Base {
         'content',
         'meta',
         'image',
+        'language_id',
         'created_at',
         'updated_at',
     );
@@ -112,7 +113,14 @@ class Model_Content extends Model_Base {
             'key_to' => 'id',
             'cascade_save' => true,
             'cascade_delete' => false,
-        )
+        ),
+        'language' => array(
+            'key_from' => 'language_id',
+            'model_to' => 'Model_Language',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
     );
     
     protected static $_has_many = array(
@@ -153,6 +161,7 @@ class Model_Content extends Model_Base {
             $val->add_field('description', 'description', 'max_length[2000]');
             $val->add_field('meta', 'meta', 'max_length[2000]');
             $val->add_field('content', 'content', 'max_length[10000]');
+            $val->add_field('language_id', 'language', 'max_length[11]');
             self::$validator = $val;
         }
         

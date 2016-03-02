@@ -14,7 +14,6 @@
         <div class="collapse navbar-collapse pull-left" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><?= Controller_Application::$current_page == "Home" ? \Fuel\Core\Html::anchor("/", "Главная", array('class' => 'active')) :  \Fuel\Core\Html::anchor("/", "Главная"); ?></li>
-                <? $links = Model_Link::query()->order_by('weight')->get(); ?>
                 <?php foreach ($links as $link): ?>
                     <li>
                         <? $utl = Router::get('view_category', array('alias' => $link->category->alias)); //Fuel\Core\Uri::base() . "home/pages/view/{$link->category->alias}"; ?>

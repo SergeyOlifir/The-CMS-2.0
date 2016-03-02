@@ -6,6 +6,11 @@
       <p class="text-muted text-center"><?= $cmodel->page_title;?></p>
 
       <ul class="list-group list-group-unbordered">
+        <? if (!is_null($cmodel->language_id)): ?>
+          <li class="list-group-item clearfix">
+              <b class="col-xs-6">Язык</b> <a class="col-xs-6 text-right"><?= $cmodel->language->name; ?></a>
+          </li>
+        <? endif; ?>
         <li class="list-group-item clearfix">
           <b class="col-xs-6">Обновлена</b> <a class="col-xs-6 text-right"><?= Date::forge($cmodel->created_at)->format("%d/%m/%Y %H:%M");?></a>
         </li>

@@ -141,7 +141,7 @@
                 <? endif;?>
             </div>
             <div class="box-footer">
-                <button data-toggle="modal" data-target="#master_categiry_form" class="btn btn-primary btn-block btn-flat"><b>Привязать</b></botton>
+                <button data-toggle="modal" data-target="#master_categiry_form" class="btn btn-primary btn-block btn-flat"><b>Привязать</b></button>
             </div>
         </div>
         <div class="box box-primary">
@@ -195,7 +195,7 @@
                 <? endif;?>
             </div>
             <div class="box-footer">
-                <button data-toggle="modal" data-target="#reladet_related_categiry_form" class="btn btn-primary btn-block btn-flat"><b>Добавить</b></botton>
+                <button data-toggle="modal" data-target="#reladet_related_categiry_form" class="btn btn-primary btn-block btn-flat"><b>Добавить</b></button>
             </div>
         </div>
         <div class="box box-primary">
@@ -316,7 +316,7 @@
     'relations' => $model->content,
     'action' => "admin/category/add_content/{$model->id}",
     'popup_id' => 'add_content_form', 
-    'models' => Model_Content::find('all')
+    'models' => Model_Content::query()->where('language_id', '=', $model->language_id)->get()
 )); ?>
 
 <?= render('admin/category/reladet_categiry_form', array(

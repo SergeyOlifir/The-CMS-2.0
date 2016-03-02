@@ -5,6 +5,7 @@ class Model_MainPage extends Model_Base {
         'id',
         'title',
         'meta',
+        'language_id',
         'footer_content',
         'created_at',
         'updated_at',
@@ -17,6 +18,16 @@ class Model_MainPage extends Model_Base {
             'table_through' => 'promo_category_in_mainpage',
             'key_through_to' => 'category_id',
             'model_to' => 'Model_Category',
+            'key_to' => 'id',
+            'cascade_save' => true,
+            'cascade_delete' => false,
+        ),
+    );
+
+    protected static $_belongs_to = array(
+        'language' => array(
+            'key_from' => 'language_id',
+            'model_to' => 'Model_Language',
             'key_to' => 'id',
             'cascade_save' => true,
             'cascade_delete' => false,
@@ -49,6 +60,7 @@ class Model_MainPage extends Model_Base {
             ->from(Model_Category::table())
             ->join('featured_category_in_mainpage')
             ->on(Model_Category::table() . '.id', '=', 'featured_category_in_mainpage.category_id') //->from('featured_category_in_mainpage')->where('featured_category_in_mainpage.main_id', '=', $this->id)
+            ->where('featured_category_in_mainpage.main_id', '=', $this->id)
             ->where('featured_category_in_mainpage.type', '=', $type);
         
         if(!is_null($limit)) {

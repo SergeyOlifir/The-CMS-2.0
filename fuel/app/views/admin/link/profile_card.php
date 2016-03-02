@@ -8,6 +8,11 @@
       <li class="list-group-item clearfix">
         <b class="col-xs-6">Вес</b> <a class="col-xs-6 text-right"><?= $lmodel->weight;?></a>
       </li>
+      <? if (!is_null($lmodel->language_id)): ?>
+          <li class="list-group-item clearfix">
+            <b class="col-xs-6">Язык</b> <a class="col-xs-6 text-right"><?= $lmodel->language->name; ?></a>
+          </li>
+      <? endif; ?>
       <li class="list-group-item clearfix">
         <b class="col-xs-6">Обновлена</b> <a class="col-xs-6 text-right"><?= Date::forge($lmodel->created_at)->format("%d/%m/%Y %H:%M");?></a>
       </li>

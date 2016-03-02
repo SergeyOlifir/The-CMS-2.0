@@ -2,8 +2,26 @@
 
 class Controller_Admin_Mainpage extends Controller_Admin {
     
-    public function action_edit() {
-        $model = Model_MainPage::query()->get_one();
+    public function action_edit($lang = null) {
+
+        $langs = Model_Language::find('all');
+        $this->template->set_global('langs', $langs);
+        $currentLang = null;
+        if (!is_null($lang)) {
+            $currentLang = $langs[$lang];
+        }
+        if (is_null($currentLang)) {
+            $currentLang = Model_Language::query()->get_one();
+        }
+        if (!is_null($currentLang) && is_null($lang)) {
+            Fuel\Core\Response::redirect('/admin/mainpage/edit/'. $currentLang->id);
+        }
+        $this->template->set_global('currentLang', $currentLang);
+        $model = Model_MainPage::query()->where('language_id', '=', $lang)->get_one();
+        if (is_null($model)) {
+            $model = Model_MainPage::Forge();
+            $model->language_id = !is_null($currentLang) ? $currentLang->id : null;
+        }
         $this->template->set_global('model', $model);
         $this->template->content = Fuel\Core\View::forge('admin/mainpage/edit');
         
@@ -11,6 +29,7 @@ class Controller_Admin_Mainpage extends Controller_Admin {
             if(Model_MainPage::get_validator()->run()) {
                 $fields = Model_MainPage::get_validator()->validated();
                 $model->from_array($fields);
+                $model->language_id = !is_null($currentLang) ? $currentLang->id : null;
                 try {
                     $model->save();
                     \Fuel\Core\Session::set_flash('success', 'Категория успешно обновлена!');
@@ -26,8 +45,8 @@ class Controller_Admin_Mainpage extends Controller_Admin {
         }
     }
     
-    public function action_add_image() {
-        $model = Model_MainPage::query()->get_one();
+    public function action_add_image($id = null) {
+        $model = Model_MainPage::find($id);
         $config = \Config::get('application.galery.upload');
         Upload::process($config);
         if ((count(\Fuel\Core\Upload::get_files()) > 0) and Upload::is_valid()) {
@@ -86,7 +105,7 @@ class Controller_Admin_Mainpage extends Controller_Admin {
     }
     
     public function action_add_promo($id = null) {
-        if($model = Model_MainPage::query()->get_one()) {
+        if($model = Model_MainPage::find($id)) {
             if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
                 foreach (\Fuel\Core\Input::post('relations') as $related_id) {
                     if($related_model = Model_Category::find((int)$related_id)) {
@@ -112,7 +131,7 @@ class Controller_Admin_Mainpage extends Controller_Admin {
     }
     
     public function action_drop_promo($id = null, $related_id = null) {
-        if(isset($related_id) and $model = Model_MainPage::query()->get_one() and $rmodel = Model_Category::find($related_id)) {
+        if(isset($related_id) and $model = Model_MainPage::find($id) and $rmodel = Model_Category::find($related_id)) {
             try {
                 unset($model->promoted_category[$related_id]);
                 $model->save();
@@ -130,7 +149,7 @@ class Controller_Admin_Mainpage extends Controller_Admin {
     }
     
     public function action_add_featured($id = null, $type = 1) {
-        if($model = Model_MainPage::query()->get_one()) {
+        if($model = Model_MainPage::find($id)) {
             if(\Fuel\Core\Input::post() && count(\Fuel\Core\Input::post('relations')) > 0) {
                 foreach (\Fuel\Core\Input::post('relations') as $related_id) {
                     //TODO Fix this
@@ -167,8 +186,8 @@ class Controller_Admin_Mainpage extends Controller_Admin {
 
     }
     
-    public function action_remove_featured($type = null, $rid = 1) {
-        if($model = Model_MainPage::query()->get_one()) {
+    public function action_remove_featured($id, $type = null, $rid = 1) {
+        if($model = Model_MainPage::find($id)) {
             $query = DB::delete('featured_category_in_mainpage')
                 ->where('featured_category_in_mainpage.category_id', '=', $rid)
                 ->where('featured_category_in_mainpage.type', '=', $type);

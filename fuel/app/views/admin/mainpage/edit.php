@@ -1,6 +1,13 @@
+<? if (count($langs) > 1 && !is_null($currentLang)): ?>
+    <ul class="nav nav-tabs">
+        <? foreach($langs as $lang): ?>
+            <li role="presentation" class="<?= $lang->id == $currentLang->id ? 'active' : '' ?>"><a href="/admin/mainpage/edit/<?= $lang->id ?>"><?= $lang->name ?></a></li>
+        <? endforeach;?>
+    </ul>
+<? endif; ?>
 <div class="box box-primary">
     <div class="box-header with-border">
-        <h3 class="box-title">Редакрирование главной</h3>
+        <h3 class="box-title">Редактирование главной</h3>
     </div>
     <?= Fuel\Core\Form::open(array('enctype'=>'multipart/form-data')); ?>
         <?= render('admin/mainpage/_form'); ?>
@@ -81,7 +88,7 @@
                                             <ul class="dropdown-menu" aria-labelledby="drop1">
                                               <li><a href="/admin/category/view/<?= $rmodel->id ;?>">Просмотреть</a></li>
                                               <li><a href="/admin/category/edit/<?= $rmodel->id ;?>">Редактировать</a></li>
-                                              <li><a onclick="confirm('Вы уверены?')" href="/admin/mainpage/remove_featured/1/<?= $rmodel->id ;?>">Отвязать</a></li>
+                                              <li><a onclick="confirm('Вы уверены?')" href="/admin/mainpage/remove_featured/<?= $model->id ?>/1/<?= $rmodel->id ;?>">Отвязать</a></li>
 
                                             </ul>
                                         </div>
@@ -135,7 +142,7 @@
                                             <ul class="dropdown-menu" aria-labelledby="drop1">
                                               <li><a href="/admin/category/view/<?= $rmodel->id ;?>">Просмотреть</a></li>
                                               <li><a href="/admin/category/edit/<?= $rmodel->id ;?>">Редактировать</a></li>
-                                              <li><a onclick="confirm('Вы уверены?')" href="/admin/mainpage/remove_featured/2/<?= $rmodel->id ;?>">Отвязать</a></li>
+                                              <li><a onclick="confirm('Вы уверены?')" href="/admin/mainpage/remove_featured/<?= $model->id ?>/2/<?= $rmodel->id ;?>">Отвязать</a></li>
 
                                             </ul>
                                         </div>
@@ -216,21 +223,21 @@
     'relations' => $model->promoted_category,
     'action' => "admin/mainpage/add_promo/{$model->id}",
     'popup_id' => 'promo_categiry_form',
-    'models' => Model_Category::find('all')
+    'models' => Model_Category::query()->where('language_id', '=', (is_null($currentLang) ? null : $currentLang->id))->get()
 )); ?>
 
 <?= render('admin/mainpage/promo_category_form', array(
     'relations' => $model->get_featured_categories('1'),
     'action' => "admin/mainpage/add_featured/{$model->id}/1",
     'popup_id' => 'featured_categiry_form_type_1',
-    'models' => Model_Category::find('all')
+    'models' => Model_Category::query()->where('language_id', '=', (is_null($currentLang) ? null : $currentLang->id))->get()
 )); ?>
 
 <?= render('admin/mainpage/promo_category_form', array(
     'relations' => $model->get_featured_categories('2'),
     'action' => "admin/mainpage/add_featured/{$model->id}/2",
     'popup_id' => 'featured_categiry_form_type_2',
-    'models' => Model_Category::find('all')
+    'models' => Model_Category::query()->where('language_id', '=', (is_null($currentLang) ? null : $currentLang->id))->get()
 )); ?>
 
 <?= render('admin/mainpage/image_label_form', array(
