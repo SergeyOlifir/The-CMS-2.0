@@ -51,12 +51,12 @@
                         <div class="row tiles">
                             <?= \TCCore\TCTheme::render("content/tiles", array('content' => $rcategory->get_own_content(4), 'category' => $rcategory, 'fool_view' => false)); ?>
                         </div>
-                        <div class="row">
+                        <!--<div class="row">
                             <div class="col-md-9"></div>
                             <div class="col-md-3">
                                 <h4 class="page-count"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 <? endif; ?>
             <? endforeach; ?>
