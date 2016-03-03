@@ -381,6 +381,8 @@ header .navbar-collapse {
     font-size: 21px;
     color: #442200;
     margin: 10px 0 0 0;
+    max-height: 45px;
+    overflow: hidden;
 }
 
 .projects .item:hover h1 a {
@@ -459,8 +461,8 @@ footer .posts-count-section h5 span {
 
 .featured-wrp-type2 .categoty-card {
     display: inline-block;
-    width: 240px;
-    height: 240px;
+    width: 225px;
+    height: 225px;
     border-radius: 50%;
     background: no-repeat center;
     background-size: cover;
@@ -675,6 +677,7 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 
 .commetnts-wrp .comments .media .media-body {
     font-size: 17px;
+    padding-bottom: 15px;
 }
 
 .commetnts-wrp .comments .media .media-left img {
@@ -792,6 +795,17 @@ footer .footer-map {
     background-size: cover;
 }
 
+.comments .media-body {
+    position: relative;
+}
+
+.comments .media-body time {
+    position: absolute;
+    bottom: 0;
+    font-size: 11px;
+    right: 0px;
+}
+
 @media (min-width: 768px) {
     .content .description {
         padding-top: 25px;
@@ -897,7 +911,7 @@ footer .footer-map {
     }
     
     .projects .item.fool article {
-        height: 420px;
+        height: 445px;
     }
     
     .projects .item .content-img-bg {
@@ -954,8 +968,8 @@ footer .footer-map {
     
     .navbar-second .navbar-brand {
         color: #fff;
-        font-size: 19px;
-        padding: 11px 15px 6px 15px;
+        font-size: 22px;
+        padding: 14px 15px 9px 15px;
     }
     
     .navbar-second .navbar-nav>li>a {
