@@ -11,6 +11,47 @@
             <meta name="keywords" content="<?= $meta_keywrd;?>">
         <? endif; ?>
         <link rel="shortcut icon" href="/assets/img/templates/<?= $template; ?>/favicon.png" type="image/png">
+        
+        <meta name='yandex-verification' content='4bee6e3f36f25284' />
+        <meta name='wmail-verification' content='5622ced4bad4660a' />
+            <!-- Yandex.Metrika counter -->
+            <script type="text/javascript">
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter22608880 = new Ya.Metrika({id:22608880,
+                                clickmap:true,
+                                trackLinks:true,
+                                accurateTrackBounce: true});
+                        } catch (e) {
+                        }
+                    });
+
+                    var n = d.getElementsByTagName("script")[0],
+                            s = d.createElement("script"),
+                            f = function() {
+                        n.parentNode.insertBefore(s, n);
+                    };
+                    s.type = "text/javascript";
+                    s.async = true;
+                    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+                    if (w.opera == "[object Opera]") {
+                        d.addEventListener("DOMContentLoaded", f, false);
+                    } else {
+                        f();
+                    }
+                })(document, window, "yandex_metrika_callbacks");
+            </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/22608880" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+        <meta property="og:title" content="zhitnitsa" />
+        <meta property="og:type" content="company" />
+        <meta property="og:url" content="http://zhitnitsa.com.ua/" />
+        <meta property="og:image" content="" />
+        <meta property="og:site_name" content="&#x416;&#x438;&#x442;&#x43d;&#x438;&#x446;&#x430;" />
+        <meta property="fb:admins" content="100005100901584" />
+        
         <?= Asset::css('bootstrap.min.css'); ?>
         <?= TCCore\TCTheme::add_css("carusel.css"); ?>
 
