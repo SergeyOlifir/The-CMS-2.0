@@ -259,10 +259,15 @@ header .navbar-collapse {
     background-color: #66cc66;
 }
 
-.all-wrapper h2 {
+.all-wrapper h2, .all-wrapper h2 a {
     font-size: 32px;
     color: rgb( 68, 51, 0 );
     margin: 20px 0;
+}
+
+.all-wrapper h2 a:hover {
+    text-decoration: none;
+    color: #ffeebb;
 }
 
 .all-wrapper h4 {

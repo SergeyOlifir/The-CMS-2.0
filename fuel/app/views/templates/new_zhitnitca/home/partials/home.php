@@ -47,7 +47,7 @@
             <? foreach($main_page_model->promoted_category as $rcategory): ?>
                 <? if(count($rcategory->get_own_content(4)) > 0): ?>
                     <div class="related-category">
-                        <h2 class="related-cat-title"><?=$rcategory->title; ?></h2>
+                        <h2 class="related-cat-title"><a href="<?= TCRouter::get('view_category', array('alias' => $rcategory->alias)); ?>"><?=$rcategory->title; ?></a></h2>
                         <div class="row tiles">
                             <?= \TCCore\TCTheme::render("content/tiles", array('content' => $rcategory->get_own_content(4), 'category' => $rcategory, 'fool_view' => false)); ?>
                         </div>
