@@ -31,10 +31,10 @@
                 <p><?= $model->meta; ?></p>
                 <hr>
                 <strong><i class="fa fa-file-text-o margin-r-5"></i>Описание</strong>
-                <p><?= $model->description; ?></p>
+                <?= $model->description; ?>
                 <hr>
                 <strong><i class="fa fa-file-text-o margin-r-5"></i>Контент</strong>
-                <p><?= $model->content; ?></p>
+                <?= $model->content; ?>
             </div>
             
         </div>

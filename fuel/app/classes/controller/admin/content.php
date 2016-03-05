@@ -137,12 +137,13 @@ class Controller_Admin_Content extends Controller_Admin {
     
     public function action_view ($id) {
         if(isset($id) and $model = Model_Content::find($id)) {
-            $this->template->set_global('model', $model);
-            $this->template->set_global('models', Model_Content::query()->where('language_id', '=', $model->language_id)->get());
-            $this->template->set_global('models_category', Model_Category::query()->where('language_id', '=', $model->language_id)->get());
+            $this->template->set_global('model', $model, false);
+            $this->template->set_global('models', Model_Content::query()->where('language_id', '=', $model->language_id)->get(), false);
+            $this->template->set_global('models_category', Model_Category::query()->where('language_id', '=', $model->language_id)->get(), false);
             $this->template->header = 'Контент';
             $this->template->description = 'Просмотр';
-            $this->template->content = \Fuel\Core\View::forge('admin/content/view');
+            $this->template->content = \Fuel\Core\View::forge('admin/content/view', array(), false);
+            $this->template->content->auto_filter(false);
         } else {
             Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
         }

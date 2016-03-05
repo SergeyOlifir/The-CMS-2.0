@@ -141,7 +141,8 @@ class Controller_Admin_Category extends Controller_Admin {
             $this->template->set_global('models', Model_Category::query()->where('language_id', '=', $model->language_id)->get(), false);
             $this->template->header = 'Категории';
             $this->template->description = 'Просмотр';
-            $this->template->content = \Fuel\Core\View::forge('admin/category/view');
+            $this->template->content = \Fuel\Core\View::forge('admin/category/view', array(), false);
+            $this->template->auto_filter(false);
         } else {
             Fuel\Core\Response::redirect(\Fuel\Core\Router::get('404'));
         }

@@ -43,9 +43,7 @@
                 </div>
             </div>
             <div class="description">
-                <p>
-                    <?= $content->content; ?>
-                </p>
+                <?= $content->content; ?>
             </div>
             
             <?= TCCore\TCTheme::render('content/comments_block'); ?>

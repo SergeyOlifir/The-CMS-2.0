@@ -8,9 +8,11 @@ class Controller_Home_Category extends Controller_Home {
             if ($model->language_id != TCLocal::getCurrentLangID() && Model_Language::query()->count() > 0) {
                 \Fuel\Core\Response::redirect(TCRouter::get('root'));
             }
+            
+            $this->template->auto_filter(false);
             $this->template->set_global('page', $model, false);
-            $this->template->set_global('meta_keywrd', $model->meta);
-            $this->template->set_global('title', $model->page_title);//$current_category_id
+            $this->template->set_global('meta_keywrd', $model->meta, false);
+            $this->template->set_global('title', $model->page_title, false);//$current_category_id
             $this->template->set_global('current_category_id', $model->id);
             $this->template->set_global('current_category', $model, false);
             $base_url = '';
