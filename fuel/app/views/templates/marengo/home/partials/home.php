@@ -27,7 +27,7 @@
             <? foreach($main_page_model->promoted_category as $rcategory): ?>
                 <? if(count($rcategory->get_own_content(4)) > 0): ?>
                     <div class="related-category">
-                        <h2 class="related-cat-title"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)), $rcategory->title, array('class' => 'page-count'));?></h2>
+                        <h2 class="related-cat-title"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)), $rcategory->title);?></h2>
                         <div class="row tiles">
                             <?= \TCCore\TCTheme::render("content/tiles", array('content' => $rcategory->get_own_content(4), 'category' => $rcategory, 'fool_view' => false)); ?>
                         </div>
@@ -49,7 +49,7 @@
         <? if(count($main_page_model->get_featured_categories(2)) > 0): ?>
             
                 <? foreach($main_page_model->get_featured_categories(2) as $rcategory): ?>
-                    <h2 class="related-cat-title"><?=$rcategory->title; ?></h2>
+                    <h2 class="related-cat-title"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)), $rcategory->title);?></h2>
                     <div class="row">
                         <? $i = 0; ?>
                         <? foreach ($rcategory->get_content(4, 0) as $cont): ?>
@@ -70,12 +70,12 @@
                             <? $i++; ?>
                         <? endforeach; ?>
                     </div>
-                    <div class="row">
+                    <!--<div class="row">
                         <div class="col-md-9"></div>
                         <div class="col-md-3">
                             <h4 class="page-count"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)), 'Все статьи раздела', array('class' => 'page-count'));?></h4>
                         </div>
-                    </div>
+                    </div>-->
                 <? endforeach; ?>
         <? endif; ?>
     </div>
