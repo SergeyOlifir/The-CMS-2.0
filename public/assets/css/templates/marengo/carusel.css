@@ -275,10 +275,15 @@ header .navbar-default .navbar-toggle .icon-bar {
     background-color: #a6dada;
 }
 
-.all-wrapper h2 {
+.all-wrapper h2, .all-wrapper h2 a {
     font-size: 25px;
     color: #005235;
     margin: 20px 0;
+}
+
+.all-wrapper h2 a:hover {
+    text-decoration: none;
+    color: #01170F;
 }
 
 .all-wrapper h4 {
