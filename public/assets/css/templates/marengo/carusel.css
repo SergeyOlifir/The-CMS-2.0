@@ -802,13 +802,57 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 }
 
 .commetnts-wrp {
-    
+    margin-right: 10px;
 }
+
+.commetnts-wrp .comments {
+    padding: 0 10px;
+}
+
+
+.comment-form {
+    background: #E5F5F5;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.commetnts-wrp .comments .media {
+    padding: 10px 20px 10px 10px;
+    margin: 0;
+}
+
+.commetnts-wrp .comments .media .media-body {
+    font-size: 17px;
+    padding-bottom: 17px;
+}
+
+.commetnts-wrp .comments .media .media-left img {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #339393;
+    border-radius: 100%;
+}
+
+.commetnts-wrp  .comments .media:nth-child(2n + 1) {
+    background: #E5F5F5;
+}
+
 
 .commetnts-wrp textarea, .commetnts-wrp input {
     border-radius: 0;
-    border: 1px solid #999;
+    border: 1px solid #339393;
     resize: none;
+}
+
+.comments .media-body {
+    position: relative;
+}
+
+.comments .media-body time {
+    position: absolute;
+    bottom: 0;
+    font-size: 13px;
+    right: 0px;
 }
 
 .commetnts-wrp .btn {
@@ -1096,6 +1140,43 @@ footer .footer-map {
         transform: none;
         z-index: initial;
         box-shadow: none;
+    }
+    
+    .navbar-second {
+        background: rgba(0, 120, 120, .9);
+        height: auto;
+        min-height: 0;
+        margin-bottom: 0;
+    }
+    
+    .navbar-second .navbar-toggle {
+        margin: 0;
+        padding-bottom: 0;
+        font-size: 19px;
+        border: 0 none;
+    }
+    
+    .navbar-second .navbar-brand {
+        color: #fff;
+        font-size: 22px;
+        padding: 14px 15px 9px 15px;
+    }
+    
+    .navbar-second .navbar-nav>li>a {
+        color: #fff;
+        font-size: 19px;
+        padding: 11px 15px 6px 15px;
+    }
+    
+    .navbar-second .navbar-nav>.active>a, .navbar-second .navbar-nav>.active>a:focus, .navbar-second .navbar-nav>.active>a:hover {
+        color: #fff;
+        background-color: rgba(2, 74, 2, .6);
+    }
+    
+    .navbar-second .navbar-collapse, .navbar-second .navbar-form {
+        border-color: #fff;
+        width: 100%;
+        margin: 0;
     }
 
 }
