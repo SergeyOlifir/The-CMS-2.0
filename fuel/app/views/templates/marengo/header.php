@@ -13,7 +13,8 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><?= Controller_Application::$current_page == "Home" ? \Fuel\Core\Html::anchor("/" . TCLocal::getCurrentLang(), "Главная", array('class' => 'active')) :  \Fuel\Core\Html::anchor("/" . TCLocal::getCurrentLang(), "Главная"); ?></li>
+                
+                <li><?= Controller_Application::$current_page == "Home" ? \Fuel\Core\Html::anchor("/" . TCLocal::getCurrentLang(), __("template.main_caption"), array('class' => 'active')) :  \Fuel\Core\Html::anchor("/" . TCLocal::getCurrentLang(), __("template.main_caption")); ?></li>
                 <?php foreach ($links as $link): ?>
                     <li>
                         <? $utl = TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $link->category->alias)); //Fuel\Core\Uri::base() . "home/pages/view/{$link->category->alias}"; ?>

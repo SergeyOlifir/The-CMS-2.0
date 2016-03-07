@@ -17,6 +17,7 @@ class Controller_Application extends Fuel\Core\Controller_Template {
     public static $current_page = "";
     
     function before() {
+        
         parent::before();
         
         

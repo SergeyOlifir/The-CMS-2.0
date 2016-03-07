@@ -19,10 +19,9 @@ class Controller_Home extends Controller_Application {
     function before() {
         $this->template = TCCore\TCTheme::main_view();
         
-        parent::before();
         
-        $this->template->set_global('route_params', array('name' => Fuel\Core\Request::active()->route->name, 'named_params' => Fuel\Core\Request::active()->route->named_params));
-
+        
+        
         if (Model_Language::query()->count() > 0) {
 
             if ($lang = Fuel\Core\Request::active()->param('lang')) {
@@ -54,6 +53,9 @@ class Controller_Home extends Controller_Application {
 
         }
         
+        parent::before();
+        $this->template->set_global('route_params', array('name' => Fuel\Core\Request::active()->route->name, 'named_params' => Fuel\Core\Request::active()->route->named_params));
+
         
         $model_mainpage = self::get_main_page();
         

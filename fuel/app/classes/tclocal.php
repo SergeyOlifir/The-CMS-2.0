@@ -58,6 +58,8 @@ class TCLocal {
     
     public static function setCurrentLang($lang = 'ru') {
         self::$current_lang = Model_Language::query()->where('code', '=', $lang)->get_one();
+        \Fuel\Core\Config::set('language', $lang);
+        Fuel\Core\Lang::load('template', 'template');
     }
     
     public static function getCurrentLang() {
