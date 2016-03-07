@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <h4 class="page-count">Количество страниц: <?= $total; ?></h5>
+                    <h4 class="page-count"><?= __('template.page_caunt'); ?>: <?= $total; ?></h5>
                 </div>
             </div>
         <? endif; ?>
