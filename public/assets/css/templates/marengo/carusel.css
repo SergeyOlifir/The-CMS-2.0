@@ -1269,5 +1269,15 @@ footer .footer-map {
         padding: 10px;
     }
     
+    .feedback-form {
+        width: auto;
+        left: 15px;
+        right: 15px;
+    }
+    
+    footer .info-wrp {
+        margin-bottom: 50px;
+    }
+    
    
 }
