@@ -18,6 +18,23 @@ return array(
             'button' => 'Отправить'
             
         )
+    ),
+    
+    'feedback' => array(
+        'header' => 'Задайте вопрос',
+        'form' => array(
+            'header' => 'Ответы на все Ваши вопросы по отдыху и недвижимости в Черногории...',
+            'user_name_placeholder' => 'Ваше имя *',
+            'user_email_placeholder' => 'Ваша почта *',
+            'text_placeholder' => 'Текст вопроса *',
+            'text_help_block' => 'Сообщение не более 2000 символов',
+            'button_caption' => 'Отправить'
+        ),
+        
+        'messages' => array(
+            'success' => 'Спасибо за вопрос!',
+            'danger' => 'Ошибка!'
+        )
     )
 );
 
