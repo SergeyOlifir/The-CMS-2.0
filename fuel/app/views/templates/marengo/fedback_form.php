@@ -1,7 +1,7 @@
 <div class="feedback-form" data-ng-app="feedback" data-ng-controller="feedback">
     <div class="panel panel-default">
         <div class="panel-heading" data-ng-click="toggleHeight()">
-          <h3 class="panel-title"><?= __('template.feedback.header'); ?></h3>
+            <h3 class="panel-title"><?= __('template.feedback.header'); ?><i class="glyphicon glyphicon-comment pull-right"></i></h3>
         </div>
         <div class="panel-body" data-ng-class="{opened: expanded, closed: !expanded}" >
             <div data-ng-class="{hidden: !sucsAlert}" class="alert alert-success alert-dismissable"><?= __('template.feedback.messages.success'); ?><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
