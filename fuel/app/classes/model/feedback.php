@@ -31,11 +31,24 @@ class Model_Feedback extends Model_Base {
             $val = \Fuel\Core\Validation::forge('category');
             $val->add_field('user_name', 'User Name', 'required|max_length[150]');
             $val->add_field('user_email', 'Email', 'required|max_length[150]');
-            $val->add_field('text', 'Text', 'required|max_length[500]');
+            $val->add_field('text', 'Text', 'required|max_length[2000]');
             self::$validator = $val;
         }
         
         return self::$validator;
+    }
+    
+    public function get_status () {
+        switch ($this->validated) {
+            case 1:
+                return 'Не просмотрен';
+            case 0:
+                return 'Просмотрен';
+            case 2:
+                return 'Просмотрен';
+            default :
+                return 'Не просмотрен';
+        }
     }
     
 }

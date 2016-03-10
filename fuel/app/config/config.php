@@ -299,7 +299,8 @@ return array(
 		 */
 		 'config'  => array(
                      'application',
-                     'TCTheme'
+                     'TCTheme',
+                     'TCAdmin'
                  ),
 
 		/**

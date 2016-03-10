@@ -12,11 +12,11 @@
                     <input required="required" type="name" data-ng-model="name" class="form-control" id="exampleInputEmail1" placeholder="Ваше имя *">
                 </div>
                 <div class="form-group" data-ng-class="{'has-error': errors['user_email']}">
-                    <input required="required" type="password" data-ng-model="mail" class="form-control" id="exampleInputPassword1" placeholder="Ваша почта *">
+                    <input required="required" type="email" data-ng-model="mail" class="form-control" id="exampleInputPassword1" placeholder="Ваша почта *">
                 </div>
                 <div class="form-group" data-ng-class="{'has-error': errors['text']}">
                     <textarea required="required" type="password"  data-ng-model="text" class="form-control" id="exampleInputPassword1" placeholder="Текст вопроса *"></textarea>
-                    <p class="help-block">Сообщение не более 500 символов</p>
+                    <p class="help-block">Сообщение не более 2000 символов</p>
                 </div>
                 <div class="clearfix">
                     <button type="submit" class="btn btn-success pull-right">Отправить</button>

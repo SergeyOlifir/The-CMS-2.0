@@ -29,3 +29,5 @@ fuel/app/config/development/migrations.php
 fuel/app/config/TCTheme.php
 
 fuel/app/config/TCTheme.php
+
+fuel/app/config/TCAdmin.php

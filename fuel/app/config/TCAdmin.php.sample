@@ -1,0 +1,5 @@
+<?php
+
+return array(
+    'has_feedbacks' => false,
+);
