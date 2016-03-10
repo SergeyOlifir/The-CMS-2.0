@@ -19,6 +19,7 @@
         <?= Asset::js('bower_components/angular/angular.min.js'); ?>
         <?= Asset::js('bower_components/angular-resource/angular-resource.min.js'); ?>
         <?= Asset::js('comments.js'); ?>
+        <?= Asset::js('feedback.js'); ?>
         <?= TCCore\TCTheme::add_js('application.js'); ?>
         <?= Asset::render('javascripts'); ?>
     </head>
@@ -36,5 +37,6 @@
         <footer id="footer">
             <?= TCCore\TCTheme::render("footer", array(), false); ?>
         </footer>
+        <?= \TCCore\TCTheme::load_view('fedback_form'); ?>
       </body>
 </html>
