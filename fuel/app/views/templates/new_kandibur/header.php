@@ -23,7 +23,7 @@
                 <?php endforeach; ?>
                 
             </ul>
-            <? if(Model_Language::query()->count() > 0):?>
+            <? if(Model_Language::query()->count() > 1):?>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= TCLocal::getCurrentLangModel()->name; ?> <i class="glyphicon glyphicon-cog"></i></a>
