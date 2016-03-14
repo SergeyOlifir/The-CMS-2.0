@@ -26,7 +26,7 @@
             <? if(Model_Language::query()->count() > 0):?>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown ">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-cog"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= TCLocal::getCurrentLangModel()->name; ?> <i class="glyphicon glyphicon-cog"></i></a>
                         <ul class="dropdown-menu">
                             <?php foreach (Model_Language::find('all') as $lang): ?>
                                 <? $route_params['named_params']['lang'] = $lang->code; ?>
