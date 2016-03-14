@@ -3,18 +3,69 @@
 <div class="featured-wrp-type1">
     <div class="container">
         <? if(count($main_page_model->get_featured_categories(1)) > 0): ?>
-            <div class="row">
+            
                 <? foreach($main_page_model->get_featured_categories(1) as $rcategory): ?>
-                    <div class="col-md-6, col-sm-6 col-xs-12">
-                        <a href="<?= TCRouter::get('view_category', array('alias' => $rcategory->alias)) ;?>">
-                            <div class="categoty-card" style="background-image: url('<?= $rcategory->get_logo('small');?>')">
-                                <div class="overlay"></div>
-                                <h4><?= $rcategory->title; ?></h4>
+                    <h2 class="related-cat-title"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)), $rcategory->title);?></h2>
+                    <div class="row">
+                        <? $i = 0; ?>
+                        <? foreach ($rcategory->get_content(4, 0) as $cont): ?>
+                            <!--<div class="col-sm-6 col-xs-12">
+                                <a class="feat-wrp" href="<?= TCRouter::get('view_subsidiary_content', array('lang' => TCLocal::getCurrentLang(), 'id' => $cont->id, 'parent_category' => $rcategory->id)) ;?>">
+                                    <div class="clearfix">
+                                        <div class="text-area <?= (($i < 2) ? 'pull-left' : 'pull-right'); ?>" data-position="<?= $i; ?>">
+                                            <? $category = ((count($cont->master_category) > 0) ? array_pop($cont->master_category) : $rcategory); ?>
+                                            <h4 class="cat-title <?= (($i < 2) ? 'top' : 'bottom'); ?>"><?= $category->title; ?></h4>
+                                            <h4 class="cont-title <?= (($i < 2) ? 'bottom' : 'top'); ?>"><?= $cont->title; ?></h4>
+                                        </div>
+                                        <div class="image-area <?= (($i < 2) ? 'pull-right' : 'pull-left'); ?>">
+                                            <div class="bgr" style="background-image: url('<?= $cont->get_logo('small');?>')"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>-->
+                            <div class="col-xs-12">
+                                <div class="clearfix">
+                                    <? if(!($i % 2)): ?>
+                                        <a class="clearfix feat-wrp" href="<?= TCRouter::get('view_subsidiary_content', array('id' => $cont->id, 'parent_category' => $rcategory->id)) ;?>">
+                                            <div class="col-sm-6 from-left" data-position="<?= $i; ?>">
+                                                <div>
+                                                    <div class="twrp clearfix">
+                                                        <time class="pull-right"><?= Date::forge($cont->created_at)->format("%d/%m/%Y"); ?></time>
+                                                    </div>
+                                                    <h4 class="cont-title"><?= $cont->title; ?></h4>
+                                                    <p><?= \Fuel\Core\Str::truncate($cont->description, 150, '...'); ?></p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 img-from-right img-wrp">
+                                                <div class="image-area">
+                                                    <div class="bgr" style="background-image: url('<?= $cont->get_logo('small');?>')"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    <? else: ?>
+                                        <a class="clearfix feat-wrp" href="<?= TCRouter::get('view_subsidiary_content', array('id' => $cont->id, 'parent_category' => $rcategory->id)) ;?>">
+                                            <div class="col-sm-6 img-from-left img-wrp">
+                                                <div class="image-area">
+                                                    <div class="bgr" style="background-image: url('<?= $cont->get_logo('small');?>')"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 from-right" data-position="<?= $i; ?>">
+                                                <div>
+                                                    <div class="twrp clearfix">
+                                                        <time class="pull-left"><?= Date::forge($cont->created_at)->format("%d/%m/%Y"); ?></time>
+                                                    </div>
+                                                    <h4 class="cont-title"><?= $cont->title; ?></h4>
+                                                    <p><?= \Fuel\Core\Str::truncate($cont->description, 150, '...'); ?></p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    <? endif; ?>
+                                </div>
                             </div>
-                        </a>
+                            <? $i++; ?>
+                        <? endforeach; ?>
                     </div>
                 <? endforeach; ?>
-            </div>
         <? endif; ?>
     </div>
 </div>
