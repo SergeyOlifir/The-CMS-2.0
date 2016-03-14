@@ -33,7 +33,7 @@ class Controller_Home extends Controller_Application {
 
                 foreach (Model_Language::find('all') as $model_lang) {
                     $matched_langs[$model_lang->code] = explode(',', $model_lang->match);
-                    $all_langs[] = strtolower($model_lang->code);
+                    $all_langs[] = $model_lang->code;
                 }
 
 
