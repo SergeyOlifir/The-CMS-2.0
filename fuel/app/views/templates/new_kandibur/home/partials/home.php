@@ -8,7 +8,7 @@
                     <h2 class="related-cat-title"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)), $rcategory->title);?></h2>
                     <div class="row">
                         <? $i = 0; ?>
-                        <? foreach ($rcategory->get_content(4, 0) as $cont): ?>
+                        <? foreach ($rcategory->get_content(3, 0) as $cont): ?>
                             <div class="col-xs-12">
                                 <div class="clearfix">
                                     <? if(!($i % 2)): ?>
@@ -76,16 +76,18 @@
 <div class="featured-wrp-type2">
     <div class="container">
         <? if(count($main_page_model->get_featured_categories(2)) > 0): ?>
-            
                 <? foreach($main_page_model->get_featured_categories(2) as $rcategory): ?>
-                    <div class="row">
-                        <? foreach ($rcategory->get_content(4, 0) as $cont): ?>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
+                    <h2 class="related-cat-title"><?= Fuel\Core\Html::anchor(TCRouter::get('view_category', array('lang' => TCLocal::getCurrentLang(), 'alias' => $rcategory->alias)), $rcategory->title);?></h2>
+                    <div class="clearfix">
+                        <? foreach ($rcategory->get_content(6, 0) as $cont): ?>
+                            <div class="col-sm-4 col-xs-12 galery-item">
                                 <a href="<?= TCRouter::get('view_subsidiary_content', array('id' => $cont->id, 'parent_category' => $rcategory->id)) ;?>">
                                     <div class="categoty-card" style="background-image: url('<?= $cont->get_logo('small');?>')">
-                                        <div class="overlay"></div>
+                                        <div class="overlay">
+                                            <h4><?= $cont->title; ?></h4>
+                                            <p><?= \Fuel\Core\Str::truncate($cont->description, 200, '...'); ?></p>
+                                        </div>
                                     </div>
-                                    <h4><?= $cont->title; ?></h4>
                                 </a>
                             </div>
                         <? endforeach; ?>
