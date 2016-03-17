@@ -954,20 +954,36 @@ footer .f-logo {
     background: #21b539;
 }
 
-.projects .tiles .item:nth-child(4n + 1) article {
+.projects .tiles .item:nth-child(8n + 1) article {
     background: #21b539;
 }
 
-.projects .tiles .item:nth-child(4n + 2) article {
+.projects .tiles .item:nth-child(8n + 2) article {
     background: #e1d923;
 }
 
-.projects .tiles .item:nth-child(4n + 3) article {
+.projects .tiles .item:nth-child(8n + 3) article {
     background: #ff5c23;
 }
 
-.projects .tiles .item:nth-child(4n + 4) article {
+.projects .tiles .item:nth-child(8n + 4) article {
     background: #ff0000;
+}
+
+.projects .tiles .item:nth-child(8n + 5) article {
+    background: #ff0000;
+}
+
+.projects .tiles .item:nth-child(8n + 6) article {
+    background: #b226fc;
+}
+
+.projects .tiles .item:nth-child(8n + 7) article {
+    background: #2648fc;
+}
+
+.projects .tiles .item:nth-child(8n + 8) article {
+    background: #26aef0;
 }
 
 @media (min-width: 768px) {

@@ -6,4 +6,3 @@
     </div>
     <?= $main_page_model->footer_content; ?>
 </div>
-
