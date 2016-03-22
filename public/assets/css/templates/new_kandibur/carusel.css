@@ -165,12 +165,12 @@ header .navbar-collapse {
 }
 
 .content-galery-carusel .carousel-indicators li:hover {
-    border-color: #009900;
+    border-color: #ff4000;
     cursor: pointer;
 }
 
 .content-galery-carusel .carousel-indicators li.active {
-    border-color: #009900;
+    border-color: #ff4000;
 }
 
 .content-galery-carusel .carousel-inner > .item {
@@ -288,9 +288,9 @@ header .navbar-collapse {
 }
 
 .all-wrapper h4 {
-    color: #442200;
-    font-size: 19px;
-    font-weight: bold;
+    color: #ff0000;
+    font-size: 18px;
+    font-weight: normal;
 }
 
 .all-wrapper .related-wrapper {
@@ -502,10 +502,16 @@ footer .posts-count-section h5 span {
 
 
 .content .related-categoryes .related-cat-title {
-    font-size: 21px;
-    color: #442200;
-    margin: 12px 0 30px 20px;
-    font-weight: bold;
+    font-size: 16px;
+    color: #ff0000;
+    margin: 12px 0 20px 20px;
+    font-weight: normal;
+    font-family: inherit;
+}
+
+.content .related-categoryes .projects.app-categories .tiles .item article {
+    background: transparent;
+    border: 1px solid #ff4203;
 }
 
 .featured-wrp-type1 .related-cat-title, .featured-wrp-type1 .related-cat-title a, .featured-wrp-type2 .related-cat-title, .featured-wrp-type2 .related-cat-title a  {
@@ -649,32 +655,36 @@ footer .posts-count-section h5 span {
     float: right;
     width: 50%;
     padding: 0px 10px 10px 10px;
-    max-height: 117px;
+    max-height: 79px;
     overflow: hidden;
     
 }
 
 .content .related-categoryes .projects .item .content-img-bg {
-    height: 85px;
+    height: 81px;
 }
 
 .content .related-categoryes .projects .item article {
-    height: 104px;
+    height: 93px;
+    padding: 5px;
 }
 
 .content .related-categoryes .projects .item h1 {
     margin: 0;
+    padding: 0;
 }
 
 .content .related-categoryes .projects .item h1 a {
-    font-size: 19px;
-    color: rgb( 68, 34, 0 )
+    font-size: 12px;
+    color: #003355;
+    line-height: 1;
 }
 
-.content .tiles .description {
-    padding-top: 0;
-    font-size: 23px;
-    color: rgb( 68, 34, 0 )
+.content  .tiles .content-bg .description {
+    padding-top: 25px;
+    font-size: 13px;
+    color: #003355;
+    font-weight: normal;
 }
 
 
@@ -792,11 +802,16 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 }
 
 .commetnts-wrp {
-    
+    margin-right: 10px;
 }
 
+.commetnts-wrp .comments {
+    padding: 0 10px;
+}
+
+
 .comment-form {
-    background: #f7f5f2;
+    background: #fff4e2;
     padding: 15px;
     margin-top: 15px;
 }
@@ -808,23 +823,36 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 
 .commetnts-wrp .comments .media .media-body {
     font-size: 17px;
+    padding-bottom: 17px;
 }
 
 .commetnts-wrp .comments .media .media-left img {
     width: 64px;
     height: 64px;
-    border: 2px solid #846f4a;
+    border: 2px solid #003355;
     border-radius: 100%;
 }
 
 .commetnts-wrp  .comments .media:nth-child(2n + 1) {
-    background: #f7f5f2;
+    background: #fff4e2;
 }
+
 
 .commetnts-wrp textarea, .commetnts-wrp input {
     border-radius: 0;
-    border: 1px solid #999;
+    border: 1px solid #003355;
     resize: none;
+}
+
+.comments .media-body {
+    position: relative;
+}
+
+.comments .media-body time {
+    position: absolute;
+    bottom: 0;
+    font-size: 13px;
+    right: 0px;
 }
 
 .commetnts-wrp .btn {
@@ -836,27 +864,30 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     height: 0;
 }
 
-.commetnts-wrp .comments {
-    padding: 0 10px;
+.commetnts-wrp .comments, .commetnts-wrp .comments h4 {
+    color: #003355;
 }
 
 .commetnts-wrp h5 {
-    color: rgb( 68, 34, 0 );
-    font-size: 21px;
+    color: #003355;
+    font-size: 19px;
     text-decoration: underline;
     cursor: pointer;
-    margin-top: 25px;
-    margin-bottom: 20px;
+}
+
+.commetnts-wrp h5 .glyphicon {
+    top: 5px;
+    left: 7px;
 }
 
 .commetnts-wrp .comment_item p {
-    color: rgb( 68, 34, 0 );
+    color: #005235;
     font-size: 17px;
 }
 
 .commetnts-wrp label {
     font-size: 17px;
-    color: rgb( 68, 34, 0 );
+    color: #003355;
 }
 
 .commetnts-wrp .form-control {
@@ -897,7 +928,7 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
 }
 
 .commetnts-wrp .capcha {
-    color: #443300;
+    color: #005235;
     font-size: 20px;
     font-weight: bold;
 }
@@ -910,12 +941,6 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     border-color: #a94442;
 }
 
-.content .description {
-    padding-top: 25px;
-    font-size: 17px;
-    line-height: 1.6;
-    color: rgb( 68, 34, 0 );
-}
 
 footer .footer-map {
     background: url('../../../img/templates/new_kandibur/map_img_footer.jpg') no-repeat center center;
@@ -986,8 +1011,25 @@ footer .f-logo {
     background: #26aef0;
 }
 
+
+.content-bg {
+    background: #fff4e2;
+    border-bottom: 2px solid #ff4000;
+    border-top: 2px solid #ff4000;
+    padding: 30px 25px;
+}
+
+#content-carousel {
+    border: 1px solid #ff4000;
+}
+
+.details {
+    font-size: 14px;
+    color: #003355;
+}
+
 @media (min-width: 768px) {
-    .content .description {
+    .content .content-bg .description {
         padding-top: 25px;
         font-size: 17px;
         line-height: 1.6;
