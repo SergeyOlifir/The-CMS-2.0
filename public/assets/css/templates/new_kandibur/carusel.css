@@ -1017,6 +1017,7 @@ footer .f-logo {
     border-bottom: 2px solid #ff4000;
     border-top: 2px solid #ff4000;
     padding: 30px 25px;
+    margin-right: 10px;
 }
 
 #content-carousel {
@@ -1171,6 +1172,10 @@ footer .f-logo {
         transform: none;
         z-index: 10;
         box-shadow: none;
+    }
+    
+    .content-bg, .commetnts-wrp { {
+        margin-right: 0;
     }
     
     
