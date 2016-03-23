@@ -397,8 +397,8 @@ header .navbar-collapse {
 
 .content .breadcrumb + .row + .description {
     padding-top: 25px;
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 19px;
+    line-height: inherit;
     color: rgb( 68, 34, 0 );
 }
 
