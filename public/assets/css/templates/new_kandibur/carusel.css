@@ -502,7 +502,7 @@ footer .posts-count-section h5 span {
 
 
 .content .related-categoryes .related-cat-title {
-    font-size: 16px;
+    font-size: 19px;
     color: #ff0000;
     margin: 12px 0 20px 20px;
     font-weight: normal;
@@ -675,9 +675,11 @@ footer .posts-count-section h5 span {
 }
 
 .content .related-categoryes .projects .item h1 a {
-    font-size: 12px;
+    font-size: 13px;
     color: #003355;
-    line-height: 1;
+    line-height: inherit;
+    display: block;
+    margin-top: 0;
 }
 
 .content  .tiles .content-bg .description {
@@ -875,7 +877,7 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     text-decoration: underline;
     cursor: pointer;
     margin-bottom: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .commetnts-wrp h5 .glyphicon {
