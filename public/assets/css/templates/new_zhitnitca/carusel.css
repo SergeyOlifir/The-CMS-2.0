@@ -402,6 +402,18 @@ header .navbar-collapse {
     color: rgb( 68, 34, 0 );
 }
 
+.content .breadcrumb + .row + .description h3 {
+    font-size: 28px;
+    margin: 15px 0;
+    color: rgb( 68, 34, 0 );
+}
+
+.content .breadcrumb + .row + .description h4 {
+    font-size: 25px;
+    margin: 15px 0;
+    color: rgb( 68, 34, 0 );
+}
+
 footer {
     background: url('../../../img/templates/new_zhitnitca/footer-bg.jpg') no-repeat center;
     background-size: cover;
