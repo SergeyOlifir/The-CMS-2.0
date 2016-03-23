@@ -278,7 +278,7 @@ header .navbar-collapse {
 .all-wrapper h2 {
     font-family: 'Mistral';
     color: #ff0000;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: normal;
     margin: 20px 0;
 }
@@ -682,9 +682,10 @@ footer .posts-count-section h5 span {
 
 .content  .tiles .content-bg .description {
     padding-top: 25px;
-    font-size: 13px;
+    font-size: 15px;
     color: #003355;
     font-weight: normal;
+    line-height: inherit;
 }
 
 
@@ -873,6 +874,7 @@ footer .second-menu-wrp .menu-row .sub-menu-wrp li a {
     font-size: 19px;
     text-decoration: underline;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 .commetnts-wrp h5 .glyphicon {
@@ -1025,7 +1027,7 @@ footer .f-logo {
 }
 
 .details {
-    font-size: 14px;
+    font-size: 15px;
     color: #003355;
 }
 
