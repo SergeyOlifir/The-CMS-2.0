@@ -207,7 +207,7 @@ header .navbar-collapse {
 }
 
 .all-wrapper .page-count {
-    font-size: 17px;
+    font-size: 18px;
     color: #ff5000;
     padding-top: 35px;
     text-align: center;
@@ -289,7 +289,7 @@ header .navbar-collapse {
 
 .all-wrapper h4 {
     color: #ff0000;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: normal;
 }
 
@@ -484,14 +484,14 @@ footer .posts-count-section h5 span {
 
 .featured-wrp-type2 .overlay h4 {
     color: #fff;
-    font-size: 22px;
+    font-size: 21px;
     margin-top: 0;
     font-weight: normal;
 }
 
 .featured-wrp-type2 .overlay p {
     color: #fff;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .featured-wrp-type2 .categoty-card {
@@ -535,9 +535,9 @@ footer .posts-count-section h5 span {
 
 .featured-wrp-type1 time {
     color: #fff;
-    font-size: 23px;
+    font-size: 21px;
     background: #ffb000;
-    padding: 5px;
+    padding: 10px;
     margin: 0 -20px;
 }
 
@@ -616,8 +616,8 @@ footer .posts-count-section h5 span {
 
 .featured-wrp-type1 p {
     color: #fff;
-    font-size: 13px;
-    height: 36px;
+    font-size: 15px;
+    height: 40px;
     overflow: hidden;
 }
 

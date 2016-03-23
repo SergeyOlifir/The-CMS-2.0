@@ -16,7 +16,7 @@
                                             <div class="col-sm-6 from-left" data-position="<?= $i; ?>">
                                                 <div>
                                                     <div class="twrp clearfix">
-                                                        <time class="pull-right"><?= Date::forge($cont->created_at)->format("%d/%m/%Y"); ?></time>
+                                                        <time class="pull-right"><?= Date::forge($cont->created_at)->format("%d.%m.%Y"); ?></time>
                                                     </div>
                                                     <h4 class="cont-title"><?= $cont->title; ?></h4>
                                                     <p><?= \Fuel\Core\Str::truncate($cont->description, 150, '...'); ?></p>
@@ -38,7 +38,7 @@
                                             <div class="col-sm-6 from-right" data-position="<?= $i; ?>">
                                                 <div>
                                                     <div class="twrp clearfix">
-                                                        <time class="pull-left"><?= Date::forge($cont->created_at)->format("%d/%m/%Y"); ?></time>
+                                                        <time class="pull-left"><?= Date::forge($cont->created_at)->format("%d.%m.%Y"); ?></time>
                                                     </div>
                                                     <h4 class="cont-title"><?= $cont->title; ?></h4>
                                                     <p><?= \Fuel\Core\Str::truncate($cont->description, 150, '...'); ?></p>
