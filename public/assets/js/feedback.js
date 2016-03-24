@@ -1,6 +1,5 @@
 (function() {
     var feedback = angular.module('feedback', ['ngResource']);
-
     feedback.factory('Feedback',['$resource', function($resource) {
         return $resource('/home/feedback/index.json', {}, {
             save: {
@@ -20,7 +19,7 @@
             }
         });
     }]);
-    
+
     feedback.controller('feedback',['$scope', 'Feedback', function ($scope, Feedback) {
         $scope.expanded = false;
         $scope.name = '';
@@ -42,7 +41,6 @@
                 user_email: $scope.mail,
                 text: $scope.text
             }, function(e) {
-                console.log(e);
                 if(e.status == "fail") {
                     $scope.errors = e.errors;
                     $scope.sucsAlert = false;
@@ -56,9 +54,10 @@
                 }
                 
             });
-        }
+        };
         
     }]);
-    
-  
+    $(document).ready(function() {
+        angular.bootstrap(document.getElementById("fedback"),['feedback']);
+    });
 })();

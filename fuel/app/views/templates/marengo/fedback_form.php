@@ -1,4 +1,4 @@
-<div class="feedback-form" data-ng-app="feedback" data-ng-controller="feedback">
+<div id="fedback" class="feedback-form"  data-ng-controller="feedback">
     <div class="panel panel-default">
         <div class="panel-heading" data-ng-click="toggleHeight()">
             <h3 class="panel-title"><?= __('template.feedback.header'); ?><i class="glyphicon glyphicon-comment pull-right"></i></h3>
