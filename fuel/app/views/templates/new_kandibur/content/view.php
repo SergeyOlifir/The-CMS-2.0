@@ -4,7 +4,7 @@
 <div class="container content">
     <div class="row tiles">
         <h2><?= $content->title; ?></h2>
-        <div class="col-md-9">
+        <article class="col-md-9">
             
             <!--<ol class="breadcrumb">
                 <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
@@ -47,7 +47,7 @@
             
             <?= TCCore\TCTheme::render('content/comments_block'); ?>
             
-        </div>
+        </article>
         <div class="col-md-3">
             <div class="related-categoryes">
                 <? if(count($content->promoted_category) > 0): ?>
