@@ -1,7 +1,7 @@
 <?php
 return array(
     '_root_'  => 'home/index',  // The default route
-    '_404_'   => 'welcome/404',    // The main 404 route
+    '_404_'   => 'home/index',    // The main 404 route
     '404'   => array('welcome/404', 'name' => '404'),
     '(:lang)/page/(:alias)/(:parent_category)' => array('home/category/view', 'name' => 'view_subsidiary_category_with_lang'),
     '(:lang)/page/(:alias)' => array('home/category/view', 'name' => 'view_category_with_lang'),
