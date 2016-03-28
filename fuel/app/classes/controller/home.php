@@ -24,10 +24,9 @@ class Controller_Home extends Controller_Application {
         
         if (Model_Language::query()->count() > 0) {
 
-            if ($lang = Fuel\Core\Request::active()->param('lang')) {
+            if (($lang = Fuel\Core\Request::active()->param('lang')) && (Model_Language::query()->where('code', '=', $lang)->count() > 0)) {
                 TCLocal::setCurrentLang($lang);
             } else {
-
                 $matched_langs = array();//Model_Language::find('all');
                 $all_langs = array();
 
@@ -43,11 +42,13 @@ class Controller_Home extends Controller_Application {
                     TCLocal::setCurrentLang($lang);
                 }
 
-                if (Fuel\Core\Request::active()->route->name == '_root_') {
-                    Fuel\Core\Response::redirect(TCRouter::get('root', Fuel\Core\Request::active()->route->named_params));
-                } else {
-                    Fuel\Core\Response::redirect(TCRoute::get(Fuel\Core\Request::active()->route->name, Fuel\Core\Request::active()->route->named_params));
-                }
+                //if (Fuel\Core\Request::active()->route->name == '_root_') {
+                //    Fuel\Core\Response::redirect(TCRouter::get('root', Fuel\Core\Request::active()->route->named_params));
+                //} else {
+                //    Fuel\Core\Response::redirect(TCRouter::get(Fuel\Core\Request::active()->route->name, Fuel\Core\Request::active()->route->named_params));
+                //}
+                
+                Fuel\Core\Response::redirect(TCRouter::get('root'));
 
             }
 
