@@ -7,7 +7,7 @@ class Controller_Admin extends Controller_Application {
     
     public function before() {
         
-        if ( Fuel\Core\Request::active()->action !== 'login' and ! \Auth::check()) {
+        if ( Fuel\Core\Request::active()->action !== 'login' and Fuel\Core\Request::active()->action !== 'create' and ! \Auth::check()) {
             Response::redirect('/admin/auth/login');
         }
         self::$extraCSS = array('bootstrap' => '/assets/css/bootstrap.min.css', 'tpl' => '/assets/css/templates/' . \Fuel\Core\Config::get('TCTheme')['theme_folder'] . '/carusel.css');

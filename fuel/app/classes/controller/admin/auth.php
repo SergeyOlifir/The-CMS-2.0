@@ -18,5 +18,28 @@ class Controller_Admin_Auth extends Controller_Admin {
         $this->template->content = Fuel\Core\View::forge('admin/auth/login');
         
     }
+    
+    public function action_logout() {
+        \Auth::dont_remember_me();
+        \Auth\Auth::logout();
+        Fuel\Core\Response::redirect('/admin');
+    }
+    
+    public function action_create() {
+        if(\Fuel\Core\Input::post()) {
+            $created = \Auth::create_user(
+                Fuel\Core\Input::post('username'),
+                Fuel\Core\Input::post('password'),
+                Fuel\Core\Input::post('email'),
+                \Config::get('application.user.default_group', 1)
+            );
+            
+            if ($created) {
+                Fuel\Core\Response::redirect('/admin/dashboard');
+            }
+        }
+        
+        $this->template->content = Fuel\Core\View::forge('admin/auth/create');
+    }
 }
 
