@@ -28,9 +28,7 @@
             request_capcha: {
                 method: 'GET',
                 url: '/home/comment/capcha.json'
-            },
-            
-            
+            }
         });
     }]);
     
@@ -58,8 +56,11 @@
         };
         
         var updateComments = function() {
-            $scope.comments_list = Comment.all({id: content_id}, function () {
+            //$scope.comments_list = Comment.all({id: content_id}, function () {
+            Comment.all({id: content_id}, function (e) {  
+                $scope.comments_list = e;
                 $scope.count = Object.keys($scope.comments_list).length - 2;
+                //$scope.$apply();
             });
         };
         
@@ -94,7 +95,6 @@
         
         var create_comment = function(obj) {
             Comment.save(obj, function(e) {
-                console.log(e);
                 if(e.status === 'fail') {
                     $scope.errors = e.errors;
                 } else {
@@ -119,9 +119,12 @@
             } else {
                 update_capcha();
             }
-            
-            console.log($scope.comments_list);
         };
+        
+        window.setInterval(function() {
+            updateComments();
+        }, 10000);
+        
     }]);
     
   
