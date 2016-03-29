@@ -21,29 +21,31 @@
         </div>
         
         <div class="fotm-wrp comment-form" >
-            <div class="form-group" data-ng-class="{'has-error' : errors['comment-name']}" >
-                <label for="comment-name"><?= __('template.comments.form.name'); ?></label>
-                <input id="comment-name" class="comment-name form-control" placeholder="<?= __('template.comments.form.name_placeholder') ;?>" data-ng-model="user_name" />
-                <p class="help-block"><?= __('template.comments.form.name_help') ;?></p>
-            </div>
-            <div class="form-group" data-ng-class="{'has-error' : errors['comment-email']}" >
-                <label for="comment-email"><?= __('template.comments.form.email'); ?></label>
-                <input id="comment-email" class="comment-email form-control" placeholder="<?= __('template.comments.form.email_placeholder'); ?>" data-ng-model="user_email" />
-                <p class="help-block"><?= __('template.comments.form.email_help'); ?></p>
-            </div>
-            <div class="form-group" data-ng-class="{'has-error' : errors['comment-email']}" >
-                <textarea class="comment-field form-control" placeholder="<?= __('template.comments.form.text_placeholder'); ?>" data-ng-model="comment_text"></textarea>
-                <p class="help-block"><?= __('template.comments.form.text_help'); ?></p>
-            </div>
-            <div class="row form-group" data-ng-class="{'has-error' : errors['capcha']}">
-                <div class="col-md-6">
-                    <span class="capcha">{{capcha_numbers.first}} + {{capcha_numbers.second}} = </span>
-                    <input data-ng-model="capcha" class="capcha-result" type="text" />
+            <form data-ng-submit="addComment(user_name, user_email, comment_text)">
+                <div class="form-group" data-ng-class="{'has-error' : errors['comment-name']}" >
+                    <label for="comment-name"><?= __('template.comments.form.name'); ?></label>
+                    <input id="comment-name" class="comment-name form-control" placeholder="<?= __('template.comments.form.name_placeholder') ;?>" data-ng-model="user_name" />
+                    <p class="help-block"><?= __('template.comments.form.name_help') ;?></p>
                 </div>
-                <div class="col-md-6 ">
-                    <button data-ng-class="{disabled: capcha == ''}" class="btn btn-success btn-lg pull-right " data-ng-click="addComment(user_name, user_email, comment_text)"><?= __('template.comments.form.button'); ?></button>
+                <div class="form-group" data-ng-class="{'has-error' : errors['comment-email']}" >
+                    <label for="comment-email"><?= __('template.comments.form.email'); ?></label>
+                    <input type="email" id="comment-email" class="comment-email form-control" placeholder="<?= __('template.comments.form.email_placeholder'); ?>" data-ng-model="user_email" />
+                    <p class="help-block"><?= __('template.comments.form.email_help'); ?></p>
                 </div>
-            </div>
+                <div class="form-group" data-ng-class="{'has-error' : errors['comment-email']}" >
+                    <textarea class="comment-field form-control" placeholder="<?= __('template.comments.form.text_placeholder'); ?>" data-ng-model="comment_text"></textarea>
+                    <p class="help-block"><?= __('template.comments.form.text_help'); ?></p>
+                </div>
+                <div class="row form-group" data-ng-class="{'has-error' : errors['capcha']}">
+                    <div class="col-md-6">
+                        <span class="capcha">{{capcha_numbers.first}} + {{capcha_numbers.second}} = </span>
+                        <input data-ng-model="capcha" class="capcha-result" type="text" />
+                    </div>
+                    <div class="col-md-6 ">
+                        <button type="submit" data-ng-class="{disabled: capcha == ''}" class="btn btn-success btn-lg pull-right " ><?= __('template.comments.form.button'); ?></button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
