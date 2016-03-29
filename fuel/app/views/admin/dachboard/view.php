@@ -10,7 +10,7 @@
                     <div class="progress-bar" style="width: 100%"></div>
                 </div>
                 <span class="progress-description small-box">
-                    <?= \Fuel\Core\Html::anchor('/', 'Просмотреть все', array('class' => 'small-box-footer')); ?>
+                    <?= \Fuel\Core\Html::anchor('/admin/comment/index/unread', 'Просмотреть все', array('class' => 'small-box-footer')); ?>
                 </span>
             </div>
         </div>
@@ -21,12 +21,12 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Комментариев сегодня</span>
-                <span class="info-box-number"><?= $unwotched_comments_count; ?></span>
+                <span class="info-box-number"><?= $new_comments_count; ?></span>
                 <div class="progress">
                     <div class="progress-bar" style="width: 100%"></div>
                 </div>
                 <span class="progress-description small-box">
-                    <?= \Fuel\Core\Html::anchor('/', 'Просмотреть все', array('class' => 'small-box-footer')); ?>
+                    <?= \Fuel\Core\Html::anchor('/admin/comment/index/new', 'Просмотреть все', array('class' => 'small-box-footer')); ?>
                 </span>
             </div>
         </div>
