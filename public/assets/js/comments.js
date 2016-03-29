@@ -56,11 +56,9 @@
         };
         
         var updateComments = function() {
-            //$scope.comments_list = Comment.all({id: content_id}, function () {
             Comment.all({id: content_id}, function (e) {  
                 $scope.comments_list = e;
                 $scope.count = Object.keys($scope.comments_list).length - 2;
-                //$scope.$apply();
             });
         };
         
