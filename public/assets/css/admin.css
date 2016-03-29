@@ -211,3 +211,18 @@ input[type="file"].transparent {
     height: 100%;
     border-radius: 100%;
 }
+
+.dataTables_wrapper {
+    overflow: hidden;
+}
+
+.dataTables_wrapper .col-sm-12 {
+    overflow: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .img-bg {
+        width: 48%;
+        padding-bottom: 48%;
+    }
+}
