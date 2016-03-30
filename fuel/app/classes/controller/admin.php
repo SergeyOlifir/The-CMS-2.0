@@ -3,9 +3,12 @@
 class Controller_Admin extends Controller_Application {
     
     public $template = 'admin/template';
+    public static $currentController = '';
     public static $extraCSS = array();
     
     public function before() {
+        
+        self::$currentController =  str_replace('Controller_Admin_', '', Fuel\Core\Request::active()->controller);
         
         if ( Fuel\Core\Request::active()->action !== 'login' and Fuel\Core\Request::active()->action !== 'create' and ! \Auth::check()) {
             Response::redirect('/admin/auth/login');
