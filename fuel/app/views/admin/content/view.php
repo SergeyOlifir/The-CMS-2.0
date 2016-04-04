@@ -1,11 +1,12 @@
 <div class="row">
     <div class="col-md-4">
         <div class="box box-primary">
-            <?= render('admin/content/profile_card', array('cmodel' => $model)); ?>
+            <?= render('admin/content/profile_card', array('cmodel' => $model), false); ?>
             <div class="box-footer">
                 <a href="/admin/content/edit/<?= $model->id;?>" class="btn btn-primary btn-block btn-flat"><b>Редатировать</b></a>
             </div>
         </div>
+        
         <? if(count($model->master_categories) > 0): ?>
             <? foreach($model->master_categories as $cmodel): ?>
                 <div class="box box-primary">
@@ -15,7 +16,7 @@
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         </div>
                     </div>
-                        <?= render('admin/category/profile_card', array('cmodel' => $cmodel)); ?>
+                        <?= render('admin/category/profile_card', array('cmodel' => $cmodel), false); ?>
                     <div class="box-footer">
                       <a href="/admin/category/view/<?= $cmodel->id;?>" class="btn btn-primary btn-block btn-flat"><b>Просмотр</b></a>
                     </div>
@@ -24,7 +25,9 @@
             <? endforeach;?>
         <? endif;?>
     </div>
+    
     <div class="col-md-8">
+        
         <div class="box box-primary">
             <div class="box-body">
                 <strong><i class="fa fa-file-text-o margin-r-5"></i>Мета теги</strong>
