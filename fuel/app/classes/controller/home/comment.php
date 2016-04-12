@@ -20,7 +20,12 @@ class Controller_Home_Comment extends Fuel\Core\Controller_Rest {
             
             if(Model_Comment::get_validator()->run()) {
                 if($content = Model_Content::find(\Fuel\Core\Input::post('id'))) {
-                    $content->comments[] = Model_Comment::forge(Model_Comment::get_validator()->validated());
+                    $fields = Model_Comment::get_validator()->validated();
+                    $content->comments[] = Model_Comment::forge(array(
+                        'user_name' => strip_tags($fields['user_name']),
+                        'user_email' => strip_tags($fields['user_email']),
+                        'text' => strip_tags($fields['text']),
+                    ));
                     $content->save();
                     return $this->response(array('status' => 'ok'));
                 }

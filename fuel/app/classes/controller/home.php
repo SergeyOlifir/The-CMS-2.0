@@ -40,6 +40,8 @@ class Controller_Home extends Controller_Application {
 
                 if (in_array($lang, array_keys($all_langs))) {
                     TCLocal::setCurrentLang($lang);
+                } else {
+                    TCLocal::setCurrentLang('ru');
                 }
 
                 //if (Fuel\Core\Request::active()->route->name == '_root_') {

@@ -16,12 +16,12 @@ class Create_Main_Page
 
         ), array('id'));
         
-        $model = \Model_MainPage::forge(array(
+        /*$model = \Model_MainPage::forge(array(
             'title' => '',
             'meta' => '',
         ));
         
-        $model->save();
+        $model->save();*/
         
     }
 

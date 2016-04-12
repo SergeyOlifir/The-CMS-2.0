@@ -149,7 +149,8 @@ class Model_Category extends Model_Base {
 
     public function get_content_count() {
         $db = \Database_Connection::instance(null);
-        $result = \DB::query("CALL `get_content_count_for_category`(" . Fuel\Core\DB::escape($this->id). ");", Fuel\Core\DB::SELECT)->as_object('stdClass')->execute($db)[0]->content_count;
+        $result = \DB::query("CALL `get_content_count_for_category`(" . Fuel\Core\DB::escape($this->id). ");", Fuel\Core\DB::SELECT)->as_object('stdClass')->execute($db);//[0]->content_count;
+        $result = $result[0]->content_count;   
         $db->disconnect();
         return (int)$result;
     }

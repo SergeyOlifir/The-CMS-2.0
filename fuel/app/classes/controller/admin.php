@@ -13,7 +13,10 @@ class Controller_Admin extends Controller_Application {
         if ( Fuel\Core\Request::active()->action !== 'login' and Fuel\Core\Request::active()->action !== 'create' and ! \Auth::check()) {
             Response::redirect('/admin/auth/login');
         }
-        self::$extraCSS = array('bootstrap' => '/assets/css/bootstrap.min.css', 'tpl' => '/assets/css/templates/' . \Fuel\Core\Config::get('TCTheme')['theme_folder'] . '/carusel.css');
+        
+        $tpl = '/assets/css/templates/' . \Fuel\Core\Config::get('TCTheme.theme_folder') . '/carusel.css';
+        
+        self::$extraCSS = array('bootstrap' => '/assets/css/bootstrap.min.css', 'tpl' => $tpl);
         parent::before();
         
         $this->template->set_global('tcadmin_config', \Fuel\Core\Config::get('TCAdmin'));

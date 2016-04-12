@@ -61,5 +61,18 @@ return array(
             ),
         ),
     ),
+    
+    'mail_feedback' => array(
+        'from' => array(
+            'adress' => 'noreply@montevoyage.com',
+            'name' => 'Marengo',
+        ),
+
+        'to' => array(
+            'adress' => 'sergey.olifir@gmail.com',
+            'name' => 'Marengo',
+        ),
+        
+    ),
 );
 
