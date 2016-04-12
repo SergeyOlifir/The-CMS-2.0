@@ -15,8 +15,8 @@ class TCLocal {
 
     public function __construct() {
         $this->language = array();
-        
-        if ($_SERVER['HTTP_ACCEPT_LANGUAGE']) {
+        //var_dump(array_key_exists('HTTP_ACCEPT_LANGUAGE', $_SERVER)); die();
+        if (array_key_exists('HTTP_ACCEPT_LANGUAGE', $_SERVER)) {
             if($list = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
                 if (preg_match_all('/([a-z]{1,8}(?:-[a-z]{1,8})?)(?:;q=([0-9.]+))?/', $list, $list)) {
                     $this->language = array_combine($list[1], $list[2]);
