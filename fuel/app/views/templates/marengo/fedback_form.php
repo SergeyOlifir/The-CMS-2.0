@@ -9,13 +9,13 @@
             <p class="lead"><?= __('template.feedback.form.header'); ?></p>
             <form data-ng-submit="send()">
                 <div class="form-group" data-ng-class="{'has-error': errors['user_name']}">
-                    <input required="required" type="name" data-ng-model="name" class="form-control" id="exampleInputEmail1" placeholder="<?= __('template.feedback.form.user_name_placeholder'); ?>">
+                    <input required="required" type="text" data-ng-model="name" class="form-control" placeholder="<?= __('template.feedback.form.user_name_placeholder'); ?>">
                 </div>
                 <div class="form-group" data-ng-class="{'has-error': errors['user_email']}">
-                    <input required="required" type="email" data-ng-model="mail" class="form-control" id="exampleInputPassword1" placeholder="<?= __('template.feedback.form.user_email_placeholder'); ?>">
+                    <input required="required" type="email" data-ng-model="mail" class="form-control" placeholder="<?= __('template.feedback.form.user_email_placeholder'); ?>">
                 </div>
                 <div class="form-group" data-ng-class="{'has-error': errors['text']}">
-                    <textarea required="required" type="password"  data-ng-model="text" class="form-control" id="exampleInputPassword1" placeholder="<?= __('template.feedback.form.text_placeholder'); ?>"></textarea>
+                    <textarea required="required" data-ng-model="text" class="form-control" placeholder="<?= __('template.feedback.form.text_placeholder'); ?>"></textarea>
                     <p class="help-block"><?= __('template.feedback.form.text_help_block'); ?></p>
                 </div>
                 <div class="clearfix">
