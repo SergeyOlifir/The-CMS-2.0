@@ -40,14 +40,14 @@ class Alter_content_stored_procedure_date_order
                     SELECT DISTINCT cont.* FROM relatedCat AS cat
                     INNER JOIN content_in_category AS cont_cat ON cont_cat.category_id = cat.id
                     INNER JOIN contents AS cont ON cont.id = cont_cat.content_id
-                    ORDER BY cont.updated_at
+                    ORDER BY cont.updated_at DESC
 					LIMIT indent,pagesize;
                 END IF;
                 IF pagesize = 0 THEN
                     SELECT DISTINCT cont.* FROM relatedCat AS cat
                     INNER JOIN content_in_category AS cont_cat ON cont_cat.category_id = cat.id
                     INNER JOIN contents AS cont ON cont.id = cont_cat.content_id
-					ORDER BY cont.updated_at;
+					ORDER BY cont.updated_at DESC;
                 END IF;
 
             END;
