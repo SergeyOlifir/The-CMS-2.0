@@ -36,7 +36,7 @@
                     <ul class="sub-menu-wrp home">
                         <?php foreach ($links as $link): ?>
                             <li>
-                                <? $utl = Router::get('view_category', array('alias' => $link->category->alias)); ?>
+                                <? $utl = TCRouter::get('view_category', array('alias' => $link->category->alias)); ?>
                                 <?= \Fuel\Core\Html::anchor($utl, $link->title, array('class' => ($utl . '.html' == Controller_Application::$current_page) ? "active" : "")); ?>
                             </li>
                         <?php endforeach;?>
@@ -45,11 +45,11 @@
                 
                 <?php foreach ($links as $link): ?>
                     <li>
-                        <? $utl = Router::get('view_category', array('alias' => $link->category->alias)); ?>
+                        <? $utl = TCRouter::get('view_category', array('alias' => $link->category->alias)); ?>
                         <?= \Fuel\Core\Html::anchor($utl, $link->title, array('class' => ($utl . '.html' == Controller_Application::$current_page) ? "active" : "")); ?>
                         <ul class="sub-menu-wrp">
                             <?php foreach ($link->category->subsidiary_category as $cat): ?>
-                                <? $ul = Router::get('view_category', array('alias' => $cat->alias)); ?>
+                                <? $ul = TCRouter::get('view_category', array('alias' => $cat->alias)); ?>
                                 <li><?= \Fuel\Core\Html::anchor($ul, $cat->title, array('class' => ($ul . '.html' == Controller_Application::$current_page) ? "active" : "")); ?></li>
                             <?php endforeach;?>
                         </ul>
