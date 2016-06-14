@@ -599,13 +599,14 @@ footer .info-wrp p {
 
 footer .info-wrp h3 {
     font-weight: normal;
-    color: #fff;
-    font-size: 21px;
+    color: #fff; 
+    font-size: 23px;
 }
 
 footer .info-wrp h4 {
-    color: #fff;
-    font-size: 19px;    
+    color: #fff; 
+    font-size: 21px;
+    line-height: 23px;    
 }
 
 footer nav {

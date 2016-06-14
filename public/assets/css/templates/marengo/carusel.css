@@ -734,10 +734,10 @@ footer .info-wrp p {
 }
 
 footer .info-wrp h3 {
-    font-weight: bolder;
+    font-weight: normal;
     color: #fff; 
-    font-size: 25px;
-    line-height: 22px;
+    font-size: 27px;
+    line-height: 29px;
 }
 
 footer nav {
