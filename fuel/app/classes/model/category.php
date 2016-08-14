@@ -170,7 +170,7 @@ class Model_Category extends Model_Base {
         $content = Model_Content::query()
                 ->related('master_categories', array('limit' => array($limit)))
                 ->where('master_categories.id', $this->id);
-        
+        //var_dump($content);
         return $content->get();
     }
 }

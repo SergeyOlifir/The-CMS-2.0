@@ -1,5 +1,5 @@
 <? $current_page = Controller_Application::$current_page; ?>
-<? $template = "new_zhitnitca"; ?>
+<? $template = "new_kandibur"; ?>
 <!DOCTYPE html>
 <html lang="<?= Config::get('language'); ?>">
     <head>

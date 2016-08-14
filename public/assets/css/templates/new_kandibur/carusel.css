@@ -34,7 +34,7 @@ header .navbar {
 
 header .navbar-default .navbar-nav > li > a {
     color: #009900;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: normal;
     padding: 35px 5px 30px 10px;
     font-weight: bold;
@@ -70,11 +70,11 @@ header .navbar-collapse {
     position: absolute;
     background-color: rgba(255, 40, 0, 0.8);
     padding: 15px 25px 15px 30px;
-    width: 420px;
+    width: 400px;
     min-width: 32%;
     left: 50%;
     bottom: 0;
-    font-size: 55px;
+    font-size: 50px;
     text-align: left;
     color: #fefefe;
     overflow: hidden;
@@ -504,7 +504,7 @@ footer .posts-count-section h5 span {
 .content .related-categoryes .related-cat-title {
     font-size: 19px;
     color: #ff0000;
-    margin: 12px 0 20px 20px;
+    margin: 5px 0 20px 20px;
     font-weight: normal;
     font-family: inherit;
 }
@@ -515,9 +515,9 @@ footer .posts-count-section h5 span {
 }
 
 .featured-wrp-type1 .related-cat-title, .featured-wrp-type1 .related-cat-title a, .featured-wrp-type2 .related-cat-title, .featured-wrp-type2 .related-cat-title a  {
-    font-size: 60px;
+    font-size: 55px;
     color: #ff0000;
-    margin: 12px 0 30px 0px;
+    margin: 0px 0 30px 0px;
     font-weight: normal;
     font-family: 'Mistral';
     text-align: left;
@@ -675,7 +675,7 @@ footer .posts-count-section h5 span {
 }
 
 .content .related-categoryes .projects .item h1 a {
-    font-size: 13px;
+    font-size: 15px;
     color: #003355;
     line-height: inherit;
     display: block;
@@ -966,7 +966,7 @@ footer .f-logo {
 .related-categoryes-wrp.main .related-cat-title a {
     font-family: 'Mistral';  
     color: #ff0000;
-    font-size: 60px;
+    font-size: 55px;
     font-weight: normal;
 }
 
@@ -1032,6 +1032,19 @@ footer .f-logo {
 .details {
     font-size: 15px;
     color: #003355;
+}
+
+.all-wrapper .content  .tiles .content-bg .description h3 {
+    font-size: 25px;
+    color: #003355;
+    font-weight: normal;
+}
+
+
+.all-wrapper .content  .tiles .content-bg .description h4 {
+    font-size: 21px;
+    color: #003355;
+    font-weight: normal;
 }
 
 @media (min-width: 768px) {
