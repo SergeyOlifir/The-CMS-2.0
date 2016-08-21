@@ -53,6 +53,7 @@
         <meta property="fb:admins" content="100005100901584" />
         
         <?= Asset::css('bootstrap.min.css'); ?>
+        <?= Asset::css('font-awesome.min.css'); ?>
         <?= TCCore\TCTheme::add_css("carusel.css"); ?>
 
         <?= Asset::js('jQuery-2.1.4.min.js'); ?>

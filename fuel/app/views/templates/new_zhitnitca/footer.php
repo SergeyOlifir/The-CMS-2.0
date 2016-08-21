@@ -24,6 +24,20 @@
 
 
 <div class="container">
+    <!--<ul class="soc-buttons">
+        <li class="fb-icon">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li class="vk-icon">
+            <a href="#"><i class="fa fa-vk"></i></a>
+        </li>
+        <li class="yo-icon">
+            <a href="#"><i class="fa fa-youtube"></i></a>
+        </li>
+        <li class="ok-icon">
+            <a href="#"><i class="fa fa-odnoklassniki"></i></a>
+        </li>
+    </ul>-->
     <div class="info-wrp">
         <?= $main_page_model->footer_content; ?>
     </div>
