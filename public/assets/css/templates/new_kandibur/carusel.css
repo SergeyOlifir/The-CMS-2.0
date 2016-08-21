@@ -1047,6 +1047,44 @@ footer .f-logo {
     font-weight: normal;
 }
 
+.soc-buttons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.soc-buttons li {
+    display: inline-block;
+    background: #fff;
+    padding: 4px 10px;
+    border-radius: 100%;
+    font-size: 15px;
+}
+
+.soc-buttons li a {
+    color: #fff;
+}
+
+.soc-buttons li.fb-icon {
+    background: #013066;
+}
+
+.soc-buttons li.vk-icon {
+    background: #006498;
+    font-size: 12px;
+    padding: 6px 8px;
+}
+
+.soc-buttons li.yo-icon {
+    background: #f8442d;
+    font-size: 15px;
+    padding: 4px 8px;
+}
+
+.soc-buttons li.ok-icon {
+    background: #ff8d00;
+}
+
 @media (min-width: 768px) {
     .content .content-bg .description {
         padding-top: 25px;

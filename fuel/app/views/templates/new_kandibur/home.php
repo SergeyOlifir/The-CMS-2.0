@@ -12,6 +12,7 @@
         <? endif; ?>
         <link rel="shortcut icon" href="/assets/img/templates/<?= $template; ?>/favicon.png" type="image/png">
         <?= Asset::css('bootstrap.min.css'); ?>
+        <?= Asset::css('font-awesome.min.css'); ?>
         <?= TCCore\TCTheme::add_css("carusel.css"); ?>
 
         <?= Asset::js('jQuery-2.1.4.min.js'); ?>
