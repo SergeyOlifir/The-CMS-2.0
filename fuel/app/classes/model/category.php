@@ -167,10 +167,16 @@ class Model_Category extends Model_Base {
             $condition['offset'] = array($offset);
         }
         
+        
         $content = Model_Content::query()
-                ->related('master_categories', array('limit' => array($limit)))
-                ->where('master_categories.id', $this->id);
-        //var_dump($content);
+  
+            ->related('master_categories')
+           ->where('master_categories.id', $this->id)
+            ->rows_limit($limit);
+       
+        // $content->limit(5);
+        // var_dump($content); die();
+
         return $content->get();
     }
 }
